@@ -11,19 +11,21 @@
 // Odd Loops part 2a
         const paragraph = document.querySelector("p");
 
-       for (let O = 0; O < 10; O++) {
+       for (let O = 1; O <= 10; O++) {
         let text;
-
-        if (O === 0) {
-            text = document.createTextNode("X");
+        if(O==5){
+            text = document.createTextNode("Q");
+        }else{
+            if (O === 0) {
+                text = document.createTextNode("X");
+            }
+            else if (O % 2 === 0) {
+                text = document.createTextNode("X");
+            }
+            else {
+                text = document.createTextNode("O");
+            }
         }
-        else if (O % 2 === 0) {
-            text = document.createTextNode("X");
-        }
-        else {
-            text = document.createTextNode("O");
-        }
-
         paragraph.appendChild(text);
 } 
 //Odder Loops part 2b
@@ -46,7 +48,10 @@
             let currentCityName = cityNames[i];
         
             for(let j = 0; j < currentCityName.length; j++){
-                console.log(currentCityName[j])
+                if(j===0)
+                console.log(currentCityName[j].toUpperCase());
+                else 
+                console.log(currentCityName[j]);
             } 
         }
     </script>
