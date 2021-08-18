@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <body>
+            <script>
+                let city_names = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"]
+
+for(var i = 0; i<city_names.length; i++){
+  var temp = city_names[i]
+  for(var x = 0; x<temp.length; x++){
+    if(x == 0){
+      console.log(temp[x].toUpperCase())
+    }else{
+     console.log(temp[x])
+    }
+    
+  }
+}
+            </script>
+        </body>
+    </head>
+</html>
