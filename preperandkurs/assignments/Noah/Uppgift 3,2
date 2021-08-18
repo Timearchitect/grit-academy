@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <body>
+            <script>
+                function remove_char(word, char){
+                return word.replace(char,"")
+                }
+
+            console.log(remove_char("hej","h"))
+            </script>
+        </body>
+    </head>
+</html>
