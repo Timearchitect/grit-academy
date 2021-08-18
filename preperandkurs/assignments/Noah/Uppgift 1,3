@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <body>
+            <script>
+                var foo = 0
+                var bar = 0
+                var result = foo/bar
+                console.log(result)
+                if(isNaN(result)){
+                    alert("you cant divide us")
+                }
+            </script>
+        </body>
+    </head>
+</html>
