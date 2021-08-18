@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <body>
+            <button type="submit" id="button" onclick="dead_or_alive()">Click Me!</button>
+            <script>
+                
+                function dead_or_alive(){
+                    var cat = {"Name":"Gustav","Alive":true}
+                    var dead_alive = Math.floor(Math.random() * 2)
+                    if(dead_alive == 0){
+                        return alert("The cats name is " + cat.Name + " and its dead :(")
+                    }
+                    if(dead_alive == 1){
+                        return alert("the cats name is " + cat.Name + " and its alive :)")
+                    }
+                }
+
+            </script>
+        </body>
+    </head>
+</html>
