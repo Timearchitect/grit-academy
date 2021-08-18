@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <body>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG" alt="" height="300px" width="400px">
+            <p>
+                A_small_cup_of_coffee
+            </p>
+            <input type="number" name="insert a number" id="">
+            <input type="number" name="insert a number" id="">
+            <button type="button" id="button" onclick="divided()">divided </button>
+            <script>
+                function divided(){
+                    console.log("divided")
+                }
+            </script>
+        </body>
+    </head>
+</html>
