@@ -1,114 +1,73 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+
+Assigment 1
+
+Uppgift 3 = function is_nan(foo, bar){
+  if(isNaN(foo/bar)){
+    return console.log("You Can't Divide Us")
+  }else{
+    return null
+  }
 }
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red184\green93\blue213;
-\red155\green162\blue177;\red81\green157\blue235;\red140\green211\blue254;\red72\green168\blue181;\red214\green85\blue98;
-\red222\green180\blue104;\red136\green185\blue102;\red197\green136\blue83;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c77647\c47059\c86667;
-\cssrgb\c67059\c69804\c74902;\cssrgb\c38039\c68627\c93725;\cssrgb\c61176\c86275\c99608;\cssrgb\c33725\c71373\c76078;\cssrgb\c87843\c42353\c45882;
-\cssrgb\c89804\c75294\c48235;\cssrgb\c59608\c76471\c47451;\cssrgb\c81961\c60392\c40000;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+console.log(is_nan(0,0))
 
-\f0\fs24 \cf0 \
+--------------------------
 
-\fs44 Assigment 1
-\fs24 \
-\
+Assignment 2
 
-\fs30 Uppgift 3 
-\fs24 = 
-\f1\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 function\strokec5  \strokec6 is_nan\strokec5 (
-\f2\i \strokec7 foo
-\f1\i0 \strokec5 , 
-\f2\i \strokec7 bar
-\f1\i0 \strokec5 )\{\
-\pard\pardeftab720\sl440\partightenfactor0
-\cf2   \strokec4 if\strokec5 (\strokec8 isNaN\strokec5 (\strokec9 foo\strokec8 /\strokec9 bar\strokec5 ))\{\
-    \strokec4 return\strokec5  \strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec11 "You Can't Divide Us"\strokec5 )\
-  \}\strokec4 else\strokec5 \{\
-    \strokec4 return\strokec5  \strokec12 null\strokec5 \
-  \}\
-\}\
-\strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec6 is_nan\strokec5 (\strokec12 0\strokec5 ,\strokec12 0\strokec5 ))\cf5 \cb1 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+Uppgift 2a = for(var i = 0; i<10; i++){
+  if(i%2 !== 1 && i !== 5){
+    console.log("O")
+  }
+  if(i == 5){
+    console.log("Q")
+  }
+  if(i%2 == 1){
+    console.log("X")
+  }
+}
 
-\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
-\
-\
+Uppgift 2b = var text = ""
+for(var i = 0; i<20; i++){
+var amount_spaces = Math.floor(Math.random() * 5)
+  for(var x = 0; x<amount_spaces; x++){
+    text = text.concat(" ")
+}
+text = text.concat("O")
 
-\fs44 Assignment 2
-\fs24 \
-\
+}
+console.log(text)
 
-\fs30 Uppgift 2a 
-\fs24 = 
-\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 f
-\f1 or\strokec5 (\strokec4 var\strokec5  \strokec9 i\strokec5  \strokec8 =\strokec5  \strokec12 0\strokec5 ; \strokec9 i\strokec8 <\strokec12 10\strokec5 ; \strokec9 i\strokec8 ++\strokec5 )\{\
-\pard\pardeftab720\sl440\partightenfactor0
-\cf2   \strokec4 if\strokec5 (\strokec9 i\strokec8 %\strokec12 2\strokec5  \strokec8 !==\strokec5  \strokec12 1\strokec5  \strokec8 &&\strokec5  \strokec9 i\strokec5  \strokec8 !==\strokec5  \strokec12 5\strokec5 )\{\
-    \strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec11 "O"\strokec5 )\
-  \}\
-  \strokec4 if\strokec5 (\strokec9 i\strokec5  \strokec8 ==\strokec5  \strokec12 5\strokec5 )\{\
-    \strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec11 "Q"\strokec5 )\
-  \}\
-  \strokec4 if\strokec5 (\strokec9 i\strokec8 %\strokec12 2\strokec5  \strokec8 ==\strokec5  \strokec12 1\strokec5 )\{\
-    \strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec11 "X"\strokec5 )\
-  \}\
-\}\
-\
-Uppgift 2b = \strokec4 var\strokec5  \strokec9 text\strokec5  \strokec8 =\strokec5  \strokec11 ""\strokec5 \
-\pard\pardeftab720\sl440\partightenfactor0
-\cf2 \strokec4 for\strokec5 (\strokec4 var\strokec5  \strokec9 i\strokec5  \strokec8 =\strokec5  \strokec12 0\strokec5 ; \strokec9 i\strokec8 <\strokec12 20\strokec5 ; \strokec9 i\strokec8 ++\strokec5 )\{\
-\strokec4 var\strokec5  \strokec9 amount_spaces\strokec5  \strokec8 =\strokec5  \strokec10 Math\strokec5 .\strokec8 floor\strokec5 (\strokec10 Math\strokec5 .\strokec8 random\strokec5 () \strokec8 *\strokec5  \strokec12 5\strokec5 )\
-  \strokec4 for\strokec5 (\strokec4 var\strokec5  \strokec9 x\strokec5  \strokec8 =\strokec5  \strokec12 0\strokec5 ; \strokec9 x\strokec8 <\strokec9 amount_spaces\strokec5 ; \strokec9 x\strokec8 ++\strokec5 )\{\
-    \strokec9 text\strokec5  \strokec8 =\strokec5  \strokec9 text\strokec5 .\strokec6 concat\strokec5 (\strokec11 " "\strokec5 )\
-\}\
-\strokec9 text\strokec5  \strokec8 =\strokec5  \strokec9 text\strokec5 .\strokec6 concat\strokec5 (\strokec11 "O"\strokec5 )\
-\
-\}\
-\strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec9 text\strokec5 )\
-\
-Uppgift 2c = \strokec4 let\strokec5  \strokec9 city_names\strokec5  \strokec8 =\strokec5  [\strokec11 "kiruna"\strokec5 , \strokec11 "uppsala"\strokec5 , \strokec11 "malmo"\strokec5 , \strokec11 "gothenburg"\strokec5 , \strokec11 "stockholm"\strokec5 ]\
-\
-\strokec4 for\strokec5 (\strokec4 var\strokec5  \strokec9 i\strokec5  \strokec8 =\strokec5  \strokec12 0\strokec5 ; \strokec9 i\strokec8 <\strokec9 city_names\strokec5 .\strokec9 length\strokec5 ; \strokec9 i\strokec8 ++\strokec5 )\{\
-  \strokec4 var\strokec5  \strokec9 temp\strokec5  \strokec8 =\strokec5  \strokec9 city_names\strokec5 [\strokec9 i\strokec5 ]\
-  \strokec4 for\strokec5 (\strokec4 var\strokec5  \strokec9 x\strokec5  \strokec8 =\strokec5  \strokec12 0\strokec5 ; \strokec9 x\strokec8 <\strokec9 temp\strokec5 .\strokec9 length\strokec5 ; \strokec9 x\strokec8 ++\strokec5 )\{\
-    \strokec4 if\strokec5 (\strokec9 x\strokec5  \strokec8 ==\strokec5  \strokec12 0\strokec5 )\{\
-      \strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec9 temp\strokec5 [\strokec9 x\strokec5 ].\strokec6 toUpperCase\strokec5 ())\
-    \}\strokec4 else\strokec5 \{\
-     \strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec9 temp\strokec5 [\strokec9 x\strokec5 ])\
-    \}\
-    \
-  \}\
-\}\
-\
+Uppgift 2c = let city_names = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"]
 
-\fs40 Assigment 3a 
-\fs30 = \strokec4 function\strokec5  \strokec6 remove_char\strokec5 (
-\f2\i \strokec7 word
-\f1\i0 \strokec5 , 
-\f2\i \strokec7 char
-\f1\i0 \strokec5 )\{\
-\strokec4 return\strokec5  \strokec9 word\strokec5 .\strokec6 replace\strokec5 (\strokec9 char\strokec5 ,\strokec11 ""\strokec5 )\
-\}\
-\
-\strokec10 console\strokec5 .\strokec6 log\strokec5 (\strokec6 remove_char\strokec5 (\strokec11 "hej"\strokec5 ,\strokec11 "h"\strokec5 ))\
-\
-\
+for(var i = 0; i<city_names.length; i++){
+  var temp = city_names[i]
+  for(var x = 0; x<temp.length; x++){
+    if(x == 0){
+      console.log(temp[x].toUpperCase())
+    }else{
+     console.log(temp[x])
+    }
+    
+  }
+}
 
-\fs40 Assigment 3b
-\fs30  = \strokec4 const\strokec5  \strokec10 cat\strokec5  \strokec8 =\strokec5  \{\strokec11 "Name"\strokec5 :\strokec11 "Gustav"\strokec5 , \strokec11 "Alive"\strokec5 :\strokec12 true\strokec5 \}\
-\
-\strokec4 if\strokec5 (\strokec6 confirm\strokec5 ())\{\
-  \strokec4 var\strokec5  \strokec9 dead_or_alive\strokec5  \strokec8 =\strokec5  \strokec10 Math\strokec5 .\strokec8 floor\strokec5 (\strokec10 Math\strokec5 .\strokec8 random\strokec5 () \strokec8 *\strokec5  \strokec12 2\strokec5 )\
-  \strokec4 if\strokec5 (\strokec9 dead_or_alive\strokec5  \strokec8 ==\strokec5  \strokec12 0\strokec5 )\{\
-    \strokec6 alert\strokec5 (\strokec11 "The cats name is "\strokec5  \strokec8 +\strokec5  \strokec9 cat\strokec5 .\strokec9 Name\strokec5  \strokec8 +\strokec5   \strokec11 " and hes not Alive"\strokec5 )\
-  \}\
-  \strokec4 if\strokec5 (\strokec9 dead_or_alive\strokec5  \strokec8 ==\strokec5  \strokec12 1\strokec5 )\{\
-    \strokec6 alert\strokec5 (\strokec11 "The cats name is "\strokec5  \strokec8 +\strokec5  \strokec9 cat\strokec5 .\strokec9 Name\strokec5  \strokec8 +\strokec5  \strokec11 " and hes Alive"\strokec5 )\
-  \}\
-\}\cf5 \cb1 \
+-----------------
+
+Assigment 3a = function remove_char(word, char){
+return word.replace(char,"")
+}
+
+console.log(remove_char("hej","h"))
+
+
+Assigment 3b = const cat = {"Name":"Gustav", "Alive":true}
+
+if(confirm()){
+  var dead_or_alive = Math.floor(Math.random() * 2)
+  if(dead_or_alive == 0){
+    alert("The cats name is " + cat.Name +  " and hes not Alive")
+  }
+  if(dead_or_alive == 1){
+    alert("The cats name is " + cat.Name + " and hes Alive")
+  }
 }
