@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <body>
+            <script>
+              for(var i = 1; i<11; i++){
+                  if(i%2==0 && i !== 5){
+                      console.log("O")
+                  }
+                  if(i%2==1){
+                      console.log("x")
+                  }
+                  if(i == 5){
+                      console.log("Q")
+                  }
+
+              }
+            </script>
+        </body>
+    </head>
+</html>
