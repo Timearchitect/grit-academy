@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <body>
+            <script>
+                //part 1
+              for(var i = 1; i<11; i++){
+                  if(i%2==0 && i !== 5){
+                      console.log("O")
+                  }
+                  if(i%2==1){
+                      console.log("x")
+                  }
+                  if(i == 5){
+                      console.log("Q")
+                  }
+
+              }
+              //part 2
+              var text = ""
+              for(var i = 0; i<20; i++){
+                var amount_spaces = Math.floor(Math.random() * 5)
+                for(var x = 0; x<amount_spaces; x++){
+                    text = text.concat(" ")
+                    }
+            text = text.concat("O")
+
+                }
+            console.log(text)
+            </script>
+        </body>
+    </head>
+</html>
