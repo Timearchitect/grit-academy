@@ -1,0 +1,12 @@
+body {
+    background-color: beige;
+}
+h1 {
+    font-family: cursive;
+    color: green
+}
+p {
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black
+}
