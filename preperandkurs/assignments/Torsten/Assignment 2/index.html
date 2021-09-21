@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!-- Assignment 2A -->
+    <script>
+        let i = 0
+        let iseven = true
+        let text = ""
+        
+        for (i = 0; i < 11; i++)
+        {
+            text = ""
+            if (i % 2 == 0)
+            {
+                iseven = true
+            }
+            else
+            {
+                iseven = false
+            }
+
+            if (iseven == true)
+            {
+                text = "O"
+            }   
+            else if (iseven == false)
+            {
+                text = "X"
+            }
+            text += "<br>";
+            document.write(text)
+        }
+
+        document.write("<br>");
+
+
+        // Assignment 2B
+
+        //Function for randomizing space between O's
+        function getRndInteger (min, max)
+        {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        //Function for repeating a task
+        function repeat(func, times)
+        {
+            func();
+            times && --times && repeat(func, times);
+        }
+
+        for (i = 0; i < 21; i++)
+        {
+            let rndspace = getRndInteger(1,6);
+            document.write("O" + "<br>");
+            repeat(function () {document.write("<br>"); }, rndspace);
+        }
+
+        // Assignment 2C
+        
+
+    </script>
+
+</body>
+
+</html>
