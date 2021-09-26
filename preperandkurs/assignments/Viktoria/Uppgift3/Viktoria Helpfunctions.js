@@ -1,6 +1,9 @@
 
 function charRemove (character, text) {
- return work.replace(text, "")
- 
+    for(let i =0 ; i<=  toString(text).length ; i++ ){
+        text =  text.replace(character, "");
+    }
+    return text;
+
   }
- console.log(charRemove("cat", "ca")) 
+ console.log(charRemove("c", "ccccccccccccccccccdc")) ;

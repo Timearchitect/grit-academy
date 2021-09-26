@@ -31,7 +31,7 @@ console.log("Q")
 
 var text = ""
 for(var i = 0; i<20; i++){
-var amount_spaces = Math.floor(Math.random() * 5)
+var amount_spaces = Math.floor(Math.random() * 5)+1
 for(var x = 0; x<amount_spaces; x++){
  text = text.concat(" ")
  }
@@ -47,7 +47,7 @@ text = text.concat("O")
 
 <script>
 // this is part 2c of the assignment. 
-let citynames = ["kiruna", "uppsala","malmo","gothenburg","stockholm"]
+/*let citynames = ["kiruna", "uppsala","malmo","gothenburg","stockholm"]
   
 for (var i=0; i<citynames.length ; i=i+1)  {
 
@@ -63,7 +63,19 @@ console.log(temp[x])
   }
 }
         
-}
+}*/
+let citynames = ["kiruna", "uppsala","malmo","gothenburg","stockholm"]
+ for(let x =0; x<citynames.length ; x++){     // array
+   for(let i = 0; i<citynames[x].length; i++){ // bokstäver
+      if(i == 0) 
+        console.log(citynames[x].charAt(i).toUpperCase());
+      else 
+        console.log(citynames[x].charAt(i));
+    }
+ }
+  
+
+
   </script>
     
  
