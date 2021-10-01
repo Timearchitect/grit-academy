@@ -13,22 +13,22 @@
         {
             text = ""
             if (i % 2 == 0)
-            {
                 iseven = true
-            }
+            
             else
-            {
                 iseven = false
-            }
-
-            if (iseven == true)
-            {
+            
+            if (iseven == true){
+                if(i==4)
+                text = "Q"
+                else 
                 text = "O"
-            }   
-            else if (iseven == false)
-            {
-                text = "X"
+
             }
+            
+            else if (iseven == false)
+                text = "X"
+            
             text += "<br>";
             document.write(text)
         }
@@ -66,9 +66,15 @@
         let chars = cityNames.toString();
 
         //For loop to divide the letters in each word
-        for (let i = 0; i < chars.length; i++)
-        {
-            console.log(chars.charAt(i));
+        for( let j = 0  ;  j < cityNames.length ; j++){     // "stad" i string
+         for (let i = 0; i < cityNames[j].length; i++)     
+            {   
+                if(i == 0)
+                    console.log(cityNames[j].charAt(i).toUpperCase(cityNames[j].charAt(i)));
+                else 
+                    console.log(cityNames[j].charAt(i));
+
+            }
         }
 
     </script>
