@@ -1,0 +1,4 @@
+function charRemove (character, text){
+
+    
+}

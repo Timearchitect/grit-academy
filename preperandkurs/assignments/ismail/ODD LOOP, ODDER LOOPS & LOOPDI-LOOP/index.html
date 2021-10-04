@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>hej hej hej</p>
+    <script src="scripts/base.js">
+    </script>
+    <script>
+
+        // this is part 2a of the assignment
+
+        for (let i = 1; i < 11; i++) {
+            if (i % 2 == 1) {
+                // document.write(i % 2);
+                document.write("O");
+
+            }
+            else {
+                // document.write(i % 2);
+                document.write('X');
+            }
+        }
+        /*document.write(i%2);
+        document.write('<br>');
+        document.write(<p>O</p>)
+      */
+      document.write('<p>__________</p>');
+      // Detta är nästa loop
+
+      for (let u = 0; u<20; u++){
+        document.write('O');
+
+        //deklarerar variabeln ran och ger den ett random nummer från 1 till 5
+        let ran = Math.ceil( Math.random()*5);
+
+        //loopar lika många gånger som värdet av variablen ran
+        for (let b = 0; b<ran; b++ ){
+
+            //skriver ut ett space
+            document.write('&nbsp;');
+        }
+        
+      }
+
+let cityNames; 
+cityNames = ["kiruna","uppsala","malmo","gothenburg","stockholm"];
+console.log(cityNames);
+      let firstLetterUpperCase = cityNames[0][0].toUpperCase();
+       console.log(firstLetterUpperCase);
+       firstLetterUpperCase = cityNames[0][1].toUpperCase();
+       console.log(firstLetterUpperCase);
+
+       for (let wordIndex = 0; wordIndex < cityNames.length; wordIndex++){
+         for (let letterIndex = 0; letterIndex < cityNames[wordIndex].length; letterIndex++ ) {
+             // let letterToLog = cityNames[wordIndex][letterIndex]
+             let isFirstLetter = letterIndex == 0;
+             if (isFirstLetter) {
+                 // console.log(letterToLog.toUpperCase())
+                 console.log(cityNames[wordIndex][letterIndex].toUpperCase())
+             }else {
+                 // console.log(letterToLog);
+                 console.log(cityNames[wordIndex][letterIndex])
+            }
+           
+         }
+       } 
+
+ let cityName;
+ cityName = "stockholm"
+
+ for (let letterIndex = cityName.length-1; letterIndex >= 0; letterIndex--){
+ console.log(cityName[letterIndex])
+
+ }
+
+ let sons;
+ //deklararet en variabel
+sons = ["Liam", "Isaac", "Noah"];
+//tilldelat variabeln ett värde, i detta fall en array av strings
+for (let mySons=0; mySons<sons.length; mySons++){
+//     skapat en loop, i loopen har vi deklarerat en ny variabel (mySons) med ett värde. Gett den ett värde att köra tills den är slut
+
+ console.log(sons[mySons])
+
+
+
+ }
+            
+
+           
+
+               
+            
+
+
+
+
+
+
+
+
+
+
+let myName = "Ismail";
+for (
+    //Deklarera index variabel, den här variabeln används för att komma åt enskilda platser i en array
+    let i=0;
+    //Definiera ett condition, dvs en regel, för när loopen ska köra 
+    i < myName.length;
+    //Definiera någonting som ska hända, i slutet av varje loop iteration
+    i++
+    ){
+    // 
+console.log(myName[i])
+}
+
+
+
+
+
+        //Deklarera index variabel, den här variabeln används för att komma åt enskilda platser i en array
+        //Definiera ett condition, dvs en regel, för när loopen ska köra 
+        //Definiera någonting som ska hända, i slutet av varje loop iteration
+
+
+
+
+let colours = ["Red", "Green", "Blue"];
+for (let i=0; i < colours.length; i++){
+console.log(colours[i])
+
+
+}
+
+        
+let countries = ["sweden", "denmark", "turkey"];
+for (let i=0; i<countries.length; i++){
+console.log(countries[i])
+
+
+}
+
+    
+let phones = ["Iphone", "Samsung", "Huawei", "LG"];
+for(let i=0; i<phones.length; i++){
+console.log(phones[i])
+}
+
+
+
+
+        
+
+
+    </script> 
+
+</body>
+
+
+</html>
