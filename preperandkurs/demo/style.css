@@ -1,0 +1,9 @@
+h1{
+    font-style: italic;
+    color: rgb(231, 65, 15);
+}
+
+body{
+    /* background-color: cyan; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
