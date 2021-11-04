@@ -1,10 +1,11 @@
-console.log(888);
+
  let foo = 0;
 
- let bar = 0:
+ let bar = 0;
  
- bar / foo = "you cant divide us";
+ if(bar/foo == Number){}
+ else 
 
- console.log(bar / foo);
+ console.log("you cant divide us");
 
 
