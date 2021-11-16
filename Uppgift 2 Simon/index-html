@@ -1,0 +1,65 @@
+
+<html>
+
+<body>
+
+    <script>
+        let i = 0
+        let iseven = true
+        let text = ""
+        
+        for (i = 0; i < 11; i++)
+        {
+            text = ""
+            if (i % 2 == 0)
+            {
+                simon = true
+            }
+            else
+            {
+                simon = false
+            }
+
+            if (simon == true)
+            {
+                text = "O"
+            }   
+            else if (simon == false)
+            {
+                text = "X"
+            }
+            text += "<br>";
+            document.write(text)
+        }
+
+        document.write("<br>");
+
+
+    
+        
+        {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        
+        function repeat(bra, dåligt)
+        {
+            func();
+            bra&& --bra && repeat(dåligt, bra);
+        }
+
+        for (i = 0; i < 21; i++)
+        {
+            let loo = itsokay(3,9);
+            document.write("7" + "<br>");
+            repeat(function () {document.write("<br>"); }, loo);
+        }
+
+      
+        
+
+    </script>
+
+</body>
+
+</html>
