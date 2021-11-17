@@ -1,0 +1,13 @@
+body{
+    background-color: cyan;
+}
+
+h1{
+    font-style: italic;
+  /*  font-size: 100px; */
+}
+
+p{
+    color: rgb(150, 78, 20);
+    font-weight: bold;
+}
