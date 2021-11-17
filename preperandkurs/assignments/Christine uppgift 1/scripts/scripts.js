@@ -90,9 +90,114 @@ for( let i = 0;     i < 4 ;    i += 1  ){
     document.write("<div>"+text+"</div>");
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// funktioner
+//alert("hello world");  // kallar funktionen alert med "hello world" some paramenter
+
+
+//metoder
+//console.log("hello world");
+
+
+// definera funktion
+
+let foo; 
+foo = 5;
+
+function addition( para1 , para2 ){
+    let bar= 0;
+    if( para1<0){
+        console.error("value to small!!!");
+    }
+    return para1 + para2 ;
+}
+
+
+
+  // kalla på addition()
+
+  foo = addition(25,51);
+
+console.log( foo   );
+
+
+function infinity(){
+    console.log("infinity");
+    beyond();
+}
+
+
+function beyond(){
+    console.log("beyond");
+    infinity();
+}
+
+
+
+
+
+
+
 */
+function beyond(){
+    console.log("beyond");
+    infinity();
+}
+// Objekt
+
+let foo;
+foo = 5;
+
+let foo2;
+//      0    1      2
+foo2 = [5,"green", true];
+foo2[0] = 99999;
 
 
-console.log("vidare...");
+let foo3;
+//       id      color       ready
+foo3 = {
+    id:5,
+    color:"red",
+    ready:false
+};
+
+foo3.id= 99999;
+
+
+//console.log();
+
+let AlriksConsole = {
+    log: function(x){ 
+        console.log(x); 
+    }
+};
+
+AlriksConsole.log() // kallar på metoden 
+
+
+const foo4 = 5; 
+
+for( var i = 0 ; i< 3; i++) {
+    console.log(i);
+}
+i= foo4;
+console.log(i);
+
+
+
+
 
 
