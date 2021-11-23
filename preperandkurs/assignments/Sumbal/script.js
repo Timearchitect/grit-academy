@@ -6,5 +6,5 @@ foo= 0;
 let bar;
 bar=0;
 
-console.log(foo/bar)
-alert("warning:happiest page ever")
+console.log(foo/bar);
+alert("warning:happiest page ever");
