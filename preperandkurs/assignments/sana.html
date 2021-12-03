@@ -19,26 +19,29 @@
 // this is part 2b of the assignment. 
 
 for(var i = 1; i<11; i++){
-if(i%2==0 && i !== 5){
-console.log("O")
-}
-if(i%2==1){
-console.log("x")
+  if(i%2==0 && i !== 5){
+    console.log("O")
   }
-if(i == 5){
-console.log("Q")
- }
- }
+  if(i%2==1){
+    console.log("x")
+  }
+  if(i == 5){
+    console.log("Q")
+  }
+}
 
-var text = ""
+var text = "";
 for(var i = 0; i<20; i++){
-var spaces = Math.floor(Math.random() * 5)+1
-for(var x = 0; x<spaces; x++){
- text = text.concat(" ")
- }
-text = text.concat("O")
+    var spaces = Math.floor(Math.random() * 5)+1;
+    console.log(spaces);
 
- }
+    for(var x = 0; x<spaces; x++){
+      
+      text = text.concat(" ");
+    }
+    text = text.concat("O");
+
+}
  console.log(text)
 </script>
 

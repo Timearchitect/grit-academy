@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(29, 175, 185);
+}
+
+p{
+   color: red; 
+}
+
+h1{
+    font-size: 100px;
+   /* color: blue;
+    font-style: italic; */
+}
+
+h2{
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+
+

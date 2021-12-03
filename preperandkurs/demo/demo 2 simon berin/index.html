@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="checkCat();">check cat</button>
+
+</body>
+<script>
+    /*
+    //alert("hello");
+        
+    
+    
+    let age = 17;
+    let vip = true;
+    
+    //syntax
+    //  (condition) : regel -> sant/false
+    //   == jämnför != inte likamed  >  <  <= min+lika med    
+    // && och    || eller
+    
+    if( age >= 18 && vip == true)  
+        console.log("YES, du får komma in i klubben");   
+    else 
+        console.log("no, du får INTE komma in i klubben");    
+    
+    console.log("VIDARE...");    
+    
+  
+    
+    // Loopar
+    // while loop 
+    // (condition)
+    // sant: loopar helatiden   falskt: skippar o gå vidare
+    let i=0;
+    while( i < 3 ){
+        i++;
+        console.log("while loop : "+i);    
+    } 
+    
+    // for loop
+    // (variabel; condition ; öka) 
+let que = ["Berin","Simon","Alrik","Helen"];
+
+    for( let i=0;  i < 4;  i++ )
+        document.write("<br>kö plats: "+ i + " " + que[i] );    
+     
+
+
+
+//funktioner
+//alert("hello");
+
+
+//metod
+//console.log("hello");
+let foo = 56;
+
+//deklarera en funktion
+// (parametrar)
+function addition(  para1 , para2 ){
+    console.log(para1 + para2);
+    return "Hello";
+} 
+
+    
+function infinity(  ){
+    console.log("infinity");
+    beyond();
+} 
+    
+        
+function beyond(  ){
+    console.log("beyond");
+    infinity();
+} 
+     
+
+
+
+
+//Objekt
+
+
+let foo1 = 5;
+foo1=8888;
+
+let foo2 = [5,"hello"];
+foo2[0]=8888;
+
+let foo3 = { siffra:5 , text:"hello" };
+foo3.siffra=8888;
+
+let bil = {
+    antalHjul : [1,1,1],
+    regnummer: "OBM251",
+    color: "red",
+    finished: true
+}
+
+let alriksConsole={
+    log: function(x){
+        console.log(x);
+    }
+
+}
+
+
+
+
+
+for(let i=0; i<10 ; i++ ){
+    
+    if( i % 2 == 0 ){
+
+        if(i==4)
+            document.write('<br>Q');
+           // console.log('Q');
+        else 
+            //console.log('O');
+            document.write('<br>O');
+    }
+    else
+        //console.log('X');
+        document.write('<br>X');
+}
+document.write('<br>');
+
+
+
+for(let i=0; i<20 ; i++ ){
+    document.write('O');
+
+    // Math.random() 0 -> 1      
+    //  *5           0 -> 5 
+    //  Math.floor()   0  1  2  3  4  
+    //   +1               1  2  3  4  5
+    let amountOfSpaces = Math.floor(Math.random()*5)+1;
+    for (let j = 0; j < amountOfSpaces ; j++) {
+        document.write('&nbsp');
+    }
+    
+}
+
+
+
+let cityNames = ["kiruna","lund","malmo"];
+let summeradCityNames="";
+for(let i=0; i<cityNames.length ; i++ ){ // array -> varje element
+   // klistra i hop alla städer en text
+   //summeradCityNames = summeradCityNames + cityNames[i];
+   //summeradCityNames += cityNames[i];
+   summeradCityNames = summeradCityNames.concat(cityNames[i]);
+}
+console.log(summeradCityNames  );
+for (let i = 0; i < summeradCityNames.length; i++) {
+    console.log(summeradCityNames.charAt(i)  );
+}
+
+
+
+for(let i=0; i<cityNames.length ; i++ ){ // array -> varje element
+    //console.log( cityNames[i] );
+    let staden = cityNames[i];
+    for (let j = 0; j < staden.length; j++) { // string -> char
+
+        if(j==0)
+            console.log( staden.charAt(j).toUpperCase() );
+        else 
+            console.log( staden.charAt(j) );
+       // console.log( "bokstaven på position " +j +" är "+ staden.charAt(j));
+   
+    }
+}
+
+
+
+
+*/
+
+
+let text ="cfcgccfcccdcvhccccjdcckcccc";
+let newText="";
+console.log("original text: "+text);
+for(let i=0 ; i< text.length ; i++){
+    let char = text.charAt(i);
+    if(char !=='c')
+        console.log("match 'c' on index: "+i);
+    else{ 
+        console.log(i);
+        newText += text.substr(i,1);
+    }
+
+}
+console.log("new filtered text: "+newText);
+
+let foo= "haaa22334344aaahaaaaghjiihjgaaaaghha",newFoo="";
+foo=foo.split('a');
+for(let i=0 ; i< foo.length ; i++){
+    newFoo+=foo[i];
+}
+console.log(newFoo);
+/*
+let text ="cfcgccfcccdcvhccccjdcckcccc" ,  newText="";
+console.log("original text: "+text);
+for(let i=0 ; i< text.length ; i++)
+    if(text.charAt(i) !=='c')
+        newText += text.substr(i,1);
+console.log("new filtered text: "+newText);
+*/
+
+function charRemove(c,text){
+    for(let i=0 ; i< text.length ; i++)
+        text = text.replace(c,"");
+    return text;
+}
+
+console.log( charRemove('a',"aaeweaa3safsd") );
+    
+let arrayCat = ["Gustav", true];
+console.log(arrayCat[0]);
+
+let cat= {
+    name: "Shady",
+    alive:true
+}
+console.log(cat.name);
+
+/*function checkCat(){
+    if( Math.random()< 0.5)
+        alert("the cat named "+ cat.name + " is alive" );
+    else
+        alert("the cat named "+ cat.name + " is not alive" );
+}*/
+function checkCat(){
+    if( Math.random()< 0.5)
+        cat.alive= ", its still alive!";
+    else
+        cat.alive= ", its DEAD!!";
+    alert("the cats name is "+ cat.name + cat.alive );
+}
+
+ </script>
+</html>
