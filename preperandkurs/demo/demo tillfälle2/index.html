@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+
+// funktioner
+//alert("hello");
+
+myFunction( 34,22)
+//deklarera
+let foo = 0;
+
+//definera/deklarera med parameter
+function myFunction( para1 , para2 ) { 
+    let bar= 0;
+    bar = "hello";
+    console.log( para1 + para2 + bar);
+    return "hejsan";
+    bar = true;
+}
+
+//call / kalla myFunction()
+//myFunction( 888,444); 
+
+
+//console.log(   myFunction( 888,444)  );
+//let alrik = myFunction( 888,444);
+
+var calculatedSumForDisplay= 0;
+var localCurrency = "$";
+function updateShoppingCart ( c ){
+    // summary items
+    // calc sum
+    // tax calc
+    // shipping
+    // currency convertion
+    calculatedSumForDisplay = 98765
+    localCurrency = c;
+    document.write(calculatedSumForDisplay + " "+ localCurrency );
+    return true;
+}
+
+
+function infinity(){
+    console.log("infinity");
+    beyond();
+}
+
+
+
+
+function beyond(){
+    console.log("beyond");
+    infinity();
+}
+
+
+
+
+
+// Object
+
+let foo1;
+foo1= 2;
+
+// length    2
+// index             0                  1
+// element
+let foo2;
+foo2 =        [     "Gustav"   ,      "red"      ];
+foo2[0] = 32456; 
+
+//  cat har 2  properties
+//  key value pair
+let cat;
+cat =         { 
+    name: "Gustav"   , 
+    color: "red" ,
+    log:  function ( x ){
+        console.log( x );
+    }
+};
+cat.name= 234567; 
+
+
+
+
+
+
+function log( x ){
+    console.log( x );
+}
+
+
+
+
+// metod
+console.log();
+
+
+
+
+
+
+
+
+
+</script>
+</html>
