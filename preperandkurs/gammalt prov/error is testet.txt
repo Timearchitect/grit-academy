@@ -1,0 +1,8 @@
+Fel i testet 2020-01-17
+
+5) blommor[2]= "solros";
+8) alternativ A är också rätt
+16)   refererar till föregående uppgift 15.
+
+
+
