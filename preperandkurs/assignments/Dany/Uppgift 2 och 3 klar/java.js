@@ -18,6 +18,8 @@ function kitkat(){
 /*
  
 // finns det något funktionellt fel / logiskt fel
+Svar: 10 är större än 5 - behöver enbart kolla om age är större än 10
+då big alltid kommer skrivas ut oavsett.
 
 let age = 15;
 
@@ -29,3 +31,6 @@ else
     console.log("small");
 
 */
+
+
+
