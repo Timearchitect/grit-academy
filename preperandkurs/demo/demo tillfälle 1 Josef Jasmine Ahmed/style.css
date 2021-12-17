@@ -1,0 +1,14 @@
+body{ 
+    background-color: rgb(127, 255, 127);
+}
+
+h1{
+    font-size: 100px;
+    font-style: italic;
+   /* color: brown; */
+}
+
+p{
+    font-weight: bold;
+    color: blueviolet;
+}
