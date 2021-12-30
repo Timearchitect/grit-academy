@@ -14,22 +14,20 @@
 for(let i = 1; i<11; i++){
         if(i%2==0)
           console.log(i,"X")
-        if(i%2==1 && i !==5)
+        if(i%2==1 && i !== 5)
           console.log (i,"O")
         if (i == 5)
             console.log (i,"Q")
 }
-     
-// assignment 2b
-var text = ""
-for(var i = 1; i<21; i++){
-var amount_spaces = Math.floor(Math.random() * 5)+1
-for(var x = 0; x<amount_spaces; x++){
- text = text.concat(" ")
- }
  
-text = text.concat("O")
-
+// assignment 2b
+let text = "";
+for(let i = 1; i<21; i++){
+  let amount_spaces = Math.floor(Math.random() * 5) + 1;
+  for(let x = 0; x<amount_spaces; x++){
+    text = text.concat(" ");
+  }
+  text = text.concat("O");
 }
 
  console.log(text)
@@ -47,7 +45,6 @@ text = text.concat("O")
                     console.log(cityNames[a].charAt(i).toUpperCase(cityNames[a].charAt(i)));
                 else 
                     console.log(cityNames[a].charAt(i));
-
             }
         }
 </script>
