@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(53, 163, 163);
+}
+
+h1{
+    color: maroon;
+    /* font-size: 120px;
+    font-style: italic; */
+}
+
+h2{
+    color: rgb(255, 0, 255);
+    font-weight: bold;
+}
