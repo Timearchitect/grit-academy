@@ -1,0 +1,17 @@
+body{
+    background-color: aquamarine;
+}
+
+h1{
+    /*font-size: 200px;
+    font-weight: bold;*/
+    color: rgb(53, 204, 91);
+}
+
+h2{
+    display: none;
+}
+
+p{ 
+    font-style: italic;
+}
