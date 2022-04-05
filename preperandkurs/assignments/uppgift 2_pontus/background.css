@@ -1,0 +1,20 @@
+body{ 
+    
+    background-color: black;
+
+
+}
+
+h1 { font-size: 200px;
+    font: bold;
+    color: black;
+    position: static;
+
+}
+
+h2 { font-size:medium;
+    font: bold;
+    color: white;
+    position: static;
+
+}
