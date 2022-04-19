@@ -7,6 +7,7 @@ function charRemove  (character, text){
     }
     else {
         console.log("Wrong datatype");
+        return;
         close();
     }
 
