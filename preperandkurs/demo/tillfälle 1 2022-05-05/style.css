@@ -1,0 +1,23 @@
+
+div{
+    border: 2px dashed #F0F;
+}
+
+h1{
+   /* color: blue;
+    font-size: 100px;*/
+    font-weight: bold;
+}
+
+
+h2{
+    color: #f00;
+    font-style: italic;
+}
+
+p{
+    color:blueviolet;
+    font-family: monospace;
+    font-stretch: narrower;
+}
+
