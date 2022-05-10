@@ -1,0 +1,10 @@
+/*Bakgrundsfärg*/
+body{
+    background-color: lightsteelblue;
+}
+
+/*Ändrar storlek på bilden*/
+img{
+    width: 400px;
+    height: 300px;
+}

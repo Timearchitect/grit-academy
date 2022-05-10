@@ -1,14 +1,10 @@
-h1{
-    /*color: aqua;
-    font-size: 150px;*/
-    font-style: italic;
+html {
+    height: 100%;
 }
-
-h2{
-    color: #f0f;
-    font-weight: bold;
+body {
+  background: linear-gradient(119deg, rgba(208,208,208,1) 0%, rgba(158,169,177,1) 25%, rgba(27,26,26,1) 100%);
 }
-
-p{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-} 
+.picture {
+    width: 400px;
+    height: 300px;
+}
