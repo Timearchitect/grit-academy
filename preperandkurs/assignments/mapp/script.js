@@ -19,5 +19,10 @@ let croak;  // skapat en variabel med namnet foo
 
     // referera / använder
 
-console.log( frog / croak );
+console.log("frog!!!", frog / croak );
 console.log("hello")
+
+// Alrik
+function log2() {
+    console.log("Divide2   !!");
+}

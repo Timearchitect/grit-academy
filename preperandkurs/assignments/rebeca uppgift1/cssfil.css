@@ -1,8 +1,7 @@
 h1{
-color: rgb(35, 34, 34);  
-front: size 150px
-front-style: italic;
-
+    color: rgb(35, 34, 34);  
+    font: size 150px;
+    font-style: italic;
 }
 h2{
     color: rgb(129, 128, 130);
