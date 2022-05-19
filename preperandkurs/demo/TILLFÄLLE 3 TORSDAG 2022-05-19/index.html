@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tillfälle 3</title>
+
+
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<style>
+.pic{
+    width: 20px;
+    height: 20px;
+}
+
+
+</style>
+<script> 
+
+
+    let foo= 8;
+    console.log(foo);
+    
+    //syntax 
+    
+    if(true){
+        console.log(foo);
+    }
+    
+    
+    
+    
+    // while
+    let vip = true;
+    let c = 0;
+    
+    while(c < 3){
+        console.log("while", c );
+        c++; // ökar
+    }
+    console.log("finished", c );
+    
+    
+    
+    
+    // do while
+    let c2=0;
+    do{
+        console.log("do while", c2 );
+        c2++; // ökar
+    }
+    while(c2 < 3)
+    
+    console.log("finsihed", c2 );
+    
+    // for
+    //  init kod ; condition rep ; repepterande kod  
+    // deklarera variabel; condition ; variabeln ökar
+    //let bodyDOM = document.getElementsByTagName("body");
+    //console.log(bodyDOM);
+    let divDOM=document.getElementById("box");
+    for ( var i =0 ; i<10 ; i++){
+        console.log("for", i );
+        let imgDOM =document.createElement('img');
+        imgDOM.src="https://www.kindpng.com/picc/m/229-2299436_pepe-twitch-emotes-hd-png-download.png";
+        imgDOM.className="pic";
+        divDOM.append(imgDOM);
+    
+    }
+    console.log("finsihed", i );
+
+
+ let foo2 = [123, true , "Hello","Alrik","Belula","Simon"];
+
+ for(let i = 0 ; i < foo2.length;i++ ){
+    console.log( foo2[i] );
+ }
+
+
+
+ foo2.forEach( element => console.log(element)  );
+
+
+
+ // functions är fabrik
+ // fabriken har input & output
+
+let bar = 0;
+
+
+// definera/deklarera en funktion som heter alrik
+// inom ( så har vi parametrar)
+function alrik( para1 ){
+   return belula(para1) +" ALRIK";
+}
+// retunerar
+
+
+// kalla på funktionen alrik
+alrik();
+
+
+function belula(tal){
+    return tal +" BELULA";
+}
+
+
+
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</html>

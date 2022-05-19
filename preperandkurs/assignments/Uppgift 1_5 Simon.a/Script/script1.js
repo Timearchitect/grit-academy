@@ -6,10 +6,10 @@ function entry() {
     /*let vip = document.getElementById(checkbox);
     let age = document.getElementById(number).value;*/
 //-----------------------------------------------------
-    let age = document.getElementById("number").value; 
-    let vip = document.getElementById("checkbox").checked;
+    age = document.getElementById("number").value; 
+    vip = document.getElementById("checkbox").checked;
 
-    if (vip===true) {
+    if (vip) {
         alert('Welcome in my best VIP customer :)')
     } else if (age>=18) {
         alert('Access granted')
