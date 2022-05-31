@@ -1,0 +1,20 @@
+html {
+    height: 100%;
+}
+body {
+  background: linear-gradient(119deg, rgba(208,208,208,1) 0%, rgba(158,169,177,1) 25%, rgba(27,26,26,1) 100%);
+}
+
+#div {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+}
