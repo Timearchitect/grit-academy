@@ -15,7 +15,7 @@
                 if (i == 5) {
                     console.log(i, "Q")
                 } else {
-                    console.log(i, "O")
+                    console.log(i+ " O")
                 }
             } else {
                 console.log(i, "X")
@@ -30,7 +30,7 @@
 for (let l = 0; l < 21; l++) {
     let random = Math.floor(Math.random() * 5) + 1;
     for (let index = 0; index < random; index++) {
-        document.write("<br>");
+        document.write("<br>");  // &#160 space entity number
     }
     document.write("O")
 }
@@ -44,6 +44,7 @@ for (let i = 0; i < cityNames.length; i++) {
 
     for (let y = 0; y < element.length; y++) {
         const element2 = element[y];
+        console.log(element2);           // glömde console.log()
     }
 }
 //-----------------END of 2c-----------------
