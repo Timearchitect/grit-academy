@@ -1,23 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
-    <button onclick="alert(cat.name)">The cat's name is</button>
+    <script>
+ 
+//Uppgift 2a
+/*
+//loopen börjar på 0, loopen pågår sålänge foo är mindre än 11, foo ökar med ett för varje loop
+    for(let foo = 1; foo < 11; foo++){
+
+
+//om foo delas med 2 och det blir 1 i rest så ska o skrivas ut i consolen 
+    if(foo%2==1)
+    console.log(foo,"O");
+  
+
+//om foo delas med 2 och går jämt utså ska x falla ut i consolen
+    if(foo%2==0)
+    console.log(foo,"X");
+
+
+//(undantag) om foo är 5 ska q falla ut i colsolen
+    if(foo == 5)
+    console.log(foo, "Q")
+}
+*/
+
+//Uppgift 2b
+
+    let text = "";
+//börjar med 1, loopar upp till 20, ökar med en
+    for(let bar = 1; bar < 21; bar++){
+
+    //random spaces mellan 1-5
+    let amount_spaces = Math.floor(Math.random() * 5) + 1;
+//
+    for(let o = 0; o<amount_spaces; o++){
+        text = text.concat("  ");
+}
+        text = text.concat("0");
+}
+        console.log(text)
+
+//Uppgift 2c
+let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+
+        
+            for( let cityIndex = 0  ; cityIndex < cityNames.length ; cityIndex++){
+            
+                var cityName = cityNames[cityIndex];
+                
+                for (let cityCharIndex = 0; cityCharIndex < cityName.length; cityCharIndex++){
+
+                    var character = cityName.charAt(cityCharIndex);
+
+                    if(cityCharIndex == 0)
+                        console.log(character.toUpperCase());
+                    else 
+                        console.log(character);
+                }
+            }
 
 
 
-
+    </script>
 </body>
-
-<script src="Rebeca Helpfunctions.js"></script>
-<script src="cat.js"></script>
-
-
 </html>
