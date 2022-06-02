@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgift 1</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="scripts/scripts.js"></script>  
+</head>
+<body>
+
+    <h1>Välkommen</h1>              <!-- rubrik 1 -->
+    <h2>You can't divide us</h2>    <!-- rubrik 2 -->
+
+    <p>                             <!-- brödtext -->
+            Här kommer en bild från googles bildsök
+    </p>
+
+    <!-- bild infälld nedan mha img-tagg -->
+    <img 
+    class="picture1" 
+    src="pictures/picture1.jpeg"
+    alt="Kod på satorskärm"> 
+    <!-- 
+        class för att komma åt i .css
+        alt skrivs om bilden inte laddas 
+    -->
+
+    <p>
+        Avancerad kod, mycket användbart. 
+        I vardagen möts vi av programmering vart vi än vänder oss.
+    </p>
+    <!--
+       - här är den andra bilden, men kommenterade bort den
+       - för jag blev osäker från uppgiftsbeskrivningen hur
+       - många bilder som skulle visas
+    <img 
+    class="picture2"
+    src="pictures/picture2.jpeg"
+    alt="Fräck dator">
+    <p>Här en dator för hemmabruk</p>
+    -->
+
+    <!-- två input-tags (saknar funktion/metod) -->
+    <label for="number1">skriv in tal:</label>
+    <input type ="number"><br> <!-- fick inte till för enbart tal? -->
+    <label for="number2">dividera med:</label>
+    <input type="number"><br> <!-- <br> = radbrytning -->
+    <!-- en knapp med kopplad metod i .js -->
+    <button onclick="print()">Divide</button>
+</body>
+</html>
