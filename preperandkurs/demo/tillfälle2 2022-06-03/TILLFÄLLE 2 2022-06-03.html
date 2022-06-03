@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+
+  </head>
+  <body>
+      <img src="Cat_November_2010-1a.jpg" width="100">
+    <h1>Kan jag ta körkort?</h1>
+    <p>input your age below</p>
+    <input id="ageInput" type="number" value="8" />
+    <button onclick='
+    
+    let age = document.getElementById("ageInput").value; 
+
+      if(age >= 16 ){ //true
+          let age = document.getElementById("ageInput").value; 
+          console.log("jag är " + age + "  år och kan ta körkort");
+      } else { // false
+          console.log("nej, jag är " + age + " år som är för ung för körkort");
+      }
+    
+    '>CHeck</button>
+  </body>
+
+
+  <script src="script.js"> </script>
+
+</html>
