@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2: Loops</title>
+</head>
+<body>
+    <p id="2a"></p>
+    <p id="2b"></p>
+</body>
+<script>   // This is part 2a of the assignment.
+for (let i = 0; i < 10; i++) {
+    if ( i % 2 == 0 ){
+        document.getElementById("2a").innerHTML += "X"
+        }
+        else{
+            if ( i == 5 ){
+                document.getElementById("2a").innerHTML += "Q"    
+            }
+            else{
+            document.getElementById("2a").innerHTML += "O"    
+            }
+        }
+}
+// Start av 2b
+for (let i = 0; i < 20; i++) {
+    let space = "&nbsp" // html konverterar multipla " " till bara en enkel blankspace. Därav behövs "&nbsp" för att förhindra denna konvertion.
+    document.getElementById("2b").innerHTML += "O" + space.repeat(getRandomInt(1,5))
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+// Start av 2c
+let cityNames = ["kiruna","uppsala","malmo","gothenburg","stockholm"];
+for (i in cityNames) {
+    console.log(cityNames[i].slice(0,1).toUpperCase())
+}
+</script>
+</html>
