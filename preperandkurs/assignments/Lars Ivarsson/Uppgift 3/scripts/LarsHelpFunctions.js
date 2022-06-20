@@ -7,7 +7,8 @@ function charRemove (charOff, origText)
 
     //Skapar ett regular expression av indatan för att använda replace();
     var input = new RegExp (charOff, "g");
-    origText = origText.replace(input, "");
+    for(let i= 0 ; i< origText.length ; i++)
+        origText = origText.replace(input, "");
     //returnar texten nu modifierad till utan vald character
     return console.log(origText);
 }
