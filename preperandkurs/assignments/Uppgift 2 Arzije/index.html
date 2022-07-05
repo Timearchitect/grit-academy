@@ -39,19 +39,23 @@ for (var x=0; x<20; x++){
 
             // Denna gjorde jag själv
 
-
+let array = ["o","x","o","x","o","x","o","x","o","x"]
 for ( let i = 0; i < 10; i++){
 
     console.log ("X")
-
     document.write("x");
     
         for ( let i = 0; i < 1; i++){
-
-document.write("o");
-  
-    }
-      
+            document.write("o");
+        }
+  /*    
+      if( i % 2 == 0 ) 
+        document.write("x");
+      else  
+        document.write("o");
+         
+       //document.write(array[i]);
+       */
  }
 
             // Denna lyckades jag inte direkt med
@@ -59,12 +63,16 @@ document.write("o");
 
 for ( let i = 0; i < 20; i++){
 
-    document.write("     ");
-
 var min=1;
 var max=5;
-var random = Math.random() * (+max - +min) + +min;
+var amountOfSpaces = Math.round(Math.random() * (max - min) + min);
 document.write ("O");
+console.log("O")
+
+    for ( let i = 0; i < amountOfSpaces; i++){
+       console.log(" ")
+       document.write("&nbsp;");
+    }
 
 } 
 

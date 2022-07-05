@@ -20,23 +20,22 @@
  */
 
 
- /*let citynames = ["kiruna", "uppsala" , "malmo", "goteborg", "stockholm"];{
+ let citynames = ["kiruna", "uppsala" , "malmo", "goteborg", "stockholm"];
 
-    for ( let element of citynames);
-    console.log("kiruna" [0]);
-    console.log("kiruna" [1]);
+    for ( let cityName of citynames)
+      for ( let letter of cityName)
+          console.log(letter);
+  /*  console.log("kiruna" [1]);
     console.log("kiruna" [2]);
     console.log("kiruna" [3]);
     console.log("kiruna" [4]);
     console.log("kiruna" [6]);
-    
- }
-*/
-
-let enStad = "kirunauppsalamalmogoteborgstockholm";{
-
-    for (let i=0; i< enStad.length; i++)
-    console.log(enStad[i]);
-}
+    */
+ 
 
 
+let enStad = citynames.join(""); //"kirunauppsalamalmogoteborgstockholm";
+
+   for (let i=0; i< enStad.length; i++)
+      console.log(enStad[i]);   
+   
