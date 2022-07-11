@@ -1,0 +1,17 @@
+h1{ 
+    /*color: aqua;
+    font-size: 80px;*/
+    font-weight: bold;
+}
+
+h2{
+    color: rgb(255, 0, 0);
+    font-size: 60px;
+    font-style: italic;
+}
+h3{
+    background-color: #bcbcbc;
+}
+p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
