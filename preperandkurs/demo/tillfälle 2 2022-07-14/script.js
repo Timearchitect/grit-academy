@@ -81,9 +81,7 @@ if (VIP == true) {
  // || eller or
 if (VIP == true || age >= 18) {
     console.log("ja");
-
 } else {
     console.log("nej");
-    
 }
 
