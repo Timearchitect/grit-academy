@@ -1,17 +1,18 @@
-let checkValue = document.getElementById("vip")
-let inputValue = document.getElementById("ageinput")
+function check(){
 
 
-let vip = checkValue
-let age = inputValue
+  let checkValue = document.getElementById("vip");
+  let inputValue = document.getElementById("ageinput");
+  
+  let vip = checkValue.checked;
+  let age = inputValue.value;
+  
+  if (vip == true) 
+    alert("VIP Welcome");
+  else if (age >= 18) 
+    alert("Access granted");
+  else 
+    alert("Access denied");
+  
 
-if (vip=true) {alert("VIP Welcome");
-show_popup("Welcome in my best VIP customer");}
-
-else {
-    if (age>=18) {alert("Access granted");
-    show_popup("Access granted"); }
-    
-    else {alert("Access denied");
-    show_popup("Access denied");
-  }}
+}
