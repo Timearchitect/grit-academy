@@ -1,0 +1,17 @@
+h1{
+    /*color: crimson;
+    font-size: 100px;
+    font-weight: bold;*/
+    padding: 40px;
+}
+
+h2{
+    color: rgb(0,0,255);
+    font-size: 75px;
+    font-style: italic;
+}
+
+p{
+    background-color: aqua;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
