@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="email">
+        <input type="password">
+        <button onclick="user.logIn()">login</button>
+        <button onclick="user.logOut()">login out</button>
+<button onclick=" alert('namnet på katten är Gustav') "></button>
+        <p>status:</p><p id="loginStatus">true</p>
+    </body>
+    <script src="script.js"></script>
+
+    <script>
+        //2a-----------------------
+
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 == 0) {
+                console.log("O");
+                document.write("O");
+            } else {
+                console.log("X");
+                document.write("X");
+            }
+        }
+
+        //2b-------------------
+
+        for (let i = 0; i < 20; i++) {
+        
+            console.log('O');
+            document.write("O");
+
+
+            let amountOfSpaces = Math.round( Math.random()*4 )+1;
+            for (let j = 0; j < amountOfSpaces; j++) {
+                console.log(' ');
+                document.write("&nbsp;");
+            }
+
+        }
+
+
+        //2c------------------------
+        let cityNames =[ "kiruna","malmö","stockholm"]
+
+        for (let i = 0; i < cityNames.length; i++) { // array -> text
+           
+            let city = cityNames[i];
+            console.log(city)
+
+            for (let i = 0; i < city.length; i++) { // text -> bokstav
+                console.log(city[i])
+            }
+
+
+        }
+
+
+
+
+
+
+    </script>
+ 
+
+    </script>
+</html>
