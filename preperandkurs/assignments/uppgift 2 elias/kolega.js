@@ -1,22 +1,12 @@
+const vip = false;
+const age = 10;
 
-const vip=true 
-const age=18
+// alt + shift + f : autoformattering med prettier
 
-
-if ( vip) {
-    console.log ("WELCOME MY BEST CUSTOMER ;)");
-    
-  }
-    else
-    if (age >= 18) {
-     
-      console.log ("Access granted");
-      
-    }
-      else
-      {
-      console.log ("Access denied");
+if (vip) {
+    alert("WELCOME MY BEST CUSTOMER ;)");
+} else if (age >= 18) {
+    alert("Access granted");
+} else {
+    alert("Access denied");
 }
-    {
-    console.log ("NOO");
-    }
