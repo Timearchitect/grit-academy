@@ -1,0 +1,14 @@
+h1{
+   color: aquamarine;
+   /*background-color: red;
+   font-size: 75px;*/
+}
+
+h2{
+    color: rgb(255, 0, 255);
+    font-style: italic;
+}
+
+p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
