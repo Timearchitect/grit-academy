@@ -11,6 +11,12 @@ if (divide != Number) {
     alert("You cant divide us!");
 };
 
+const theButton = document.getElementById("theButton");
+       
+theButton.addEventListener("click", function(e) {
+    console.log("divide")
+})
+
 /*
 //button action - Fungerar ej?
 const theButton = document.getElementById("theButton");
@@ -20,3 +26,6 @@ theButton.addEventListener("click", function(e) {
 })
 
 */
+
+
+
