@@ -1,21 +1,28 @@
 // part 2 a of uppgift 2
-
-
-for (let i = 0; i < 10; i++)  {
-
+// alt + shift + f
+for (let i = 0; i < 10; i++) {
     if (i == 4) {
-        console.log('Q');
+        console.log("Q");
         continue;
+    }
+    if (i % 2 == 0) {
+        console.log("O");
+        continue;
+    }
+    console.log("X");
 }
-    if (i % 2 == 0 ) 
-    {console.log('O');
-    continue;
-}
-    console.log('X')
-} 
 
-    // part 2b
+for (let i = 0; i < 10; i++) 
+    if (i == 4) 
+        console.log("Q");
+    else if (i % 2 == 0) 
+        console.log("O");
+    else 
+        console.log("X");
 
+
+
+// part 2b
 
 /* for (let i = 0; i < 20; i++)  {
     if (i > 20) {
@@ -30,26 +37,21 @@ for (let i = 0; i < 10; i++)  {
 }*/
 
 for (let i = 0; i < 20; i++) {
-if (i < 20)
-
-function getRndInteger(min=1, max=5) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
-document.write("O" + (" ".repeat(Math.floor(Math.random() * 5) + 1)));
-
+   /* if (i < 20)
+        function getRndInteger(min = 1, max = 5) {
+            return Math.floor(Math.random() * (5 - min + 1)) + min; // samma
+        }*/
+    document.write("O" + "&nbsp;".repeat(Math.floor(Math.random() * 5) + 1));
 }
-  
-   //   document.write("O"+' '.repeat(Math.floor(Math.random() * 5) + 1)+ "O");
-   // }
-   
-    // const str = 'O'const padEnd = str + ' '.repeat((Math.random()) * 5);
 
-    
+//   document.write("O"+' '.repeat(Math.floor(Math.random() * 5) + 1)+ "O");
+// }
 
+// const str = 'O'const padEnd = str + ' '.repeat((Math.random()) * 5);
 
 // let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"]
 
-// cityNames [0] blir kiruna, cityNames [1] blir uppsala osv. 
+// cityNames [0] blir kiruna, cityNames [1] blir uppsala osv.
 
 /* let city1 = "kiruna"
 let city2 = "uppsala"
@@ -59,9 +61,8 @@ let city5 = "stockholm"
 
 */
 
-let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm" ]
- 
+let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
 
-for (let x=0; x<cityNames.length; x++)
-for (let i=0; i<cityNames[x].length; i++) 
-    console.log(cityNames[x].charAt(i)); 
+for (let x = 0; x < cityNames.length; x++)
+    for (let i = 0; i < cityNames[x].length; i++)
+        console.log(cityNames[x].charAt(i));
