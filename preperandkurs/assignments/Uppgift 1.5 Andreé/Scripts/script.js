@@ -14,7 +14,7 @@ function returnNumber() {
     let age = document.getElementById("numberBox").value;
     console.log(age);
 
-    let vip = document.getElementById("checkBox").value;
+    let vip = document.getElementById("checkBox").checked;
     console.log(vip)
 
    if (vip === true) {
