@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgift 2.0 Andreé</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <h1 id="xo">Uppgift 2.0</h1>
+
+    <button id="btn1" type="button" onclick="startPrint()">Press me for 2a!</button><br/>
+
+    <button id="btn2" type="button" onclick="startLoopi()">Press me for 2b!</button><br>
+
+    <button id="brn3" type="button" onclick="startLetter()">Press me for 2c!</button>
+</body>
+
+<!-- part 2a -->
+<script>
+
+function startPrint(){
+
+for (let countNr =0; countNr <10; countNr +=1){
+    
+    console.log(countNr);
+    if (countNr %2 == 0){
+        document.write("X");
+        console.log("X");
+    } else if (countNr == 5){
+        document.write("Q");
+        console.log("Q")
+    } else {
+        document.write("O");
+        console.log("O");
+    };
+}
+
+}
+
+// Part 2b
+
+
+function startLoopi(){
+
+    for (let count =0; count <20; count +=1){
+        let rng = (Math.floor(Math.random() * 5));
+        document.write('O' + '\xa0'.repeat(rng));
+    }
+
+}
+
+// Part 2c
+let cityNames = ["kiruna", "uppsala", "malmö", "gothenburg", "stockholm"]
+
+function capitalizwWords (arr) {
+    return arr.map(element => {
+        return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+    });
+};
+
+function startLetter(){
+
+    for (i = 0; i < cityNames.length; i++){
+
+        //let nameSplit = cityNames[i].split('');
+        let capWords = capitalizwWords(cityNames);
+
+        let nameSplit = capWords[i].split('');
+
+        console.log(nameSplit);
+}
+    
+}
+
+</script>
+
+</html>
