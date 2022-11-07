@@ -1,0 +1,15 @@
+h1{
+    /* color:brown; 
+    font-size: 100px;
+    font-weight: bold;*/
+}
+
+h2{
+    color:rgb(58, 42, 165);
+    font-size: 60px;
+    font-style: italic;
+}
+
+p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
