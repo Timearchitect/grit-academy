@@ -1,0 +1,19 @@
+h1{
+    color:rgb(192, 27, 27);
+    font-size: 100px;
+    font-weight: bold;
+}
+h2{
+    color:green;
+    font-size: 45px;
+    font-style: italic;
+}
+h3{ 
+    color: rgb(47, 0, 255);
+    font-size: 45px;
+    font-style: italic;
+    }
+
+p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
