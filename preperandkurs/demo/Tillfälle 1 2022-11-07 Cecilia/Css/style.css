@@ -1,0 +1,19 @@
+h1{
+    color:purple;
+    font-size:125px;
+    font-weight: bold;
+}
+
+h2{    
+    color:rgb(151, 97, 151);
+    font-size:70px;
+    font-weight: itallic;
+}
+
+h3{
+    color:rgb(51, 13, 66);
+    font-size:40px;
+    font-weight: itallic;
+}
+
+p{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif}
