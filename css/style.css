@@ -1,0 +1,31 @@
+h1{
+
+color:rgb(20, 233, 233);
+font-size: 50px;
+font-weight: bold;
+}
+
+
+h2{
+color: aqua;
+font-size: 30px;
+font-style: italic;
+
+
+}
+body{
+    background-color: black;
+   
+}
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: aqua;
+
+}
+
+img{
+    width: 200ox;
+    height: 200px;
+}
