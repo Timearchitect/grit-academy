@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppgift 2 </title>
+    
+    <style>
+        h2{color: red
+     }
+    </style>
+</head>
+<body>
+    <h2>UPPGIFT 2 </h2>
+
+
+    <script> 
+
+    // PART 2A
+    
+    for (let i=0;    i<10;     i++){ 
+    if (i===4) document.write("Q");
+    if (i===4) continue;     // startar om loopen
+    if (i%2 === 0)  document.write ("O");
+    if (i%2 !== 0)  document.write ("X");
+    }
+    
+    </script>
+    <p></p>
+    <script>
+        
+    //PART 2B
+    
+    for (let o=0;     o<20;      o++){
+    document.write ("O");
+    let space =("&nbsp");
+
+   let random=   Math.random ()*5; 
+   random = Math.round (random);
+   document.write(space.repeat (random));
+    }
+
+    </script>
+    <p></p>
+    <script>
+
+    //PART 2C
+    
+    let cityNames = ["malmö", "kiruna","lund", "uppsala", "ystad"];
+    let cities = cityNames.toString();
+    let c=0;
+    while (c < 100){      
+    let city = cities.charAt(c);
+    console.log(city);
+    c=c+1;
+    cityNames.length;
+}
+    
+    </script>
+    </body>
+    </html>
