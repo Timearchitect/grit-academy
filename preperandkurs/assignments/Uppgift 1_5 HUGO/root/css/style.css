@@ -1,0 +1,36 @@
+.transparentcontainerSmall {
+    align-content: center;
+    display: auto;
+    padding: 1rem 1rem;
+
+}
+
+.centercontainerSmall{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+.center{
+display: block;    
+margin: auto;
+
+}
+
+.information{
+    float: right;
+}
+
+.shadow{
+    box-shadow: 2pt 2px 2px black;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: center
+}
+
+h2{
+    text-align: center
+}

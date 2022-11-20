@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment 2 Anneli</title>
+    </head>
+
+    <body>
+        <!--Part 2a-->
+
+        <script>
+            // perfekt
+            for (let step = 1; step < 11; step++) {
+                if (step == 5)
+                    document.write("Q");
+                else if (step % 2 == 0)
+                     document.write("O");
+                else
+                     document.write("X");
+            }
+        </script>
+
+        <!--Part 2b-->
+
+        <p id="demo"></p>
+        <script>
+            let number = 1;
+            while (number <= 20) {
+                let spaces = "\xa0"; // nice mellanrums med Unicode
+                random = document.getElementById("demo").value = Math.floor(
+                    Math.random() * 6
+                );
+                document.write("O" + spaces.repeat(random)); // nice reapet()
+                number++;
+            }
+        </script>
+
+        <!--Part 2c-->
+
+        <script>
+            const cityNames = [
+                "kiruna",
+                "uppsala",
+                "malmo",
+                "gothenburg",
+                "stockholm",
+            ];
+            for (const cities of cityNames) {
+                let first = cities.charAt(0);
+
+                let upperFirst = first.toUpperCase();
+                // ni behöver också småbokstäverna också
+                console.log(upperFirst);
+            }
+        </script>
+    </body>
+</html>
