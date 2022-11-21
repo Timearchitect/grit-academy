@@ -14,7 +14,7 @@
     <p id="ODD_LOOP"></p>
         <script> // FIRST LOOP SCRIPT: FOR LOOP METHOD
     
-            for (index = 1; index <= 10; index++) {
+            for (let index = 1; index <= 10; index++) {
         
         // TRE VIKTIGA ELEMENT I EN FOR LOOP METHOD
         // STARTKOD FÖR ATT DEKLARERA VARIABEL OFTAST: LET xx OCH I DETTA FALL INDEX = 1
@@ -41,10 +41,9 @@
     <p id="ODDER_LOOP"></p>
         <script> // SECOND LOOP SCRIPT: GENOM ATT ANVÄNDA FOR METHOD I KOMBINATION MED MATH.RANDOM.
             for (nummer = 1; nummer <=20; nummer++) {
-                mellanslag = "&nbsp"; //MELLANSLAG I HTML_SPRÅK
-                shuffle = document.getElementById("ODDER_LOOP").value = Math.floor(Math.random() * 5); //SHUFFLE-FUNKTION
+                let mellanslag = "&nbsp";  //Entity code MELLANSLAG I HTML_SPRÅK
+                shuffle = document.getElementById("ODDER_LOOP").value = Math.floor(Math.random() * 5)+1; //SHUFFLE-FUNKTION
                 document.write("O" + mellanslag.repeat(shuffle));
-
     }
 
         </script>
@@ -57,23 +56,25 @@
             console.log(cityName)
 
 
-        for (UpperCase = 0; UpperCase < cityName.length; UpperCase++){
-                CITIES = cityName[UpperCase]
+        for (i = 0; i < cityName.length; i++){
+                CITIES = cityName[i]
                 document.write("<br/>");
 
-            for (const cityName of CITIES) { // KOD FÖR ATT INDIKERA VARJE FÖRSTA INITIAL PÅ ORD
+           /* for (const cityName of CITIES) { // KOD FÖR ATT INDIKERA VARJE FÖRSTA INITIAL PÅ ORD
                 initials = CITIES.charAt(0)
                 BTS = initials.toUpperCase() // OMFORMATERA INITIALEN TILL UPPERCASE
 
                 document.write(BTS)
                 console.log(BTS)
-            }
+            }*/
 
             
-                for (lowerCase = 1; lowerCase < CITIES.length; lowerCase++) { //INDIKERA FRÅN OCH MED VARJE ANDRA BOKSTAV I ARRAYN
-                
-                    document.write(CITIES[lowerCase]);
-                    console.log(CITIES[lowerCase]);
+                for (lowerCase = 0; lowerCase < CITIES.length; lowerCase++) { //INDIKERA FRÅN OCH MED VARJE ANDRA BOKSTAV I ARRAYN
+                        if(lowerCase==0)   document.write(CITIES[0].toUpperCase())
+                        else{
+                        document.write(CITIES[lowerCase]);
+                        console.log(CITIES[lowerCase]);
+                    }
                 }
 
             
