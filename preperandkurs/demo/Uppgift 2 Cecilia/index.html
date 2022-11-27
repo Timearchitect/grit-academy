@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        //----------------PART 1----------------//
+       
+    
+        for(let i= 0; i<10; i++){
+            if( i == 1 || i==3||i==5||i==7||i==9){
+                document.write("X")
+            } 
+            else { document.write("O")}
+            }
+    
+        /* for( let i = 1; i<=10 ; i++){        //andra försöket//
+            if(i%2 === 0)
+            document.write("O");
+            if(i%2  == 0 ) document.write("X")
+            }*/
+       
+            document.write("<br></br>")
+        
+        //--------------Part 2---------------//
+       
+        for( var count = 0; count<20; count++){
+            let amountOfSpaces= Math.ceil(Math.random() *5)
+            document.write("O" + ("&#xa0".repeat(amountOfSpaces))  )
+        } 
+        
+            //let random= words[Math.floor(Math.random() *6)];
+           // document.write("O" + space.repeat(words))
+        
+       
+        //---------------Part 3--------------// 
+    
+            
+                let cityNamesArray = [ "kiruna","uppsala","malmö","gothemburg", "stockholm" ]
+                for(let i =0; i < cityNamesArray.length ; i++)
+                {
+                    let city = cityNamesArray[i]
+                    console.log(city)
+                    for(let i =0; i< city.length; i++){
+                    console.log(city.charAt(i))
+                }
+                }
+                
+                let allaBokstaver = cityNamesArray.toString()
+                allaBokstaver = allaBokstaver.replaceAll(",")
+                for(let i =0; i< allaBokstaver.length; i++){
+                console.log(allaBokstaver.charAt(i))}
+               
+                
+                //var numberOfCities= cityNames.length;
+    
+            /*let alphabet = ("kiruna","uppsala","malmö","gothemburg", "stockholm")
+            const alphabetArray = alphabet.split("");
+            console.log("alphabet");*/
+            
+              /*  var name =cityName.count()
+            while (name <10){
+                var cityName  = cities.chartAt(0);
+                console.log(element)}*/
+    
+        
+        </script>
+    
+</body>
+
+</html>
