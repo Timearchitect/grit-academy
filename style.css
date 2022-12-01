@@ -1,0 +1,16 @@
+h1{ color: hwb(71 65% 12%);
+    font-size: 40px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+h2{
+   border: 5px solid red; width:400px; height:200px;
+}
+
+p{ color: rgb(141, 154, 144);
+    height: 100px;
+    font-size: 20px;
+    font-style: italic;}
+
+
