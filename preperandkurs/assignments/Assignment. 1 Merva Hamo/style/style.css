@@ -4,8 +4,8 @@ h1{ color: hwb(71 65% 12%);
     font-style: oblique;
 }
 
-h2{
-   border: 5px solid red; width:400px; height:200px;
+img{
+   border: 5px solid red; width:400px; height:400px;
 }
 
 p{ color: rgb(141, 154, 144);
