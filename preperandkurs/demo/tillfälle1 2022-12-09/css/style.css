@@ -1,0 +1,14 @@
+h1{
+    color:red;
+    font-size: 150px;
+    font-style:italic;
+}
+
+h2{
+    color:cyan;
+    font-weight: bold;    
+}
+
+p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
