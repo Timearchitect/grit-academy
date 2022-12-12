@@ -4,7 +4,7 @@ foo = 0 //tilldela värdet 0 till foo
 let bar //deklarera skapa en veriabel som heter bar
 bar = 0 //tilldela värdet 0 till bar
 
-console.log(  foo  );
-console.log(  bar  );
+console.log(  foo /bar  );
+
 
 alert ( "You can't devide us!" )
