@@ -30,6 +30,16 @@
         document.write("O")
     }
 }
+
+for (let i = 1; i <= 10; i++)
+    if (i % 2 == 1)
+        if (i == 5)
+            document.write("Q");
+            else 
+            document.write("O");
+    else 
+        document.write("X")
+
 */
     
 
@@ -53,7 +63,7 @@ for (let a = 0; a < 20; a++){
 
 //-------------- del 2c -----------------
 
-let city  = ["Kiruna","Uppsala","Malmo","Gothenburg","Stockholm"];
+let city  = ["kiruna","uppsala","malmo","gothenburg","stockholm"];
 for(let i = 0; i < city.length; i++){           //loop för att gå igenom alla värden i city
     for(let j = 0; j < city[i].length; j++){   //loop för att gå igenom alla bokstäver i varje värde
         const letters = city[i][j];
