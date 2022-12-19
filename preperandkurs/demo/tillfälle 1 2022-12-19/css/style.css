@@ -1,0 +1,16 @@
+h1 {
+   /* color:deeppink;
+    font-size: 150px;
+    font-style: italic;*/
+}
+
+h2 {
+    color:brown;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+p{
+    margin-left: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
