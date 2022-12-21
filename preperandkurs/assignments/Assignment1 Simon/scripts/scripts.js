@@ -1,12 +1,9 @@
 console.log ("Assignment1");
 alert ("welcome to Simons Assignment");
-let foo 
-let bar 
-let foobar 
+let foo = 0
+let bar = 0
+let foobar =0 
 
-foo = 0
-bar = 0
-foobar = 0
 
 console.log (foo/bar);
 
@@ -22,12 +19,10 @@ function divide() {
 
     if (isNaN(foobar)) {
         alert("you cant divide us!");
-    }
-
-    if (foobar === Infinity) {
+    } else if (foobar === Infinity) {
         alert('Let\'s call it Infinity!');
     }   
-      
+    else console.log (foobar);  
 
 }
 
