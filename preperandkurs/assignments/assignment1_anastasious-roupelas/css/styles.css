@@ -1,0 +1,11 @@
+.image-small {
+    height: 300px;
+    width: 400px;
+    border: 10px solid red;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
