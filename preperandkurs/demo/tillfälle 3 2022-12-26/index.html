@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> loopar </title>
+    
+    <style>   
+        h1{
+            color: rgb(255, 169, 169);
+            border: 5px dotted red;
+            padding: 20px;
+            width: 50%;
+        }
+        img{
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <img src="https://sm.mashable.com/mashable_sea/photo/default/man-fakes-death-cat-q6u_2z9w.png" width="200" height="150">
+    <button onclick="addition(888,112)">CLICK here!!!</button>
+</body>
+
+    
+<script >
+
+
+
+
+    // Loopar 
+    // if( 5 > 2  )
+ // kör koder direkt under , else funkar endast efter ifsatser
+ 
+ // while ( 5 > 2  )
+ // repeterar koder direkt under använd { curllybrackets för fler koder }
+
+// for loop
+for( let x =  0;   x < 3;   x++ ){
+console.log("for loop " + x)
+}
+
+
+
+//while loop
+ let count = 0
+ while( count < 3 ){
+     console.log("while loop " + count)
+     count ++; // ökar med 1
+ }
+
+ console.log("...vidare")
+
+ "rad : 0"
+ "rad : 2"
+ "rad : 4"
+ "rad : 6"
+ "rad : 8"
+
+ let a = 1, z = 0;
+ while(z < 64){
+     console.log("rad : " + a)
+     a*=2
+     z++
+ }
+ 
+
+// exempel 
+
+ let que = ["Simon","Sia","Paulina","Anastasios","Alrik","Anna"]
+ let i = 0;
+ while(  i < que.length ){
+     document.write( '<h1> Köplats "+ (i+1) +" " +que[i] +"</h1> <br>')
+     i++
+ }
+
+ //galleri
+
+     let j=0;
+ while( j < 1000)
+ {
+     document.write( ' <img src="https://sm.mashable.com/mashable_sea/photo/default/man-fakes-death-cat-q6u_2z9w.png" > ')
+     j++
+ }
+
+
+
+ // funktioner
+//let foo = 0;  //deklaration variabel foo
+
+// syntax fuction namn ( parameter ) { koder   }   
+//  definera functionen addition
+
+
+ function addition (  tal1 ,tal2 )   {
+     console.log(tal1 + tal2) 
+     return tal1 + tal2
+ }
+
+ 
+ let foo = 3
+ console.log(foo) 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
