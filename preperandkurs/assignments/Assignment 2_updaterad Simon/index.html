@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2b</title>
+  </head>
+  <body>
+    <h1>Assignment 2b</h1>
+
+    <script>
+      // 2a börjar här!
+      document.write("<pre>");
+
+      s = "";
+      i = 0;
+      // for(i = 0; i <= 4; i++) {
+      //     console.log("i:", i, "div 2:", Math.trunc(i / 2), "mod 2", i % 2);
+      // }
+      for (i = 1; i <= 10; i++) {
+        if (i % 2 == 1)
+          if (i == 5) s += "Q";
+          else s += "O";
+        else s += "X";
+      }
+      console.log(s);
+      document.writeln("2a: ", s);
+
+      // 2b börjar här !
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      var e = 1;
+      var s = "";
+      for (e = 1; e <= 20; e++) {
+        s += "O";
+        var x = getRandomInt(5) + 1;
+        for (j = 1; j <= x; j++) {
+          s += " ";
+        }
+        // while(x > 0) {
+        //     s += " ";
+        //     x--
+        // }
+      }
+      console.log(s);
+      document.writeln("2b: ", s);
+
+      // 2c börjar här!
+
+      var cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+
+      console.log(cityNames);
+      document.writeln("2c:");
+      for (name of cityNames) {
+        arrChars = name.split("");
+        arrChars[0] = arrChars[0].toUpperCase();
+        console.log(arrChars);
+        for (c of arrChars) document.writeln(c);
+      }
+      document.writeln("</pre>");
+    </script>
+  </body>
+</html>
