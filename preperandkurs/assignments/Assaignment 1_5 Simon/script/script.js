@@ -9,7 +9,7 @@ function ageClick() {
   age = parseInt(document.getElementById("ageInput").value, 10);
   vip = document.getElementById("vipCheckbox").checked;
 
-  if (vip == true) {
+  if (vip) {
     console.log("Welcome in my best VIP customer!");
     alert("Access Granted!");
   } else if (age >= 130) {
