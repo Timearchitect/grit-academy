@@ -8,8 +8,11 @@
   </head>
   <body>
     <h1>Assignment 2b</h1>
-
+<p id="text"></p>
     <script>
+
+let pDOM = document.getElementById("text")
+
       // 2a börjar här!
       document.write("<pre>");
 
@@ -33,14 +36,14 @@
         return Math.floor(Math.random() * max);
       }
 
-      var e = 1;
+      //var e = 1;
       var s = "";
       for (e = 1; e <= 20; e++) {
         s += "O";
-        var x = getRandomInt(5) + 1;
-        for (j = 1; j <= x; j++) {
+        let x = getRandomInt(5) + 1;
+        for (j = 1; j <= x; j++) 
           s += " ";
-        }
+        
         // while(x > 0) {
         //     s += " ";
         //     x--

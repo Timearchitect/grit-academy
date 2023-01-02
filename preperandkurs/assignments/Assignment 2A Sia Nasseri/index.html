@@ -1,56 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script>
-//Uppgift 2a: ODD LOOP
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        //Uppgift 2a: ODD LOOP
 
-for (let i = 0; i < 10; i++) 
-{
-  if (i == 4) {
-    console.log("Q");
-  } else {
-    if (i % 2 == 0) {
-      console.log("O");
-    } else {
-      console.log("X");
-    }
-  }
-}
+        for (let i = 0; i < 10; i++) {
+            if (i == 4) {
+                console.log("Q");
+            } else {
+                if (i % 2 == 0) {
+                    console.log("O");
+                } else {
+                    console.log("X");
+                }
+            }
+        }
 
-//Uppgift 2B
+        //Uppgift 2B
 
-for (let i = 0; i < 20; i++) {
-let spaces = Math.floor(Math.random() * 5) + 1;
+        for (let i = 0; i < 20; i++) {
+            let AmountOfSpaces = Math.floor(Math.random() * 5) + 1;
+            document.body.innerHTML += "O" + "&#xA0".repeat(AmountOfSpaces);
+            //&#160; &#xA0; &NonBreakingSpace;
+        }
 
-document.body.innerHTML += "O" + "&nbsp".repeat(spaces) 
+        //Uppgift 2C
 
-
-}
-
-//Uppgift 2C
-
-let cityNames = ["kiruna" , "uppsala" , "malmo" , "gothenburg" , "stockholm"];
-
-for (let i = 0; i < cityNames.length; i++) 
-{
-  for (let j = 0; j < cityNames[i].length; j++) 
-  {
-    console.log(cityNames[i][j]);
-  }
-}
-
-
-</script>
-
-
-
-
+        let cityNames = [
+            "kiruna",
+            "uppsala",
+            "malmo",
+            "gothenburg",
+            "stockholm"
+        ];
+        
+        for (let i = 0; i < cityNames.length; i++) 
+            for (let j = 0; j < cityNames[i].length; j++) 
+                console.log(cityNames[i][j]);
+            
+        
+    </script>
 </html>
