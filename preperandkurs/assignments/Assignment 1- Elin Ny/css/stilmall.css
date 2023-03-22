@@ -1,0 +1,39 @@
+/*Här har jag valt att lägga till en bakgrundsfärg, för det blir lite roligare.*/
+body
+    {
+        background-color:rgba(172, 91, 91, 0.273) 
+    }
+
+/*Här stylar jag min bild. Jag har gjort den till display: block för att kunna centrera den, efter personlig smak och jag har gjort den 400 px bred och 300 px hög. 
+Jag har även lagt till en border i lite mörkare röd färg och även med lite lägre opacitet för att göra det lite mer stilfullt.*/
+img 
+    {
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        height: 300px;
+        border: rgba(146, 4, 4, 0.9) groove 4px;
+    }
+
+/*Här har jag valt att centera texten för personligen tycker jag det är snyggare*/
+p
+    {
+        text-align: center;
+    }
+
+/*Här centrerar jag skrivfälten då jag centrerat allt annat.*/
+input
+    {
+        display:block;
+        margin: auto;
+    }
+
+/*Av samma anledning så har jag valt att centrera knappen*/
+button
+    {
+        display:block;
+        margin: auto;
+    }
+
+/*Jag har valt att lägga till lite style med färg och centrering för jag personligen tycker de blir mer estetiskt så. Hoppas det är okej!*/
