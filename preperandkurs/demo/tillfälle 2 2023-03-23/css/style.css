@@ -1,0 +1,7 @@
+img{
+   /*  border: 2px dotted blue; */
+   border-style: dotted;
+   border-width: 2px;
+   border-color: blue;
+   width: 300px;
+}
