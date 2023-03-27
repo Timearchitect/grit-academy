@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Automated Age Verification</title>
+</head>
+<body>
+  <h1>Automated Age Verification System</h1>
+  <form>
+    <label for="age-input">Age:</label>
+    <input type="number" id="age-input" name="age" value="16">
+    <br>
+    <label for="vip-checkbox">VIP:</label>
+    <input type="checkbox" id="vip-checkbox" name="vip" checked>
+    <br>
+    <button type="button" id="enterBtn">Enter Hassan karam</button>
+  </form>
+  <p id="result"></p>
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    enterBtn.addEventListener("click", checkAge);
+
+    function checkAge() {
+      const ageInput = document.getElementById("age-input");
+      const isVip = document.getElementById("vip-checkbox").checked;
+
+      const age = parseInt(ageInput.value);
+      if (isVip && age < 18) {
+        document.getElementById("result").innerHTML = "Welcome VIP Client!";
+      } else if (age >= 18) {
+        document.getElementById("result").innerHTML = "Welcome!";
+      } else {
+        document.getElementById("result").innerHTML = "Access denied!";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
