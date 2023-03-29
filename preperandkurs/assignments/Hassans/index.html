@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript in HTML Example</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>Click the button to change the text color:</p>
+    <button onclick="document.body.style.color = 'red'">Change Color</button>
+    
+    <!-- Part 2a of the assignment -->
+    <script>
+      // Declare a variable to hold the loop counter
+      let i;
+      
+      // Loop 10 times
+      for (i = 0; i < 10; i++) {
+        // Generate a random number between 0 and 1
+        const randomNum = Math.floor(Math.random() * 2);
+        
+        // If the random number is 0, write an "X". Otherwise, write an "O".
+        if (randomNum === 0) {
+          document.write("X ");
+        } else {
+          document.write("O ");
+        }
+      }
+    </script>
+  </body>
+</html>
