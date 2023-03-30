@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script> 
+    // Part 2a
+// for(let i = 0 ; i <10; i++){
+//     if(i % 2){
+//         console.log("O")
+//     }else{
+//         console.log("X")
+//     }
+
+// }
+// part 2b
+
+function randomspace() {
+      let minspace = 1;
+      let maxspace = 5;
+      let randomspace = Math.floor(Math.random() * (maxspace - minspace + 1)) + minspace;
+      console.log(randomspace)
+      return " ".repeat(randomspace);
+    }
+    let result = " ";
+
+    for(let i = 0; i < 20; i++){
+      result += "O" + randomspace();
+    }
+    
+    console.log(result);
+
+// Part 2c
+
+let citynames = ["kiruna", "uppsala", "malmö", "göteborg", "stockholm" ];
+ for (let i = 0; i < citynames.length; i ++){
+    console.log([i]);
+    for (let j =0; j<citynames[i].length; j++){
+        console.log(citynames[i][j]);
+    }
+ }
+
+    </script>  
+</body>
+</html>
