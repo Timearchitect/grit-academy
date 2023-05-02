@@ -1,4 +1,4 @@
 # grit-academy
-assingments &amp; exams
+assignments &amp; old exams
 
-[] hejsan
+#  :)
