@@ -1,15 +1,17 @@
 function verifyAgeAndVIP() {
-    let age = 0;
-    let vip = false;
+   /*  let age = 0;
+    let vip = false; */
 
-    age = document.getElementById("age").value;
-    vip = document.getElementById('vip').checked;
+   let age = parseInt(document.getElementById("age").value);
+   let vip = Boolean(document.getElementById('vip').checked);
+    console.log(age,vip);
+    console.log(document.getElementById('vip'));
 
-    if (vip == true) {
+    if ( vip ) 
         alert("Welcome in my best VIP customer :) ");
-    } else if (age >= 18) {
+    else if (age >= 18) 
         alert("Access granted ");
-    } else {
+    else 
         alert("Access denied ");
-    }
+    
 }
