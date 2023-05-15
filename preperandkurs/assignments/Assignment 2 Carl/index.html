@@ -17,10 +17,10 @@
             let result = "";
 
             for (let i = 0; i < 10; i++) {
-                if (i % 2 == 0)
-                    result += "O";
-                else if (i >= 5)
+                if (i == 4)
                     result += "Q"
+                else if (i % 2 == 0)
+                    result += "O";
                 else
                     result += "X";
             }
@@ -42,27 +42,36 @@
 
         function assignment_2b() {
             let result = "";
-            let max = 5;
-            let min = 1;
+            // let max = 5;
+            // let min = 1;
 
+
+            // Alriks lösning
             for (let i = 0; i < 20; i++) {
-                switch (Math.floor(Math.random() * (max - min) + min)) {
-                    case 1:
-                        result += " "
-                        break;
-                    case 2:
-                        result += "O "
-                        break;
-                    case 3:
-                        result += "OO "
-                        break;
-                    case 4:
-                        result += "OOO "
-                        break;
-                    default:
-                        console.warn("Något gick snett")
-                }
+                let randomSpaces = Math.floor(Math.random() * 5)
+                result += ("O" + " ".repeat(randomSpaces))
             }
+            // Carls lösning
+
+            // for (let i = 0; i < 20; i++) {
+            //     switch (Math.floor(Math.random() * (max - min) + min)) {
+            //         case 1:
+            //             result += "O"
+            //             break;
+            //         case 2:
+            //             result += "O "
+            //             break;
+            //         case 3:
+            //             result += "O  "
+            //             break;
+            //         case 4:
+            //             result += "O   "
+            //             break;
+            //         case 5: // Blir aldring 5 ?
+            //             result += "O    "
+            //             break;
+            //     }
+
             console.log(result);
             document.getElementById("display2").innerHTML = result;
         }
@@ -79,21 +88,21 @@
     <script>
         // Assignment 2c : LOOPDI-LOOP
 
-        // Vet ej hur man löser uppgiften :(
-        function Assignment_2c() {
-
+        function assignment_2c() {
+            let result = "";
             let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+       
+            // Alriks lösning från minne
+            for (let i = 0; i < cityNames.length; i++) {
+                let charCity = cityNames[i];
+                console.log(charCity.replace(/./, c => c.toUpperCase()));
 
-            for (let i = 0; i < cityNames.length; i++)
-                var charCity = cityNames[i];  // ?
-            console.log(charCity);
-            
-            // ?
-            // for (let i = 0; i < charCity.length; i++)
-            //     console.log(charCity.charAt(i));
-
+                for (let i = 0; i < charCity.length; i++)
+                    console.log(charCity[i]);
+                result += charCity;
+            }
+            document.getElementById("display3").innerHTML = result.split("");
         }
-
     </script>
 
     <p id="display3"> - </p>
