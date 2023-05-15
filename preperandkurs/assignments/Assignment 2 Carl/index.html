@@ -19,6 +19,8 @@
             for (let i = 0; i < 10; i++) {
                 if (i % 2 == 0)
                     result += "O";
+                else if (i >= 5)
+                    result += "Q"
                 else
                     result += "X";
             }
@@ -37,18 +39,36 @@
 
     <script>
         // Assignment 2b : ODDER LOOPS
+
         function assignment_2b() {
+            let result = "";
+            let max = 5;
+            let min = 1;
 
-            Math.random(1 - 5);
-
-            for (i = 0; i < 20; i++) {
-
-
+            for (let i = 0; i < 20; i++) {
+                switch (Math.floor(Math.random() * (max - min) + min)) {
+                    case 1:
+                        result += " "
+                        break;
+                    case 2:
+                        result += "O "
+                        break;
+                    case 3:
+                        result += "OO "
+                        break;
+                    case 4:
+                        result += "OOO "
+                        break;
+                    default:
+                        console.warn("Något gick snett")
+                }
             }
+            console.log(result);
+            document.getElementById("display2").innerHTML = result;
         }
     </script>
 
-    <p id="display2"> - </p>
+    <pre id="display2"> - </pre>
 
     <input type="button" value="Assignment 2b" onclick="assignment_2b()">
     <input type="reset" onclick="location.reload()">
@@ -58,13 +78,20 @@
 
     <script>
         // Assignment 2c : LOOPDI-LOOP
+
+        // Vet ej hur man löser uppgiften :(
         function Assignment_2c() {
+
             let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
 
-           for (let i = 0; cityNames.length; i++){
+            for (let i = 0; i < cityNames.length; i++)
+                var charCity = cityNames[i];  // ?
+            console.log(charCity);
+            
+            // ?
+            // for (let i = 0; i < charCity.length; i++)
+            //     console.log(charCity.charAt(i));
 
-           }
-           
         }
 
     </script>
@@ -74,6 +101,7 @@
     <input type="button" value="Assignment 2c" onclick="assignment_2c()">
     <input type="reset" onclick="location.reload()">
     <hr>
+    <h3> Assignment 2 <i>Carl</i></h3>
 
 </body>
 
