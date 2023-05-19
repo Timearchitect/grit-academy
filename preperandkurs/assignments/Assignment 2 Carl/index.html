@@ -1,108 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment 2 Carl</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2 Carl</title>
-</head>
+    <body>
+        <h2>Assignment 2a : ODD LOOP</h2>
 
-<body>
-    <h2>Assignment 2a : ODD LOOP</h2>
+        <script>
+            // Assignment 2a ODD LOOP
+            function assignment_2a() {
+                let result = "";
 
-    <script>
-        // Assignment 2a ODD LOOP
-        function assignment_2a() {
-            let result = "";
-
-            for (let i = 0; i < 10; i++) {
-                if (i % 2 == 0)
-                    result += "O";
-                else if (i >= 5)
-                    result += "Q"
-                else
-                    result += "X";
+                for (let i = 0; i < 10; i++) {
+                    if (i == 4) result += "Q";
+                    else if (i % 2 == 0) result += "O";
+                    else result += "X";
+                }
+                console.log(result);
+                document.getElementById("display1").innerHTML = result;
             }
-            console.log(result);
-            document.getElementById("display1").innerHTML = result;
-        }
-    </script>
+        </script>
 
-    <p id="display1"> - </p>
+        <p id="display1">-</p>
 
-    <input type="button" value="Assignment 2a" onclick="assignment_2a()">
-    <input type="reset" onclick="location.reload()">
-    <hr>
+        <input type="button" value="Assignment 2a" onclick="assignment_2a()" />
+        <input type="reset" onclick="location.reload()" />
+        <hr />
 
-    <h2>Assignment 2b : ODDER LOOPS </h2>
+        <h2>Assignment 2b : ODDER LOOPS</h2>
 
-    <script>
-        // Assignment 2b : ODDER LOOPS
+        <script>
+            // Assignment 2b : ODDER LOOPS
 
-        function assignment_2b() {
-            let result = "";
-            let max = 5;
-            let min = 1;
+            function assignment_2b() {
+                let result = "";
+                let max = 5;
+                let min = 1;
 
-            for (let i = 0; i < 20; i++) {
-                switch (Math.floor(Math.random() * (max - min) + min)) {
+                for (let i = 0; i < 20; i++) {
+                    let amountOfspaces = Math.round(Math.random() * (max - min) + min);
+                    result += "O" + " ".repeat(amountOfspaces);
+                    /*         switch (Math.round(Math.random() * (max - min) + min)) {
                     case 1:
-                        result += " "
-                        break;
-                    case 2:
                         result += "O "
                         break;
+                    case 2:
+                        result += "O  "
+                        break;
                     case 3:
-                        result += "OO "
+                        result += "O   "
                         break;
                     case 4:
-                        result += "OOO "
+                        result += "O    "
+                        break;
+                    case 5:
+                        result += "O     "
                         break;
                     default:
                         console.warn("Något gick snett")
+                }*/
                 }
+                console.log(result);
+                document.getElementById("display2").innerHTML = result;
             }
-            console.log(result);
-            document.getElementById("display2").innerHTML = result;
-        }
-    </script>
+        </script>
 
-    <pre id="display2"> - </pre>
+        <pre id="display2"> - </pre>
 
-    <input type="button" value="Assignment 2b" onclick="assignment_2b()">
-    <input type="reset" onclick="location.reload()">
-    <hr>
+        <input type="button" value="Assignment 2b" onclick="assignment_2b()" />
+        <input type="reset" onclick="location.reload()" />
+        <hr />
 
-    <h2>Assignment 2c : LOOPDI-LOOP</h2>
+        <h2>Assignment 2c : LOOPDI-LOOP</h2>
 
-    <script>
-        // Assignment 2c : LOOPDI-LOOP
+        <script>
+            // Assignment 2c : LOOPDI-LOOP
 
-        // Vet ej hur man löser uppgiften :(
-        function Assignment_2c() {
+            // Vet ej hur man löser uppgiften :(
+            function assignment_2c() {
+                let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+                let result = "";
+                for (let i = 0; i < cityNames.length; i++) {
+                    var charCity = cityNames[i]; // ?
+                    console.log(charCity);
 
-            let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+                    for (let i = 0; i < charCity.length; i++) {
+                        console.log(charCity[i]);
+                        result += charCity[i] + "<br>";
+                    }
+                }
 
-            for (let i = 0; i < cityNames.length; i++)
-                var charCity = cityNames[i];  // ?
-            console.log(charCity);
-            
-            // ?
-            // for (let i = 0; i < charCity.length; i++)
-            //     console.log(charCity.charAt(i));
+                document.getElementById("display3").innerHTML = result;
+                // ?
+                // for (let i = 0; i < charCity.length; i++)
+                //     console.log(charCity.charAt(i));
+            }
+        </script>
 
-        }
+        <p id="display3">-</p>
 
-    </script>
-
-    <p id="display3"> - </p>
-
-    <input type="button" value="Assignment 2c" onclick="assignment_2c()">
-    <input type="reset" onclick="location.reload()">
-    <hr>
-    <h3> Assignment 2 <i>Carl</i></h3>
-
-</body>
-
+        <input type="button" value="Assignment 2c" onclick="assignment_2c()" />
+        <input type="reset" onclick="location.reload()" />
+        <hr />
+        <h3>Assignment 2 <i>Carl</i></h3>
+    </body>
 </html>
