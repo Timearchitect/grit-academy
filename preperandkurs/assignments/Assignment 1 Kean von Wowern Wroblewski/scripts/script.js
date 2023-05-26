@@ -1,9 +1,1 @@
-let foo ;
-foo = 0
-
-
-
-let bar ;
-bar = 0
-
-console.log (foo, bar);
+let foo = 0, bar  = 0;console.log (foo / bar)
