@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//This is part 2a of the assignment
+
+for (i= 0; i < 10; i++) {
+   if (i === 4) {
+    document.write("Q")
+   } else if (i % 2 === 0) {
+    document.write("O")
+   } else {
+    document.write("X")
+   }
+   
+}
+
+
+document.write("<br> <br>")
+
+// This is part 2 of the assignment
+// Variabeln = i, och om differensen är större än 1 = Math.random()
+// Om den är större än 1 måste det vara mellanslag 
+
+
+/*let lastWrittenPosition = -999
+
+for (i = 0; i < 20; i++) {
+    
+    if (Math.random() < 0.5) {
+        document.write("O")
+    } else {
+        document.write(" ")
+    }
+}*/
+
+/*let string = ""
+ 
+let last_written_pos = -9999;
+for (let i = 0; i < 20; i++) {
+    let diff = i - last_written_pos
+    if (diff > 1 && diff <= 5) {
+        if (Math.random(i) < 0.5) {
+            string += "O"
+            last_written_pos = i
+        } else {
+           string += " "
+        }
+    } else if (diff <= 1) {
+        string += " "
+    } else {
+        string += "O"
+        last_written_pos = i
+    }
+}
+ 
+console.log(string)*/
+
+
+</script>
+</html>
