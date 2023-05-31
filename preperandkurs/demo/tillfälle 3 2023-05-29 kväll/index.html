@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+
+            // while/do while / for loopar
+            // syntaxen 
+            if(true) 
+                console.log("yes");
+            else 
+                console.log("no");
+            
+            let count
+
+
+            count = 0    
+            while(count < 3){
+                console.log("while loop",count);
+                count++
+            }
+
+
+            count = 0 
+            do{
+                console.log("do while loop",count);
+                count++
+            }
+            while(count < 3)
+
+            
+            for( let count = 0; count < 3;  count++ ){
+                console.log("for while loop",count);
+            }
+                
+            console.log("vidare...");
+
+            for (let index = 0; index < 12; index++) {
+               document.write("<img src='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIIAggMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABQEDBAYHAgj/xAA5EAABAwIEBAMGBQQBBQAAAAABAAIDBBEFEiExBhNBUSJhcQcUMkKBkSOhscHRFWJy8PEWMzRDUv/EABgBAQADAQAAAAAAAAAAAAAAAAACAwQB/8QAHxEBAQEAAgMAAwEAAAAAAAAAAAECESEDEjFBUWET/9oADAMBAAIRAxEAPwDhqIiAiIgIiICIiAiIgIvQY4tLg05W7m2yogoiIgIiICIiAiIgIik+HMN/q+MU9ESWseSXkdGtBJ/IJenZOajbIuxycIYNXwcoUTYi1oAfG6zh9eq5rxPw/UYDW8t55kD9Y5QN/I+YUM+Sa6T147ntCoiqpq1FepKeWrqYqeBmeWV4YxvclWl0v2RcOGTG/wCo1jBlpG3YD0cdvrb9VHWvWJZz7VtGK8K0WB+zetw0sa6f3V080ttXSNGa/wBxb0XC19J8awSVPDuLCIOdI+mc1oHnp+6+cOS/UW2Nj5LmPiXk+raKpAHW6opqxERAREQEREBbP7OSBxRFcgEwygDv4CtYWfgVa7DsXpKtn/qlBI7tOhH2JXNTmJZvFjutA9sMri4tuT8+llicYYNTYnhcjZS0g652bsd0I9P0KrUHk1AlYHSBwu0s+YdFWqxRs0L6fw821svOzO+ix837G25cbqOH8RiquSIQ8E+GVp8Lh3B7LJ/6UqwAZKmlboSfET+2q3apwepbGM2jB4gHaEHy8l6qqV7nwQt0bNLleb6n+4efT9VdPJao/wA8xAUOCYdSU5eLVFU0XL5PgZ5gfyugezyX3eM0j43CRxLnm2hJJ1v6foon+hufQxSMha5zWFkwI1tb97bqTwSnbQvjYJHPY0uiEua3iAPht3H7qGu0p18T/GLieFMUMNOal3II5Jv4h1Pc6ar5yma9xvJlZ2b29AvqGB/g8Ts9hYDqPUea+cOLsOGGY5U07G5Y85LQOg7K3x1X5Z+UQWtG8gPoCvCIrVIiIgIiICIiArtPC+eZkUYJe9wDQEp4JaiRsUEbpHuNg1ouSus8AcBT4c6PFMXhDZrXijcNWefqob3MxPGLqs7EKplLh8VI54ZMTaS+50CvUOEU1PSwSyNMkuXM0g2N/Pv6rxj9DFV4laWMvy2s25HTdeee7nOa0EMDQAAOnVY8/G23tfqXOB58jxmAsDmtrZRlXN7sxtYyJjuXNmmb1F9Lj76qRrHwGjzTG7WnVrTq4noPMrVMP4p5NQ6IYU11O42d+IS7+FPMtVasjq2B0MLaGR0UhkilF2Am5aDuAe17m3S5Vuu4aFRhtRBTHSUlwcXfC8ndWuH66F9HDLRm0BFg3/57g9ittwh7JC4aW3XY5eo0TEMUpsMxplC+rdJVsaxjoYhmczQau7X3stN9r2DCRrMXjc0ObZkzAO+zljRmrw/jOsq8ThflFVM6SR/zXLgGt73JFreS2TjCR9RwFMKyncatsIc4ZbujDnghpt2FvsrJPWxG9yuIndUVSqK9nEREBERB6axz3BrWkuJsABqVtGE8ISTNZJiUppw46RNbd59eyk8Doo8KiLmU+eqcLGV4/IaaKXoq51LO2WWjMxadLvVG/JfmV+PFPy3bgfhPDcJp454qQCc655PE5bbORZa3gXFMFY0RzR8lw0DT0U5LMxzbg6EaKi/1dJ+mtY9CBUGZoGrdwFqNXXvp2yRQHNMbAAt0B7lbri1p2Fh0WvNw2njicScz73ddciVYGG5X00kNZUD3xxD2SSnKwHt5Dp1OqgI+G6+nrHSOjqnxlwLo44757HQZh4fqp6upYXS5myA/2uBKl+GqeV0jfHKIh0JtcehVk1wqueWPwZFiNJPVxV0Do45XcxoPyk9FvmEzuhmFnaXWJKxuSzQB3UVNikVNVinMg5osS0HXyTlPOfbqNkruG6WWeWspIYW1cri7nPYC5pO9iufe1eZvD3DQwx0l6uud0drlGpcfrb7rp3D2Ie/0oLm2sdyua+3HD/ea/D6x0cs7RE5jWtzZWWN76NN9+3RWZkt5VeT2zzmuIHM89XH7qjm5d91IzOc+7G00QAPwiX9QCFhPifcuLWtHbNt+avZ1lERAREQdazsc8sbleNmsv66i6sVTXBrRkAadsuwKz4KiHMY5qi8hueW4gO/36rzkAzljHDmHLy76A63NvosbaimvfFIDqCPhN1tOC8ROEYgrXFzRoJe3qoCWJjwSwZXbka7d9d1itDo5hYEApwcuiTXflIs5rvhcNisV0DZrtd8e1jsVj8L1jZQKKY3jJsxx+U9lNzUWVxbI2zhse6hxwlyhJ4BESRGPssjDqhrNHEAnTNZZvuzifG0uF1mUuCxPN3NIIP0ClO0LVmWXLtmOnosF9HS4lf3yEHILtlbo4W63WzMwKEAOMjtNbu1uueYrxvhOG1U7ZOdMYnlrYw2wcdfy0/NTmbUffjtuGH4pTYBg/NxCYQRAnxSfNqdlznj3iZmNVUU8EzqenDcsEriXRk32kZ01G41Flq3GPF9VxLMRLaCnjvyYGnQd797qKwurFRDUUNQSWygyM62d8wHqNfVoV+c8Kd79qvV0z+cYK2CIygA8uf5h0ySDp9fqVgS0kLnWaJKeQ/JLqHf4u/lVgqWNaaKvbmhY45SNTE7qWnt3H19bcsctO4xslzNIvZp0cO9uqmrY0sfLeWuPiG4IVtZJma+wlZpawI3b6eXkrT4iwA6Fp2cNigtoq2KIOsU0kYvyIPwur3OsO/bUq/UMgYzNznRk3cAzpt9lWSmMxvD4YQb8tgv53/3zWTSUkDnB0rS7wENbff0WLltRspfaPmDmttoOptqkjI39S7u4D4SpF8bXTOyDI7o4DQafwrJZHHM4uLDcaOtYkea7y4sUsj6eZuR21jcreMKxumxIsopzkqmjwuPz+i0d8MkZErI3GEaXBurE7pIauGeEk2t12sb/ALJxy5XVGQlkgD9D3UvSxgsHRY2FTR4vhkVUwC72B291nQRuiClmIaqJ4vxePB8DnkcfG9pawAXN/TruvlzE6o1FXK7K1vjJs29r31tdds9tGKcj3KjBFnHMbO1uTYadtFw2pbllc21i05ftsr8xVqrRKvUL3MrIXNNiHix+qsK5A4Nma4/KbqaC/iGV0onYLNlaHW7Hr/vmrUco5YiluWdP7fT+EBz05ZuWHMPQ7/srKC5IxwtY5m9COq8teW3tsdx3VWvLb9QdweqHKdRoexQUu3sfuqrwiDrIrGxRVHNdYAZvU9P+Ar09TynBjjZ7LNLW7E7E/ZQtmulZEJD4MpkNvsshtayQt5oBc34i34b3GiycNfKWgD6mR45g0N2vtpbb9ir80b5zyYpbQmxJDbkabqHNazI7l3aZHd9AelvLdZMNa5rmxmJpaNwLiy5w7ykqSna7mfiX01Y4aGyxavB7OdLh7swcdWA6D0XiITtmdLC5rWGws47XWZG9xma57Sx2xc12mu37I6z+GMUrMJiipy4GJ1wOYbZV0GlrZJIvxw0HoWm4K5o95lgc14IykEyA6O9VtZxCKnwfmNlzBsehad1PNqvUcw9s9WKzGPw5A4RWbYG9jbX+VzqodzWibqfC8eYUlxLXOq8XmlLrlrrDTUjsfufuotxbZxb8LunYrRPjPfqyiIuuPUbsrwTt1HcI8ZXEXv5915VUFEREBERBvlSSBKQdbt/QK+wD3Jmn+6oiztC7A1phhu0fGen9qkX/APYPmW/oERRqUJfDVWboLjZSGHPe6CTM5x8PU+YREdeoHOzgZjYg3F1H4+97KBgY9zQdwDboiLufrmvjldX/AOTN/mVZ6Ii0sqiIiAiIgIiICIiD/9k='> ")  
+            }
+
+            // arrayer
+            let bar = 5
+            bar = 8
+            // index   0   1   2
+            let foo = [5,"hej",true]
+            foo[0]  = 8  
+
+            foo[6] = 1000
+            foo.push(2000)
+
+            foo.pop()
+           // foo = 8 // lätt misstag
+            console.log(bar);
+            console.log(foo);
+            
+            let namnlist = ["Keikiet", "Alrik","Carolin","Gustav","Anna","Henrik"] 
+            namnlist.sort()
+            namnlist.reverse()
+            console.log(namnlist);
+
+            for (let index = 0; index < namnlist.length; index++) {
+                document.write("<h1>"+namnlist[index] + " köplats: "+(index+1) +"</h1>" );
+            }
+        </script>
+    </head>
+    <body></body>
+</html>
