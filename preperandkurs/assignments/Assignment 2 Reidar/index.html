@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="test.js"></script>
+    </head>
+    <body></body>
+    <script>
+        //This is part 2a of the assignment
 
-//This is part 2a of the assignment
-
-for (i= 0; i < 10; i++) {
-   if (i === 4) {
-    document.write("Q")
-   } else if (i % 2 === 0) {
-    document.write("O")
-   } else {
-    document.write("X")
-   }
-   
-}
+        for (let i = 0; i < 10; i++)
+            if (i == 4) 
+                document.write("Q");
+            else if (i % 2 == 0) 
+                document.write("O");
+            else 
+                document.write("X");
 
 
-document.write("<br> <br>")
+        document.write("<br> <br>");  
 
-// This is part 2 of the assignment
-// Variabeln = i, och om differensen är större än 1 = Math.random()
-// Om den är större än 1 måste det vara mellanslag 
+        let resultat=""
+        for (let i = 0; i < 20; i++) {
+
+            let randomTal = Math.random() 
+            randomTal = randomTal * 4 + 1
+            randomTal = Math.round(randomTal) 
+            console.log(randomTal);
+            
+            for(  let n = 0; n < randomTal; n++  )
+            {
+                console.log("&nbsp;");
+                document.write("&nbsp;");   
+            }    
+
+            resultat+="O "
+            document.write("O ");   
+            //console.log("O ",i)
+        }
+        console.log(resultat)
 
 
-/*let lastWrittenPosition = -999
+
+
+      
+    for (let i = 0; i < 20; i++) 
+        document.write("O"+"&nbsp;".repeat(Math.round(Math.random() * 4 + 1)));   
+        
+
+
+        // This is part 2 of the assignment
+        // Variabeln = i, och om differensen är större än 1 = Math.random()
+        // Om den är större än 1 måste det vara mellanslag
+
+        /*let lastWrittenPosition = -999
 
 for (i = 0; i < 20; i++) {
     
@@ -43,7 +66,7 @@ for (i = 0; i < 20; i++) {
     }
 }*/
 
-/*let string = ""
+        /*let string = ""
  
 let last_written_pos = -9999;
 for (let i = 0; i < 20; i++) {
@@ -64,7 +87,5 @@ for (let i = 0; i < 20; i++) {
 }
  
 console.log(string)*/
-
-
-</script>
+    </script>
 </html>

@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2a</title>
-    <H1>Assignment 2a</H1>
-    
-   
-    
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment 2a</title>
+        <h1>Assignment 2a</h1>
+    </head>
+    <body>
+        <script>
+            // assignment 2a
 
-<script>
-// assignment 2a
+            // for loop xoxo i konsollen
 
-// for loop xoxo i konsollen
+            for (let count = 0; count < 10; count++) {
+                if (count == 4) console.log("Q");
+                else if (count % 2 === 0) {
+                    console.log("X");
+                } else {
+                    console.log("O");
+                }
+            }
 
-for ( let count = 0; count <10 ; count++) {
-if (count % 2 ===0) {console.log("X");} else {console.log("O");}
-}
-
-// loop med mellanrum
-//fick det inte att fungera i konsolloggen men funkar genom document.write
-for ( let i=0; i<20; i++){
-document.write ("O");
-let space = ("&nbsp");
-let random  = Math.random()*5;
-document.write (space.repeat (random));
-}
-
-</script>
-    
-    
-</body>
+            // loop med mellanrum
+            //fick det inte att fungera i konsolloggen men funkar genom document.write
+            let resultat = "";
+            for (let i = 0; i < 20; i++) {
+                document.write("O");
+                resultat += "O";
+                let space = " "; // "&#160;" "&nbsp"
+                let random = Math.random() * 5 + 1;
+                document.write("&nbsp".repeat(random));
+                resultat += space.repeat(random);
+            }
+            console.log(resultat);
+        </script>
+    </body>
 </html>
