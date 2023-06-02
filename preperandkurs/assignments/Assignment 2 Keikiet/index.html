@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Part 2a: ODD LOOP
+
+    for (let i = 0; i < 10; i++) {
+      if (i == 4) console.log("Q");
+      if (i % 2 == 0) console.log("0");
+      else console.log("X");
+    }
+    
+    console.log("");
+
+     // Part 2b: ODDER LOOPS
+    for (let i = 0; i < 20; i++) {
+      let randomTal = Math.random();
+      randomTal = Math.round(randomTal * 4 + 1);
+      console.log(randomTal);
+
+      for (let n = 0; n < randomTal; n++) {
+        console.log("&nbsp;");
+        document.write("&nbsp");
+      }
+
+      console.log("0");
+      document.write("0");
+    }
+    
+    console.log("");
+    
+    // Part 2c: LOOPDI-LOOP
+    let cityNames = ["kiruna", "uppsala", "malmo", "gotenburg", "stockholm"];
+
+    for (let i = 0; i < cityNames.length; i++) {
+      let cityName = cityNames[i];
+      let capCityName = cityName.charAt(0).toUpperCase()+cityName.slice(1);
+      for (j = 0; j < cityName.length; j++) {
+        console.log(capCityName.charAt(j));
+      }
+
+      console.log(" ");
+    }
+  </script>
+</html>
