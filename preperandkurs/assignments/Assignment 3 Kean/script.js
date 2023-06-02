@@ -16,16 +16,17 @@ console.log(filter);
 */
 
 function charRemove(text, character) {
-  let filteredText = "";
+/*   let filteredText = "";
   for (let i = 0; i < text.length; i++) {
     if (text[i] !== character) {
       filteredText += text[i];
     }
   }
-  return filteredText;
+  return filteredText; */
+  return text.replaceAll(character,"")
 }
 
-let inputText = "Sagan om ringen";
+let inputText = "rr Sagan R om ringen r";
 let filteredText = charRemove(inputText, "r");
 console.log(filteredText);
 
