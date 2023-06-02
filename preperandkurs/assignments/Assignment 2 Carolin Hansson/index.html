@@ -27,55 +27,59 @@
 
             let result = "";
             for (let a = 0; a < 20; a++) {
-                result += "O"+ " ".repeat(getRndInteger(1, 5));
-                document.write( "O"+ "&nbsp;".repeat(getRndInteger(1, 5)));
+                result += "O" + " ".repeat(getRndInteger(1, 5));
+                document.write("O" + "&nbsp;".repeat(getRndInteger(1, 5)));
             }
-            
+
             console.log(result);
-            
-            
-            
-             ///////////// 2c: LOOPDI-LOOP /////////////
 
-        let citynames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+            ///////////// 2c: LOOPDI-LOOP /////////////
 
+            let citynames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
 
-        var word0 = citynames[0];
+            for (let i = 0; i < citynames.length; i++) {
+                var oneCity = citynames[i];
 
-        for (city0 = 0; city0 < word0.length; city0++) {
-            console.log(word0[city0]);
-        }
+                for (let i = 0; i < oneCity.length; i++) 
+                    console.log(oneCity[i]);
+                
+            }
 
-        var word1 = citynames[1];
+            // var word0 = citynames[0];
 
-        for (city1 = 0; city1 < word1.length; city1++) {
-            console.log(word1[city1]);
-        }
+            // for (city0 = 0; city0 < word0.length; city0++) {
+            //     console.log(word0[city0]);
+            // }
 
-        var word2 = citynames[2];
+            // var word1 = citynames[1];
 
-        for (city2 = 0; city2 < word2.length; city2++) {
-            console.log(word2[city2]);
-        }
+            // for (city1 = 0; city1 < word1.length; city1++) {
+            //     console.log(word1[city1]);
+            // }
 
-        var word3 = citynames[3];
+            // var word2 = citynames[2];
 
-        for (city3 = 0; city3 < word3.length; city3++) {
-            console.log(word3[city3]);
-        }
+            // for (city2 = 0; city2 < word2.length; city2++) {
+            //     console.log(word2[city2]);
+            // }
 
-        var word4 = citynames[4];
+            // var word3 = citynames[3];
 
-        for (city4 = 0; city4 < word4.length; city4++) {
-            console.log(word4[city4]);
-        }
+            // for (city3 = 0; city3 < word3.length; city3++) {
+            //     console.log(word3[city3]);
+            // }
 
-        var word5 = citynames[5];
+            // var word4 = citynames[4];
 
-        for (city5 = 0; city5 < word5.length; city5++) {
-            console.log(word5[city5]);
-        }
+            // for (city4 = 0; city4 < word4.length; city4++) {
+            //     console.log(word4[city4]);
+            // }
 
+            // var word5 = citynames[5];
+
+            // for (city5 = 0; city5 < word5.length; city5++) {
+            //     console.log(word5[city5]);
+            // }
         </script>
     </body>
 </html>
