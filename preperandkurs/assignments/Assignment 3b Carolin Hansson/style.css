@@ -1,0 +1,10 @@
+
+body {
+    background-image: url("https://coleandmarmalade.com/wp-content/uploads/2021/04/Gus-Adoption-Cover.jpg");
+}
+
+button {
+    height: 70px;
+    width: 150px;
+    background-color: orange;
+}
