@@ -1,0 +1,19 @@
+h1{/*
+    color: red;
+    font-size: 80px;*/
+    font-style:italic;
+}
+
+h2{
+    background-color: aqua;
+    margin: 30px;
+}
+
+p{ 
+    font-weight: bold;
+    border-style: dotted;
+    border-width: 5px;
+    padding: 10px;
+    margin: 20px;
+
+}

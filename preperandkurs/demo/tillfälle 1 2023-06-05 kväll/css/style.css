@@ -1,0 +1,22 @@
+h1{
+   /* color:rgb(76, 0, 255);
+    font-style: italic;   
+    font-size: 50px;*/
+}
+
+h2{
+    background-color: aqua;
+    margin: 50px;
+}
+
+p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    border-style: dotted;
+    border-width: 3px;
+}
+
+img{
+
+    width: 500px;
+}
