@@ -1,0 +1,24 @@
+h1{
+    color: rgb(157, 80, 105);
+    font-size: 80px;
+    font-weight: lighter;
+    font-family: helvetica, sans-serif;
+
+}
+
+h2{
+font-family: helvetica, sans-serif;
+}
+
+img{
+    
+    width: 400px;
+    height: 300px;
+    border: dotted;
+    border-color: crimson;
+
+}
+
+p{
+    font-family: Helvetica, sans-serif;
+}
