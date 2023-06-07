@@ -14,9 +14,11 @@ img{
     
     width: 400px;
     height: 300px;
-    border: dotted;
-    border-color: crimson;
+/*  border-style: dotted;
+    border-width: 5px;
+    border-color: crimson; */
 
+    border: 5px dotted red;
 }
 
 p{
