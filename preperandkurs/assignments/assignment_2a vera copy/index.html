@@ -11,9 +11,15 @@
      // UPPG 2A 
     
         for( let i = 0; i < 10; i++) {
-            if( i / 2 == 0) console.log("O");
+            //console.log(Number.isInteger(i / 2));
+            if( Number.isInteger(i / 2)   ) console.log("O");
             else console.log("X");
+        } 
 
+        for( let i = 0; i < 10; i++) {
+            //console.log(i % 2);
+            if( i % 2 == 0  ) console.log("O");
+            else console.log("X");
         }
     </script>
    
