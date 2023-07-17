@@ -1,0 +1,12 @@
+h1 {
+    /*color: red;
+    font-style: italic;*/
+    
+    font-size: 100px;
+    margin:0;
+}
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 5rem;
+}
