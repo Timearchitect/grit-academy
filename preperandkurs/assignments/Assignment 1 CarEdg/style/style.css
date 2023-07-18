@@ -1,0 +1,15 @@
+img {
+    border-style: dotted;
+    border-color: red;
+    border-width: 5px;
+} 
+}
+h1 {
+    color: darkred;
+}
+h2{
+    color: darkgreen;
+}
+p   {
+    color: rgb(127, 181, 34);
+}
