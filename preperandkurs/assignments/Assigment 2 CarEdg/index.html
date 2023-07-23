@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=>, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <script>
+//This is part 2a
+      for (let i = 0; i <= 10; i++) {
+        if (i % 2 == 0) {
+          console.log("O");
+          continue;
+        }
+        console.log("X");
+      }
+
+//This is part 2c
+      let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+      for (let a = 0; a < cityNames.length; a++) {
+        let result = cityNames.toString(a).charAt(a);
+
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>
