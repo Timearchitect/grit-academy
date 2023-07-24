@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=>, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <script>
-//This is part 2a
-      for (let i = 0; i <= 10; i++) {
-        if (i % 2 == 0) {
-          console.log("O");
-          continue;
-        }
-        console.log("X");
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=>, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <script>
+            //This is part 2a
+            for (let i = 0; i <= 10; i++) {
+                if (i % 2 == 0) console.log("O");
+                //continue;
+                else console.log("X");
+            }
 
-//This is part 2c
-      let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
-      for (let a = 0; a < cityNames.length; a++) {
-        let result = cityNames.toString(a).charAt(a);
+            //This is part 2c
+            let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
 
-        console.log(result);
-      }
-    </script>
-  </body>
+            for (let a = 0; a < cityNames[0].length; a++) {
+                let result = cityNames[0].charAt(a);
+                console.log(result);
+            }
+            for (let a = 0; a < cityNames[1].length; a++) {
+                let result = cityNames[1].charAt(a);
+                console.log(result);
+            }
+            for (let a = 0; a < cityNames[2].length; a++) {
+                let result = cityNames[2].charAt(a);
+                console.log(result);
+            }
+            for (let a = 0; a < cityNames[3].length; a++) {
+                let result = cityNames[3].charAt(a);
+                console.log(result);
+            }
+            for (let a = 0; a < cityNames[4].length; a++) {
+                let result = cityNames[4].charAt(a);
+                console.log(result);
+            }
+
+            for (let i = 0; i < cityNames.length; i++) {
+                singleCity = cityNames[i];
+                console.log(singleCity);
+                for (let a = 0; a < cityNames[i].length; a++) {
+                    let result = cityNames[i].charAt(a);
+                    console.log(result);
+                }
+            }
+        </script>
+    </body>
 </html>
