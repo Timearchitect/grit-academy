@@ -1,0 +1,6 @@
+/* styles.css */
+
+/* CSS rule for the image with red border effect */
+img.red-border {
+    border: 2px solid red;
+}
