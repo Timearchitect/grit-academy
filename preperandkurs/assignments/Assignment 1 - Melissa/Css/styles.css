@@ -1,6 +1,11 @@
 /* styles.css */
 
 /* CSS rule for the image with red border effect */
-img.red-border {
+/* img.red-border {
+    border: 2px solid red;
+} */
+
+
+.red-border { /*räcker med klassen, så simpel selector som möjligt*/
     border: 2px solid red;
 }
