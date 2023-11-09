@@ -41,6 +41,7 @@ function calc()
 {
   let box1 = document.getElementById("ett").value;
   let box2 = document.getElementById("tvo").value;
+  console.log(box1,box2);
   let rakna = box1/box2;
   //alert(rakna)
 
