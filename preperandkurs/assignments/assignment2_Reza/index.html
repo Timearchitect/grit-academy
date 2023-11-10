@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2a</title>
+</head>
+<body>
+    <!-- Part 2a of the assignment -->
+
+    <script>
+        // Part 2: ODD LOOP
+        for (let i = 1; i <= 10; i++) {
+            if (i === 5) {
+                document.write("Q");
+            } else if (i % 2 === 0) {
+                document.write("X");
+            } else {
+                document.write("O");
+            }
+        }
+    </script>
+
+    <!-- Part 3: ODDER LOOPS -->
+    <script>
+        document.write("<br>");
+        for (let i = 0; i < 20; i++) {
+            let spaces = Math.floor(Math.random() * 5) + 1;
+            for (let j = 0; j < spaces; j++) {
+                document.write("&nbsp;");
+            }
+            document.write("O");
+        }
+    </script>
+
+    <!-- Part 4: LOOPDI-LOOP -->
+    <script>
+        document.write("<br>");
+        let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
+
+        for (let name of cityNames) {
+            for (let letter of name) {
+                document.write(letter + "<br>");
+            }
+        }
+
+        document.write("<br>");
+
+        for (let name of cityNames) {
+            let firstLetter = name.charAt(0).toUpperCase() + name.slice(1);
+            document.write(firstLetter + "<br>");
+        }
+    </script>
+</body>
+</html>
