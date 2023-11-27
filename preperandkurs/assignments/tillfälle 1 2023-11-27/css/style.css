@@ -1,0 +1,10 @@
+h1{
+    color:rgb(0, 255, 30);
+    font-size:50pt;
+    background-color: brown;
+}
+
+h2{
+    font-style: italic;
+    text-decoration: underline;
+}
