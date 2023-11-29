@@ -1,0 +1,6 @@
+alert ('hi');  
+
+    let foo = false
+
+    let bar = false
+
