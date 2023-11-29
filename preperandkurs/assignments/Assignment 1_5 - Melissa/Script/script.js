@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+//document.addEventListener("DOMContentLoaded", function() {
     var ageInput = document.getElementById("age");
     var vipCheckbox = document.getElementById("vip");
     var enterBtn = document.getElementById("enterBtn");
@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-});
+//});
 
 

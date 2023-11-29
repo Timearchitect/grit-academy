@@ -1,62 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Helloooo</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helloooo</title>
-</head>
+    <body>
+        <h1>Pattern 2a:</h1>
+        <div id="outputOne"></div>
 
-<body>
-    <h1>Pattern 2a:</h1>
-    <div id="outputOne"></div>
+        <h1>Pattern 2:</h1>
+        <div id="outputTwo"></div>
 
-    <h1>Pattern 2:</h1>
-    <div id="outputTwo"></div>
+        <script>
+            // Part 2a
+            let outputDivOne = document.getElementById("outputOne");
+            let patternOne = "";
 
-    <script>
-        // Part 2a
-        var outputDivOne = document.getElementById("outputOne");
-        var patternOne = '';
+            for (let i = 0; i < 10; i++)
+                if (i % 2 === 1) patternOne += "X ";
+                else patternOne += "O ";
 
-        for (var i = 1; i <= 10; i++) {
-            if (i % 2 === 0) {
-                patternOne += 'X ';
-            } else {
-                patternOne += 'O ';
+            outputDivOne.innerText = patternOne;
+
+            // Part 2
+            let outputDivTwo = document.getElementById("outputTwo");
+            let patternTwo = "";
+
+            for (let i = 0; i < 20; i++) {
+                let spaces = Math.floor(Math.random() * 5) + 1;
+                for (let j = 0; j < spaces; j++) {
+                    patternTwo += "&nbsp;";
+                }
+                patternTwo += "O ";
             }
-        }
 
-        outputDivOne.innerText = patternOne;
+            outputDivTwo.innerHTML = patternTwo;
 
-        // Part 2
-        var outputDivTwo = document.getElementById("outputTwo");
-        var patternTwo = '';
+            let cityNames = ["kiruna", "uppsala", "malmo", "gothenburg", "stockholm"];
 
-        for (var i = 0; i < 20; i++) {
-            var spaces = Math.floor(Math.random() * 5) + 1; 
-            for (var j = 0; j < spaces; j++) {
-                patternTwo += '&nbsp;'; 
+            for (let i = 0; i < cityNames.length; i++) 
+                for (let j = 0; j < cityNames[i].length; j++) 
+                    console.log(cityNames[i][j]);
+                
+            
+
+            let x = 80;
+            {
+                let x = 5;
+                console.log(x);
             }
-            patternTwo += 'O ';
-        }
 
-        outputDivTwo.innerHTML = patternTwo;
-
-        let cityNames = ["kiruna","uppsala","malmo","gothenburg","stockholm"]; 
-        
-for (let i = 0; i < cityNames.length; i++) {
-   
-    for (let j = 0; j < cityNames[i].length; j++) {
-        
-        console.log(cityNames[i][j]);
-    }
-
-} 
-
-
-    </script>
-</body>
-
+            console.log(x);
+        </script>
+    </body>
 </html>
-
