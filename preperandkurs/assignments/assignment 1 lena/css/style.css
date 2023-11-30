@@ -1,0 +1,17 @@
+img {
+    width: 400px;
+
+    height: 300px;
+}
+
+h1{
+font-size: 30pt;
+color: rgb(49, 80, 80);
+font-style: italic;
+}
+p{
+    font-style: oblique;
+    color: rgb(230, 237, 237);
+    background-color: rgb(141, 28, 28);
+
+}
