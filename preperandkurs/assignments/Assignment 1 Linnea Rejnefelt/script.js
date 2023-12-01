@@ -12,5 +12,5 @@ while( i > 0){
     i=i-1; // orginal
     // i+=1; //förkortning
     // i++; //förkortning ++
-    i++;
+    //i++;
 }
