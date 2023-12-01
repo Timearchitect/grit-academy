@@ -1,5 +1,5 @@
 let vip = true;
-let age = 18;
+let age = 17;
 
 if (vip == true) {
   alert("Welcome in my best VIP customer :)");
