@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.4",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let r=e.getAttribute("data-rocket-src");if(r&&0!==r.indexOf("data:")){0===r.indexOf("//")&&(r=location.protocol+r);try{let i=new URL(r).origin;i!==location.origin&&t.push({src:i,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(n){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._pendingWebpackRequests(this),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){if(await this._littleBreath(),!0===t.noModule&&"noModule"in HTMLScriptElement.prototype){t.setAttribute("data-rocket-status","skipped");return}return new Promise(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(){let t={};function e(e,r){!function e(r){!t[r]&&(t[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),t[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),t[r].originalFunctions.remove.apply(r,arguments)});function i(e){return t[r].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(r)}function r(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}e(document,"DOMContentLoaded"),e(window,"DOMContentLoaded"),e(window,"load"),e(window,"pageshow"),e(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow")}_delayJQueryReady(t){let e;function r(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}function i(i){if(i&&i.fn&&!t.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(i)),i([])};let n=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=r(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{let e=arguments[0][t];delete arguments[0][t],arguments[0][r(t)]=e})),n.apply(this,arguments),this},t.allJQueries.push(i)}e=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){i(t)}})}async _pendingWebpackRequests(t){let e=document.querySelector("script[data-webpack]");async function r(){return new Promise(t=>{e.addEventListener("load",t),e.addEventListener("error",t)})}e&&(await r(),await t._requestAnimFrame(),await t._pendingWebpackRequests(t))}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MB64RXT');</script>
+<!-- End Google Tag Manager -->
+	
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="4Gyo6m-hjr3qFAgQ4H5ZZ9efRpt_RHS5tDMwIzeJgmk" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://topofthelist.net/xmlrpc.php">
+<script type="rocketlazyloadscript" data-rocket-src="/wp-content/themes/totl/js/jquery.min.js" defer></script>
+<link data-minify="1" rel="stylesheet" href="https://topofthelist.net/wp-content/cache/min/1/sbb7hhm.css?ver=1701359666">
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://topofthelist.net/wp-content/cache/min/1/wp-content/themes/totl/js/char-count.js?ver=1701359666" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://topofthelist.net/wp-content/cache/min/1/wp-content/themes/totl/js/char-count2.js?ver=1701359666" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" async custom-element="amp-youtube" data-rocket-src="https://topofthelist.net/wp-content/cache/min/1/v0/amp-youtube-0.1.js?ver=1701359666"></script>
+<script type="rocketlazyloadscript">try{Typekit.load({ async: true });}catch(e){}</script>
+<script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll(".rev_slider ul li"),r=0,a=i.length;r<a;r++){ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"));for(var n=1;n<11;)ewwwAttr(i[r],"data-param"+n,i[r].getAttribute("data-webp-param"+n)),n++}for(r=0,a=(i=document.querySelectorAll(".rev_slider img")).length;r<a;r++)ewwwAttr(i[r],"data-lazyload",i[r].getAttribute("data-webp-lazyload"));for(var o=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=o.length;r<a;r++)ewwwAttr(o[r],"data-thumb",o[r].getAttribute("data-webp-thumb"))}for(var l=document.querySelectorAll("video"),r=0,a=l.length;r<a;r++)ewwwAttr(l[r],"poster",e?l[r].getAttribute("data-poster-webp"):l[r].getAttribute("data-poster-image"));for(var s,c=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=c.length;r<a;r++)e&&(ewwwAttr(c[r],"data-lazy-srcset",c[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(c[r],"data-srcset",c[r].getAttribute("data-srcset-webp")),ewwwAttr(c[r],"data-lazy-src",c[r].getAttribute("data-lazy-src-webp")),ewwwAttr(c[r],"data-src",c[r].getAttribute("data-src-webp")),ewwwAttr(c[r],"data-orig-file",c[r].getAttribute("data-webp-orig-file")),ewwwAttr(c[r],"data-medium-file",c[r].getAttribute("data-webp-medium-file")),ewwwAttr(c[r],"data-large-file",c[r].getAttribute("data-webp-large-file")),null!=(s=c[r].getAttribute("srcset"))&&!1!==s&&s.includes("R0lGOD")&&ewwwAttr(c[r],"src",c[r].getAttribute("data-lazy-src-webp"))),c[r].className=c[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var w=document.querySelectorAll(".ewww_webp"),r=0,a=w.length;r<a;r++)e?(ewwwAttr(w[r],"srcset",w[r].getAttribute("data-srcset-webp")),ewwwAttr(w[r],"src",w[r].getAttribute("data-src-webp")),ewwwAttr(w[r],"data-orig-file",w[r].getAttribute("data-webp-orig-file")),ewwwAttr(w[r],"data-medium-file",w[r].getAttribute("data-webp-medium-file")),ewwwAttr(w[r],"data-large-file",w[r].getAttribute("data-webp-large-file")),ewwwAttr(w[r],"data-large_image",w[r].getAttribute("data-webp-large_image")),ewwwAttr(w[r],"data-src",w[r].getAttribute("data-webp-src"))):(ewwwAttr(w[r],"srcset",w[r].getAttribute("data-srcset-img")),ewwwAttr(w[r],"src",w[r].getAttribute("data-src-img"))),w[r].className=w[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script>		<style type="text/css">
+					.heateor_sss_button_instagram span.heateor_sss_svg,a.heateor_sss_instagram span.heateor_sss_svg{background:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+											.heateor_sss_horizontal_sharing .heateor_sss_svg,.heateor_sss_standard_follow_icons_container .heateor_sss_svg{
+							color: #fff;
+						border-width: 0px;
+			border-style: solid;
+			border-color: transparent;
+		}
+					.heateor_sss_horizontal_sharing .heateorSssTCBackground{
+				color:#666;
+			}
+					.heateor_sss_horizontal_sharing span.heateor_sss_svg:hover,.heateor_sss_standard_follow_icons_container span.heateor_sss_svg:hover{
+						border-color: transparent;
+		}
+		.heateor_sss_vertical_sharing span.heateor_sss_svg,.heateor_sss_floating_follow_icons_container span.heateor_sss_svg{
+							color: #fff;
+						border-width: 0px;
+			border-style: solid;
+			border-color: transparent;
+		}
+				.heateor_sss_vertical_sharing .heateorSssTCBackground{
+			color:#666;
+		}
+						.heateor_sss_vertical_sharing span.heateor_sss_svg:hover,.heateor_sss_floating_follow_icons_container span.heateor_sss_svg:hover{
+						border-color: transparent;
+		}
+		@media screen and (max-width:783px) {.heateor_sss_vertical_sharing{display:none!important}}div.heateor_sss_mobile_footer{display:none;}@media screen and (max-width:783px){div.heateor_sss_bottom_sharing .heateorSssTCBackground{background-color:white}div.heateor_sss_bottom_sharing{width:100%!important;left:0!important;}div.heateor_sss_bottom_sharing a{width:14.285714285714% !important;}div.heateor_sss_bottom_sharing .heateor_sss_svg{width: 100% !important;}div.heateor_sss_bottom_sharing div.heateorSssTotalShareCount{font-size:1em!important;line-height:28px!important}div.heateor_sss_bottom_sharing div.heateorSssTotalShareText{font-size:.7em!important;line-height:0px!important}div.heateor_sss_mobile_footer{display:block;height:40px;}.heateor_sss_bottom_sharing{padding:0!important;display:block!important;width:auto!important;bottom:-2px!important;top: auto!important;}.heateor_sss_bottom_sharing .heateor_sss_square_count{line-height:inherit;}.heateor_sss_bottom_sharing .heateorSssSharingArrow{display:none;}.heateor_sss_bottom_sharing .heateorSssTCBackground{margin-right:1.1em!important}}		</style>
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="preload" href="https://topofthelist.net/wp-content/plugins/rate-my-post/public/css/fonts/ratemypost.ttf" type="font/ttf" as="font" crossorigin="anonymous">
+	<!-- This site is optimized with the Yoast SEO plugin v21.6 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>How to Resize a Photo | Resizing Images Quickly and Easily</title>
+	<meta name="description" content="This guide shows you how to resize a photo, whether you are resizing images for increased webpage speed or for layout reasons." />
+	<link rel="canonical" href="https://topofthelist.net/how-to-resize-a-photo/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="How to Resize a Photo | Resizing Images Quickly and Easily" />
+	<meta property="og:description" content="This guide shows you how to resize a photo, whether you are resizing images for increased webpage speed or for layout reasons." />
+	<meta property="og:url" content="https://topofthelist.net/how-to-resize-a-photo/" />
+	<meta property="og:site_name" content="Top Of The List" />
+	<meta property="article:published_time" content="2013-09-07T04:00:26+00:00" />
+	<meta property="article:modified_time" content="2023-02-16T18:02:03+00:00" />
+	<meta property="og:image" content="https://topofthelist.net/wp-content/uploads/2016/01/Resized_Photo.jpg" />
+	<meta name="author" content="Nicole Vesota" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Nicole Vesota" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="4 minutes" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Top Of The List &raquo; Feed" href="https://topofthelist.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Top Of The List &raquo; Comments Feed" href="https://topofthelist.net/comments/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link data-minify="1" rel='stylesheet' id='formidable-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/formidable/css/formidableforms.css?ver=1701359666' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://topofthelist.net/wp-includes/css/dist/block-library/style.min.css?ver=6.3.2' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='rate-my-post-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/rate-my-post/public/css/rate-my-post.css?ver=1701359666' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uagb-block-css-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/uploads/uag-plugin/custom-style-blocks.css?ver=1701359666' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='totl-style-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/themes/totl/style.css?ver=1701359666' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='mm-compiled-options-mobmenu-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/uploads/dynamic-mobmenu.css?ver=1701359666' type='text/css' media='all' />
+<link rel='stylesheet' id='mm-google-webfont-open-sans-css' href='//fonts.googleapis.com/css?family=Open+Sans%3Ainherit%2C400&#038;subset=latin%2Clatin-ext&#038;ver=6.3.2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='heateor_sss_frontend_css-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/sassy-social-share/public/css/sassy-social-share-public.css?ver=1701359666' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='cssmobmenu-icons-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/mobile-menu/includes/css/mobmenu-icons.css?ver=1701359666' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='cssmobmenu-css' href='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/mobile-menu/includes/css/mobmenu.css?ver=1701359666' type='text/css' media='all' />
+<!--n2css--><script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.google.com/recaptcha/api.js?render=6LefGggjAAAAAOZMPOa6azvj8ON3Xj0uItsWQeZR' id='rmp-recaptcha-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/mobile-menu/includes/js/mobmenu.js?ver=1701359666' id='mobmenujs-js' defer></script>
+<link rel="https://api.w.org/" href="https://topofthelist.net/wp-json/" /><link rel="alternate" type="application/json" href="https://topofthelist.net/wp-json/wp/v2/posts/289" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://topofthelist.net/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3.2" />
+<link rel='shortlink' href='https://topofthelist.net/?p=289' />
+<link rel="alternate" type="application/json+oembed" href="https://topofthelist.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://topofthelist.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F&#038;format=xml" />
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				(function(c,l,a,r,i,t,y){
+					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;
+					t.src="https://www.clarity.ms/tag/"+i+"?ref=wordpress";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+				})(window, document, "clarity", "script", "bgzmu2nnb8");
+		</script>
+		<link rel="alternate" type="application/ld+json" href="https://topofthelist.net/how-to-resize-a-photo/?format=application/ld+json" title="Structured Descriptor Document (JSON-LD format)"><script type="application/ld+json" data-source="Editor" data-schema="289-post-App">{"@context":"http:\/\/schema.org","@type":"HowTo","step":[{"@type":"HowToStep","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep1","text":"First, you need to make sure you have the image file on your computer. If you are resizing a photo that\u2019s already on your website, you need to download that file to your computer, or if you already have it on your computer, just make sure you know where it is.","image":{"@type":"ImageObject","url":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Resized_Photo.jpg","license":"https:\/\/topofthelist.net\/terms-conditions\/","name":"Resized photo","height":"125","width":"200","acquireLicensePage":"https:\/\/topofthelist.net\/contact-us\/","@id":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Resized_Photo.jpg"},"name":"Make Sure The Photo is on Your Computer","itemListElement":[{"@type":"HowToDirection","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection1-1","position":"1","name":"Make sure you have the image file on your computer","text":"Make sure you have the image file on your computer","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection1-1"},{"@type":"HowToDirection","name":"If you are resizing a photo that\u2019s already on your website, you need to download that file to your computer","text":"If you are resizing a photo that\u2019s already on your website, you need to download that file to your computer","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection1-2","position":"2","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection1-2"}],"inLanguage":{"@id":"https:\/\/topofthelist.net\/#English"},"position":"1","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep1"},{"@type":"HowToStep","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep2","text":"There are many online tools to resize your photos, but we\u2019ve found Web Resizer to be the simplest, no-frills image resizer around. Make sure to bookmark this image resizing guide, along with Web Resizer, so you can find them in the future for easy reference!","image":{"@id":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Resized_Photo.jpg"},"name":"Navigate to this Handy Online Resizing Tool","itemListElement":{"@type":"HowToDirection","position":"1","name":"Navigate to Web Resizer","text":"Navigate to Web Resizer","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection2-1","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection2-1"},"inLanguage":{"@id":"https:\/\/topofthelist.net\/#English"},"position":"2","isAccessibleForFree":"true","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep2"},{"@type":"HowToStep","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep3","text":"Now, you need to upload your photo to the Web Resizer, so it can work its magic. Click on \u201cBrowse\u201d and find the photo on your computer. Then click \u201cOpen,\u201d and finally, \u201cupload image.\u201d","image":{"@type":"ImageObject","acquireLicensePage":"https:\/\/topofthelist.net\/contact-us\/","width":"300","height":"125","name":"Upload photo","license":"https:\/\/topofthelist.net\/terms-conditions\/","url":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Upload_Photo-300x125.jpg","@id":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Upload_Photo-300x125.jpg"},"name":"Upload Your Photo","itemListElement":[{"@type":"HowToDirection","position":"1","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection3-1","name":"Click on \u201cBrowse\u201d","text":"Click on \u201cBrowse\u201d","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection3-1"},{"@type":"HowToDirection","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection3-2","name":"Click \u201cOpen\u201d","text":"Click \u201cOpen\u201d","position":"2","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection3-2"},{"@type":"HowToDirection","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection3-3","name":"Click \"upload image\"","text":"Click \"upload image\"","position":"3","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection3-3"}],"inLanguage":{"@id":"https:\/\/topofthelist.net\/#English"},"position":"3","isAccessibleForFree":"true","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep3"},{"@type":"HowToStep","position":"4","isAccessibleForFree":"true","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep4","text":"Now, for the moment we\u2019ve all been waiting for \u2013 resizing your image! The Web Resizer defaults to resize your image to be 400 pixels wide and 300 pixels tall, or 300 pixels wide and 400 pixels tall \u2013 depending on whether your photo is landscape or portrait. This will keep your photo in-scale, to make sure you don\u2019t end up with a warped-looking photo. You can resize the image to any dimensions you like, but 400\u00d7300 is pretty standard. You can play around with the dimensions as much as you like. Keep in mind that each time you change the dimensions, you will need to click apply, and then download the photo to see the true size \u2013 the preview will not show the actual size, only the resulting file size. As you can see, there are other features you can add \u2013 borders, sharpening, tint, etc. But we promised to keep this simple! So just change your image width or height (whatever you don\u2019t select will scale correctly), click \u201capply changes,\u201d and then click \u201cdownload this image.\u201d","image":{"@type":"ImageObject","acquireLicensePage":"https:\/\/topofthelist.net\/contact-us\/","width":"418","height":"242","name":"Resize photo","license":"https:\/\/topofthelist.net\/terms-conditions\/","url":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Resize_Photo.jpg","@id":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Resize_Photo.jpg"},"name":"Resize Your Photo","itemListElement":[{"@type":"HowToDirection","name":"Use Web Resizer to resize your image","text":"Use Web Resizer to resize your image","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection4-1","position":"1","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection4-1"},{"@type":"HowToDirection","name":"Play around with the dimensions as much as you like","text":"Play around with the dimensions as much as you like","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection4-2","position":"2","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection4-2"},{"@type":"HowToDirection","name":"Download your photo","text":"Download your photo","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection4-3","position":"3","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToDirection4-3"}],"inLanguage":{"@type":"Language","name":"English","sameAs":"https:\/\/en.wikipedia.org\/wiki\/English_language","@id":"https:\/\/topofthelist.net\/#English"},"@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToStep4"}],"totalTime":"P0Y0M0DT0H30M0S","copyrightYear":"2013","isAccessibleForFree":"true","description":"This guide shows you how to resize a photo, whether you are resizing images for increased webpage speed or for layout reasons.","name":"How to Resize a Photo","url":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/","image":{"@id":"https:\/\/topofthelist.net\/wp-content\/uploads\/2016\/01\/Resized_Photo.jpg"},"inLanguage":{"@id":"https:\/\/topofthelist.net\/#English"},"estimatedCost":{"@type":"MonetaryAmount","name":"0","value":"0","currency":"USD","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#MonetaryAmount"},"audience":{"@type":"Audience","name":"Photographers","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#Photographers"},"tool":{"@type":"HowToTool","name":"Computer","@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#HowToTool"},"isPartOf":{"@type":"Blog","url":"https:\/\/topofthelist.net\/blog\/","image":"https:\/\/topofthelist.net\/wp-content\/themes\/totl\/graphics\/totl-logo.png","name":"Blog","publisher":"https:\/\/topofthelist.net\/#Organization","description":"Explore a wealth of information including effective online marketing strategies and tips for improving overall website presence. Check out the latest happenings here at Top Of The List, too!","inLanguage":{"@id":"https:\/\/topofthelist.net\/#English"},"potentialAction":"Read","creator":"https:\/\/topofthelist.net\/#Organization","isAccessibleForFree":"true","audience":["https:\/\/topofthelist.net\/4-reasons-short-urls\/#Audience","https:\/\/topofthelist.net\/avoiding-scams-senior-citizens\/#Audience1","https:\/\/topofthelist.net\/strategies#smallbusiness"],"@id":"https:\/\/topofthelist.net\/blog\/"},"@id":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/"}</script>
+<script type="application/ld+json" data-schema="Breadcrumb">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"How to Resize a Photo","item":"https:\/\/topofthelist.net\/how-to-resize-a-photo\/#breadcrumbitem"}]}</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">document.documentElement.className += " js";</script>
+<noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><style id="uagb-style-conditional-extension">@media (min-width: 1025px){body .uag-hide-desktop.uagb-google-map__wrap,body .uag-hide-desktop{display:none !important}}@media (min-width: 768px) and (max-width: 1024px){body .uag-hide-tab.uagb-google-map__wrap,body .uag-hide-tab{display:none !important}}@media (max-width: 767px){body .uag-hide-mob.uagb-google-map__wrap,body .uag-hide-mob{display:none !important}}</style><style id="uagb-style-frontend-289">.uagb-block-63418e25 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;margin-top: 5px;}.uagb-block-63418e25 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-63418e25 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-63418e25 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-63418e25.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0px;}.uagb-block-63418e25.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0px;}.uagb-block-63418e25 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: 20px;margin-right: 20px;width: 200px;height: 200px;}.uagb-block-63418e25.uagb-team__image-position-left > img{margin-top: 15px;margin-bottom: 15px;margin-left: 20px;margin-right: 20px;width: 200px;height: 200px;}.uagb-block-63418e25.uagb-team__image-position-right .uagb-team__content + img{margin-top: 15px;margin-bottom: 15px;margin-left: 20px;margin-right: 20px;width: 200px;height: 200px;}.uagb-block-63418e25.uagb-team__image-position-above img{margin-top: 15px;margin-bottom: 15px;margin-left: 20px;margin-right: 20px;width: 200px;height: 200px;}.uagb-block-63418e25 img{align-self: flex-start;}.uagb-block-63418e25 h3.uagb-team__title{margin-bottom: 0px;}@media only screen and (max-width: 976px) {.uagb-block-63418e25.uagb-team__image-position-left .uagb-team__social-icon{margin-left: 0px;}.uagb-block-63418e25.uagb-team__image-position-right .uagb-team__social-icon{margin-right: 0px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-left: 0px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-right: 0px;}}@media only screen and (max-width: 767px) {.uagb-block-63418e25.uagb-team__image-position-left .uagb-team__social-icon{margin-left: 0px;}.uagb-block-63418e25.uagb-team__image-position-right .uagb-team__social-icon{margin-right: 0px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-left: 0px;}.uagb-block-63418e25.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-right: 0px;}}</style><link rel="icon" href="https://topofthelist.net/wp-content/uploads/2019/04/cropped-TOTL-Square-arrows-Logo-sm-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://topofthelist.net/wp-content/uploads/2019/04/cropped-TOTL-Square-arrows-Logo-sm-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://topofthelist.net/wp-content/uploads/2019/04/cropped-TOTL-Square-arrows-Logo-sm-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://topofthelist.net/wp-content/uploads/2019/04/cropped-TOTL-Square-arrows-Logo-sm-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			.article-index li a:hover {color:#8CC73F}
+
+button.newsletter-button {
+	background-color: #0693e3;
+	color: #f2f2f2;
+	border: none;
+  padding: 14px 24px;
+  font-size: 13px;
+	text-align: center;
+	justify-content: center;
+	border-radius:5px;
+	text-decoration:none;
+	box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	font-weight: 100;
+	line-height: 1.3;
+}
+
+button.newsletter-button-2 {
+	background-color: #0693e3;
+	color: #f2f2f2;
+	border: none;
+  padding: 14px 24px;
+  font-size: 13px;
+	text-align: center;
+	justify-content: center;
+	border-radius:5px;
+	text-decoration:none;
+	box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	font-weight: 100;
+	line-height: 1.3;
+}
+.search-form input.search-field {
+	background-image: none;
+    background-color: #0693e3;
+    border-radius: 5px !important;
+    height: 26px !important;
+}
+
+.page-id-1125 .site-content, .page-id-1130 .site-content{
+	background-image:url(https://topofthelist.net/1629309833078/wp-content/themes/totl/graphics/pyramids4.png); 
+	background-position:center 200px; 
+	background-repeat:no-repeat;
+	background-size:85%;
+	background-attachment:fixed;
+}
+
+.blog article .entry-content img, .archive article .entry-content img {
+	max-width:600px; 
+	max-height:600px;
+}
+
+.wp-block-image.caption-align-right figcaption {
+  text-align: right;
+}
+
+.blue-box{
+	background-color: #05398e;
+	width: 380px;
+	height: auto;
+	padding: 25px 25px 25px 25px;
+	color: white;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+.quote {
+  border: none;
+  color: #05398e;
+	background-color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+	border-radius: 9px;
+	text-decoration:none;
+}
+
+/*
+.page-id-39 #steps {
+	background-image: url("https://topofthelist.net/1629309833078/wp-content/themes/totl/graphics/seo-stairs.png")!important;
+}*/
+
+/* .page-id-41 #steps {
+	background-image: url("https://topofthelist.net/1629309833078/wp-content/themes/totl/graphics/ppc-stairs.png")!important;
+} */
+
+/* .page-id-43 #steps {
+	background-image: url("https://topofthelist.net/1629309833078/wp-content/themes/totl/graphics/lso-stairs.png")!important;
+} */
+
+.postid-2122 h2 {
+	clear: none!important;
+}
+
+.size-thumbnail {
+	margin: .5em 1em 0 0!important;
+}
+
+.page-id-2697 .site-content,
+.page-id-5386 .site-content,
+.page-id-51 .site-content,
+.page-id-5620 .site-content,
+.page-id-5756 .site-content,
+.page-id-5852 .site-content,
+.page-id-2451 .site-content {
+	background: none;
+}
+.highlight-text {
+	color: #cd0268;
+}
+
+.post figure {
+	margin: .5em 0;
+}
+
+.blog article .entry-content img, .archive article .entry-content img {
+	max-width: 90%;
+	max-height: 90%;
+}
+
+/*Homepage styling */
+.alignwide {
+  /* Set these margins to work with your own theme. */
+  margin-left: -80px !important;
+  margin-right: -80px !important;
+  max-width: 100vw !important;
+}
+
+.alignfull {
+  min-width: 100vw !important;
+	margin-left: calc(-100vw/2 + 100%/2) !important;
+	margin-right: 0 !important;
+	margin-top: 35px;
+	height: 35vw;
+}
+
+.alignfull img {
+  width: 100vw !important;
+}
+
+.home-h1 {
+	font-size: 3rem;
+	line-height: 3rem;
+}
+
+.home-subtitle {
+	font-size: 2rem;
+	width: 75%;
+}
+
+.home-head-button {
+	width: 75%;
+}
+
+.page-id-3137 .wp-block-cover__inner-container .wp-block-buttons {
+	width: 75%;
+}
+
+.page-id-3137 .site-content {
+	background-image: none;
+}
+
+.imagine-more {
+	transform: translateY(234px);
+}
+
+.ssa-leadgen-widget__input {
+	width: 100% !important;
+}
+
+/* Homepage arrows on testimonials */
+.totl-raves-arrows img {
+	margin-bottom: -50px;
+	margin-top: -75px;
+}
+.totl-raves-arrows-1 img {
+	margin-bottom: -50px;
+	margin-top: -15px;
+}
+.home-pullquote {
+	padding-top: 0px !important;
+}
+
+.blog-post-home img {
+	width: 50% !important;
+	margin-right: auto;
+	margin-left: auto
+}
+.blog-post-home .wp-block-button__link {
+	background-color: #0693e3 !important;
+	font-weight: 700;
+	color: white !important;
+	border-radius: 5px;
+}
+.blog-post-home .wp-block-button:hover {
+	color: white;
+}
+.uagb-block-65d575c3 .uagb-post__items article {
+	  margin-right: auto;
+    margin-left: auto;
+}
+
+.wp-block-cover.alignfull.has-vivid-cyan-blue-background-color.has-background-dim.is-position-center-center {
+	height: 430px;
+	margin-bottom: -48px;
+}
+.bottom-button-home {
+	margin: auto;
+}
+.bottom-button-home .wp-block-button__link {
+	font-size: 24px !important;
+}
+.bottom-button-home .wp-block-button__link:hover {
+	color: #0693e3;
+}
+.home-main-cover .wp-block-group__inner-container {
+	margin-top: -115px;
+}
+a.wp-block-button__link.has-white-color.has-vivid-cyan-blue-background-color.has-text-color.has-background {
+	color: white !important;
+}
+.home-divider {
+	margin: 3em 0em;
+}
+.social-media-gallery img {
+	width: 90px !important;
+	height: auto !important;
+}
+.page-id-3137 .wp-block-gallery, .page-id-3137 .blocks-gallery-grid {
+	width: 100% !important;
+}
+/* Lite Youtube embed styling */
+  .youtube-player {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 5px;
+		 box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  }
+
+  .youtube-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: transparent;
+  }
+
+  .youtube-player img {
+    object-fit: cover;
+    display: block;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    -webkit-transition: 0.4s all;
+    -moz-transition: 0.4s all;
+    transition: 0.4s all;
+  }
+
+  .youtube-player img:hover {
+    -webkit-filter: brightness(75%);
+  }
+
+  .youtube-player .play {
+    height: 72px;
+    width: 72px;
+    left: 40%;
+    top: 50%;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    background: url('//i.imgur.com/TxzC70f.png') no-repeat;
+    cursor: pointer;
+  }
+
+a.wp-block-button__link.has-vivid-cyan-blue-color.has-white-background-color.has-text-color.has-background {
+	color: #0693e3 !important;
+}
+
+/* Homepage responsive styling */
+@media only screen and (max-width: 976px) {
+	.page-id-3137 .uagb-post-grid .uagb-post__columns-tablet-2 article {
+		width: 100%;
+		}
+}	
+@media only screen and (max-width: 781px) {
+		h1.home-h1 {
+		width: 100%;
+		font-size: 30px;
+    line-height: 1em;
+    text-align: left;
+    margin-top: 50px;
+	}
+	.home-subtitle {
+		font-size: 18px;
+    line-height: 1.2em;
+    text-align: left;
+    width: 100%;
+	}
+	.page-id-3137 .wp-block-cover__inner-container .wp-block-buttons {
+		width: 100%;
+	}
+/* 	.hide-spacer {
+		display: none;
+	} */
+		.mojo {
+		font-size: 25px !important;
+	}
+	.page-id-3137 .wp-block-pullquote p {
+		font-size: 20px;
+	}
+	.page-id-3137 .alignwide {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+	.page-id-3137 li img {
+		margin-right: auto;
+    margin-left: auto;
+		width: 50px !important;
+	}
+	.blog-post-home img {
+		width: 100% !important;
+	}
+	.page-id-3137 .uagb-block-625a253b.uagb-columns__wrap {
+		padding-top: 0px;
+	}
+	.cta-text {
+		font-size: 22px !important;
+    margin-top: 116px !important;
+	}
+	.cta-text-btm {
+		font-size: 22px !important;
+		margin-bottom: 0px;
+	}
+	.bottom-button-home .wp-block-button__link {
+		font-size: 18px !important;
+	}
+	.page-id-3137v .uagb-block-625a253b .uagb-column__inner-wrap {
+		padding: 0px;
+	}
+	.page-id-3137 .wp-block-cover.alignfull.has-vivid-cyan-blue-background-color.has-background-dim.is-position-center-center {
+		padding-bottom: 63px;
+	}
+	.padding-column .wp-block-media-text__content {
+		padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 19px;
+	}
+	.page-id-3137 .wp-block-column {
+		flex-basis: 88% !important;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	figure {
+		margin: inherit;
+	}
+	.wp-block-pullquote {
+		line-height: inherit;
+	}
+	h2.has-large-font-size {
+		font-size: 32px !important;
+		padding-top: 30px;
+	}
+	.headertext {
+		color: white !important;
+	}
+	.wp-block-gallery-22 figure img 	{
+		height: 150px;
+    width: 150px;
+    margin: auto;
+	}
+	.hide-spacer {
+		display: block !important;
+	}
+	blockquote {
+		margin: 0;
+	}
+}
+
+.menu-item a {
+	color: white !important;
+}
+
+a.wp-block-button__link {
+	color: white !important;
+}
+
+.rmp-archive-results-widget {
+	display: block;
+}
+
+/* Optimizing for Bing post */
+#all-search_engine-US-monthly-201601-202001 {
+	max-width: 600px;
+	max-height: 400px;
+	width: 100%;
+}
+
+/* Fix homepage width */
+.page-id-3137 .alignfull {
+	min-width: 99.4vw !important;
+}
+
+@media only screen and (min-width: 1025px) {
+	/* Tooltip container */
+	.tooltip {
+		position: relative;
+		display: inline-block;
+		border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+	}
+
+	/* Tooltip text */
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 120px;
+		background-color: black;
+		color: #fff;
+		text-align: center;
+		padding: 5px 0;
+		border-radius: 6px;
+		font-size: 20px;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+		/* Position the tooltip text - see examples below! */
+		position: absolute;
+		z-index: 1;
+	}
+
+	/* Show the tooltip text when you mouse over the tooltip container */
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+	}
+}
+
+@media only screen and (max-width: 545px) {
+	h1.home-h1 {
+		width: 100%;
+		font-size: 30px;
+    line-height: 1em;
+    text-align: left;
+    margin-top: 0px;
+	}
+	.home-subtitle {
+		font-size: 18px;
+    line-height: 1.2em;
+    text-align: left;
+    width: 100%;
+	}
+	.page-id-3137 .wp-block-cover__inner-container .wp-block-buttons {
+		width: 100%;
+	}
+	.hide-spacer {
+		display: none;
+	}
+		.mojo {
+		font-size: 25px !important;
+	}
+	.page-id-3137 .wp-block-pullquote p {
+		font-size: 20px;
+	}
+	.page-id-3137 .alignwide {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+	.page-id-3137 li img {
+		margin-right: auto;
+    margin-left: auto;
+		width: 50px !important;
+	}
+	.blog-post-home img {
+		width: 100% !important;
+	}
+	.page-id-3137 .uagb-block-625a253b.uagb-columns__wrap {
+		padding-top: 0px;
+	}
+	.cta-text {
+		font-size: 22px !important;
+    margin-top: 116px !important;
+	}
+	.cta-text-btm {
+		font-size: 22px !important;
+		margin-bottom: 0px;
+	}
+	.bottom-button-home .wp-block-button__link {
+		font-size: 18px !important;
+	}
+	.page-id-3137v .uagb-block-625a253b .uagb-column__inner-wrap {
+		padding: 0px;
+	}
+	.page-id-3137 .wp-block-cover.alignfull.has-vivid-cyan-blue-background-color.has-background-dim.is-position-center-center {
+		padding-bottom: 63px;
+	}
+	.padding-column .wp-block-media-text__content {
+		padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 19px;
+	}
+ }
+
+#header-social img, #header-right-social img, #header-top-social img {
+	width: auto;
+}
+
+.page-id-4048 .site-content {
+	background-image: none !important;
+}
+
+.page-id-4048 .entry-content a:hover,
+.page-id-4048 .entry-content a {
+    color: white;
+}
+
+/* Mobile spacing */
+
+@media only screen and (max-width:767px) {
+	.page-id-39 #steps,
+	.page-id-43 #steps,
+	.page-id-41 #steps {
+		background-image: none !important;
+	}
+	#footer-left {
+		text-align: center;
+		padding-left: 0px !important;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	#body-widthbox {
+		margin-top: 0px;
+	}
+	.home-main-cover {
+		margin-top: 0px;
+	}
+}
+
+@media only screen and (max-width: 979px) {
+	#page {
+		margin-top: 0px;
+	}
+}
+.ad-ext-thumbs figcaption a {
+	font-size: 1rem;
+}
+
+.ad-ext-thumbs figcaption {
+	line-height: 1;
+}
+.gray-bkgd {
+	background-color: #D3D3D3;
+}
+
+#tTitleTag {
+	width: 100%;
+}
+
+.page-id-4649 .site-content {
+	background: none;
+}
+
+#post-4649 article {
+	width: 71%;
+	margin-right: auto;
+  margin-left: auto;
+}
+
+.raves-p {
+	padding-bottom: 1em;
+}
+
+.text-gray {
+	color: #585B5B !important;
+}
+
+ul#menu-footer-menu.menu li a {
+	color: #585B5B !important;
+}
+
+
+#footer-left {
+	padding-left: 80px;
+	margin-top: 42px !important;
+}
+
+.margin-rt-25 img {
+	margin-right: 25px;
+}
+
+.careers-banner {
+	margin-top: 0px !important;
+	height: inherit !important;
+}
+.page-id-4969 .site-content,
+.page-id-4971 .site-content {
+	background-image: none;
+}
+
+
+
+#form_job-application .frm_half,
+#form_job-application .frm_first,
+#form_job-application .frm6,
+#form_job-application #frm_field_158_container
+{
+	width: 100%;
+	
+}
+
+#form_job-application .frm_submit button {
+	background-color: #0693e3;
+	color: white;
+	padding: 10px 25px;
+}
+
+#form_job-application .frm_form_field.frm_half {
+	padding-left: 0;
+}
+
+
+.rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__icons-list__icon:before {
+    content: '';
+}
+
+.rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__icons-list__icon {
+    display: inline-block !important;
+    width: auto;
+}
+
+#ssa-widget-email, 
+#ssa-widget-domain {
+	width: 100%;
+}
+
+.ssa-leadgen-widget__btn-to-step1 {
+	color: white !important;
+}
+
+.gallery-columns-9 .gallery-item {max-width: 10%}
+
+.page-id-3137 .wp-block-embed-youtube {
+	margin:0 auto !important;
+}
+
+.youtube-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.pt-30 {
+	padding-top: 30px;
+}
+
+.smm-box {
+	padding: 25px 20px !important;
+}
+
+#menu-item-88 li a {
+    width: 250px;
+}
+
+.main-navigation a {
+	color: #808285 !important;
+}
+
+#site-navigation li a {
+	line-height: 1.75rem;
+}
+
+.pink-button a {
+	color: white !important;
+}
+
+button.newsletter-button {
+	font-family: "calibri", sans-serif;
+	font-size: 16px;
+}
+
+.services-contact {
+	background-color: #0693e3;
+	color: white !important;
+	font-weight: bold;
+	padding:16px 30px;
+	border-radius: 5px;
+	display: table;
+  margin: auto;
+}
+
+#steps {
+	margin-bottom: 50px;
+}
+
+.digital-marketing-h .wp-block-button__link {
+	background: #0693e3;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.icon-list {
+	margin-left: 0 !important;
+}
+
+.blogging-cta {
+	max-height: 250px !important;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+var DID=259626;
+</script>
+<script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://topofthelist.net/wp-content/cache/min/1/live.js?ver=1701359666"></script>	
+	<script type="rocketlazyloadscript">
+  /*
+   * Light YouTube Embeds by @labnol
+   * Credit: https://www.labnol.org/
+   */
+
+  function labnolIframe(div) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute(
+      'src',
+      'https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0'
+    );
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '1');
+    iframe.setAttribute(
+      'allow',
+      'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+    );
+    div.parentNode.replaceChild(iframe, div);
+  }
+
+  function initYouTubeVideos() {
+    var playerElements = document.getElementsByClassName('youtube-player');
+    for (var n = 0; n < playerElements.length; n++) {
+      var videoId = playerElements[n].dataset.id;
+      var div = document.createElement('div');
+      div.setAttribute('data-id', videoId);
+      var thumbNode = document.createElement('img');
+      thumbNode.src = '//i.ytimg.com/vi/ID/hqdefault.jpg'.replace(
+        'ID',
+        videoId
+      );
+      div.appendChild(thumbNode);
+      var playButton = document.createElement('div');
+      playButton.setAttribute('class', 'play');
+      div.appendChild(playButton);
+      div.onclick = function () {
+        labnolIframe(this);
+      };
+      playerElements[n].appendChild(div);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initYouTubeVideos);
+</script>
+<script type="rocketlazyloadscript">
+  (function(){
+
+    window.ldfdr = window.ldfdr || {};
+    (function(d, s, ss, fs){
+      fs = d.getElementsByTagName(s)[0];
+
+      function ce(src){
+        var cs  = d.createElement(s);
+        cs.src = src;
+        setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1);
+      }
+
+      ce(ss);
+    })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_3P1w24d02rg4mY5n.js');
+  })();
+</script>
+
+	
+</head>
+
+<body class="post-template-default single single-post postid-289 single-format-standard group-blog mob-menu-slideout-over">
+<script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">if(typeof ewww_webp_supported==="undefined"){var ewww_webp_supported=!1}if(ewww_webp_supported){document.body.classList.add("webp-support")}</script>
+	
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB64RXT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header" role="banner">
+<div class="widthbox" id="header-widthbox">
+		<div class="site-branding">
+			<a href="https://topofthelist.net/" rel="home"><img id="site-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Top Of The List logo" style="position:relative; top:55px" data-lazy-src="https://topofthelist.net/wp-content/themes/totl/graphics/totl-logo.png" data-lazy-src-webp="https://topofthelist.net/wp-content/themes/totl/graphics/totl-logo.png.webp" class="ewww_webp_lazy_load"><noscript><img id="site-logo" src="https://topofthelist.net/wp-content/themes/totl/graphics/totl-logo.png" alt="Top Of The List logo" style="position:relative; top:55px"></noscript></a>
+		</div><!-- .site-branding -->
+		<div>
+	<a href="/newsletter-signup/"><button class="newsletter-button" style="position:relative; left:185px; top:40px;";>
+	GET TO THE TOP!<br>
+	NEWSLETTER SIGN-UP
+</button></a>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+			<div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-78"><a href="https://topofthelist.net/about-us/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://topofthelist.net/about-us/why-totl/">Why TOTL</a></li>
+	<li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://topofthelist.net/about-us/our-team/">Our Team</a></li>
+	<li id="menu-item-5347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5347"><a href="https://topofthelist.net/about-us/helpful-tools/">Helpful Tools</a></li>
+	<li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="https://topofthelist.net/about-us/charity-connections/">Charity Connections</a></li>
+	<li id="menu-item-5036" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5036"><a href="https://topofthelist.net/careers/">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-5800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5800"><a href="https://topofthelist.net/strategies/">Strategies</a>
+<ul class="sub-menu">
+	<li id="menu-item-5801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5801"><a href="https://topofthelist.net/strategies/">Overview</a></li>
+	<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://topofthelist.net/strategies/seo/">SEO</a></li>
+	<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="https://topofthelist.net/strategies/ppc/">Paid Search</a></li>
+	<li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://topofthelist.net/strategies/lso/">Local Search</a></li>
+	<li id="menu-item-5508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5508"><a href="https://topofthelist.net/strategies/social-media-marketing/">Social Media</a></li>
+</ul>
+</li>
+<li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-88"><a href="https://topofthelist.net/services/">Services</a>
+<ul class="sub-menu">
+	<li id="menu-item-3002" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3002"><a href="https://topofthelist.net/services/web-design-development/">Web Design &#038; Development</a></li>
+	<li id="menu-item-2546" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2546"><a href="https://topofthelist.net/services/schema-markup-services/">Structured Data</a></li>
+	<li id="menu-item-5992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5992"><a href="https://topofthelist.net/services/blogging/">Blogging</a></li>
+	<li id="menu-item-4145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4145"><a href="https://topofthelist.net/services/visual-marketing-design/">Visual Marketing Design</a></li>
+</ul>
+</li>
+<li id="menu-item-442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-442"><a href="https://topofthelist.net/testimonials/">Raves</a></li>
+<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-87"><a href="https://topofthelist.net/blog/">Blog</a></li>
+<li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-89"><a href="https://topofthelist.net/contact-us/">Contact</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+	</div>
+		
+		<div id="header-right">
+			<div id="header-social">
+				<a target="_blank" href="https://twitter.com/TopOfTheListLLC"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="X" data-lazy-src="https://topofthelist.net/wp-content/uploads/xlogo.png" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/xlogo.png.webp" class="ewww_webp_lazy_load"><noscript><img src="https://topofthelist.net/wp-content/uploads/xlogo.png" alt="X"></noscript></a>
+				<a target="_blank" href="https://www.facebook.com/Top-Of-The-List-162598308250/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Facebook" style="margin-right:15px;" data-lazy-src="https://topofthelist.net/wp-content/themes/totl/graphics/facebook.png" data-lazy-src-webp="https://topofthelist.net/wp-content/themes/totl/graphics/facebook.png.webp" class="ewww_webp_lazy_load"><noscript><img src="https://topofthelist.net/wp-content/themes/totl/graphics/facebook.png" alt="Facebook" style="margin-right:15px;"></noscript></a>
+				<a target="_blank" href="https://www.pinterest.com/TopOfTheList/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Pinterest" style="margin-right:15px;" data-lazy-src="https://topofthelist.net/wp-content/themes/totl/graphics/pinterest.png" data-lazy-src-webp="https://topofthelist.net/wp-content/themes/totl/graphics/pinterest.png.webp" class="ewww_webp_lazy_load"><noscript><img src="https://topofthelist.net/wp-content/themes/totl/graphics/pinterest.png" alt="Pinterest" style="margin-right:15px;"></noscript></a>
+				<a target="_blank" href="https://www.linkedin.com/company/top-of-the-list/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="LinkedIn" style="" data-lazy-src="https://topofthelist.net/wp-content/themes/totl/graphics/linkedin.png" data-lazy-src-webp="https://topofthelist.net/wp-content/themes/totl/graphics/linkedin.png.webp" class="ewww_webp_lazy_load"><noscript><img src="https://topofthelist.net/wp-content/themes/totl/graphics/linkedin.png" alt="LinkedIn" style=""></noscript></a>
+			</div>
+			<form role="search" method="get" class="search-form" action="https://topofthelist.net/">
+				<label>
+					<input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:" />
+				</label>
+			</form>
+			</div>
+			<div class="newsletter-button-2-frame">
+					<a href="/newsletter-signup/"><button class="newsletter-button-2" style="position:relative; margin:20px auto 0 auto";>
+		GET TO THE TOP!<br>
+		NEWSLETTER SIGN-UP
+	</button></a>
+	</div>
+		</div>
+		</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		<div class="widthbox" id="body-widthbox">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-289" class="post-289 post type-post status-publish format-standard hentry category-top-tips">
+	<header class="entry-header">
+		<h1 class="entry-title">How to Resize a Photo</h1>
+		<div class="entry-meta">
+			<span class="posted-on">Posted on <a href="https://topofthelist.net/how-to-resize-a-photo/" rel="bookmark"><time class="entry-date published" datetime="2013-09-07T00:00:26-04:00">September 7, 2013</time><time class="updated" datetime="2023-02-16T13:02:03-05:00">February 16, 2023</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://topofthelist.net/author/nicole/">Nicole Vesota</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p><a href="https://topofthelist.net/wp-content/uploads/2016/01/Resized_Photo.jpg" rel="attachment wp-att-293"><img decoding="async" class="size-full wp-image-293 alignleft ewww_webp_lazy_load" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20125'%3E%3C/svg%3E" alt="Resized photo" width="200" height="125" data-lazy-src="https://topofthelist.net/wp-content/uploads/2016/01/Resized_Photo.jpg" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/2016/01/Resized_Photo.jpg.webp"><noscript><img decoding="async" class="size-full wp-image-293 alignleft" src="https://topofthelist.net/wp-content/uploads/2016/01/Resized_Photo.jpg" alt="Resized photo" width="200" height="125"></noscript></a>There are many, many ways to resize a photo, and doing so can help improve the layout of your site, and increase page load time. Here is a quick and easy, step-by-step guide to resizing a photo.</p>
+
+
+<span id="more-289"></span>
+
+
+<p>There are a variety of reasons you may need to resize a photo, but the most common are:</p>
+<ul>
+<li>You need a smaller picture to fit your website&#8217;s layout</li>
+<li>Your webpage is taking too long to load due to the <a href="https://topofthelist.net/make-image-file-smaller/">file size of your picture</a>, so you&#8217;d like to make it smaller to <a href="https://topofthelist.net/mobile-page-speed/">improve page speed</a> </li>
+<li>You&#8217;ve heard using smaller, faster-loading photos in an <a href="https://topofthelist.net/strategies/">online marketing strategy</a> that can help improve your website&#8217;s placement in search engine results</li>
+<li>There are many, many ways to resize a photo, but we find that most of our clients want to know how to do so in the fastest, easiest way possible &#8211; and we don&#8217;t blame you!</li>
+</ul>
+<p>Here is a quick, step-by-step guide to resizing a photo.</p>
+<h2>Make Sure The Photo is on Your Computer</h2>
+<p>First, you need to make sure you have the image file on your computer. If you are resizing a photo that&#8217;s already on your website, you need to download that file to your computer, or if you already have it on your computer, just make sure you know where it is.</p>
+<h2>Navigate to this Handy Online Resizing Tool</h2>
+<p>There are many online tools to resize your photos, but we&#8217;ve found <a href="http://www.webresizer.com/resizer/" target="_blank" rel="nofollow noopener noreferrer">Web Resizer</a> to be the simplest, no-frills image resizer around. Make sure to bookmark this image resizing guide, along with Web Resizer, so you can find them in the future for easy reference!</p>
+<h2>Upload Your Photo</h2>
+<p>Now, you need to upload your photo to the Web Resizer, so it can work its magic. Click on &#8220;Browse&#8221; and find the photo on your computer. Then click &#8220;Open,&#8221; and finally, &#8220;upload image.&#8221;</p>
+<p><a href="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo.jpg" rel="attachment wp-att-294"><img decoding="async" class="alignnone size-medium wp-image-294 ewww_webp_lazy_load" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20125'%3E%3C/svg%3E" alt="Upload photo" width="300" height="125" data-lazy-srcset="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo-300x125.jpg 300w, https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo.jpg 528w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo-300x125.jpg" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo-300x125.jpg.webp" data-lazy-srcset-webp="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo-300x125.jpg.webp 300w, https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo.jpg.webp 528w" /><noscript><img decoding="async" class="alignnone size-medium wp-image-294" src="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo-300x125.jpg" alt="Upload photo" width="300" height="125" srcset="https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo-300x125.jpg 300w, https://topofthelist.net/wp-content/uploads/2016/01/Upload_Photo.jpg 528w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a></p>
+<h2>Resize Your Photo</h2>
+<p>Now, for the moment we&#8217;ve all been waiting for &#8211; resizing your image! The Web Resizer defaults to resize your image to be 400 pixels wide and 300 pixels tall, or 300 pixels wide and 400 pixels tall &#8211; depending on whether your photo is landscape or portrait. This will keep your photo in-scale, to make sure you don&#8217;t end up with a warped-looking photo. You can resize the image to any dimensions you like, but 400&#215;300 is pretty standard. Here&#8217;s what the actual size of a 400&#215;300 photo looks like:</p>
+<p><a href="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas.jpg" rel="attachment wp-att-291"><img decoding="async" fetchpriority="high" class="alignnone size-medium wp-image-291 ewww_webp_lazy_load" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20225'%3E%3C/svg%3E" alt="Hydrangeas" width="300" height="225" data-lazy-srcset="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas-300x225.jpg 300w, https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas.jpg 400w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas-300x225.jpg" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas-300x225.jpg.webp" data-lazy-srcset-webp="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas-300x225.jpg.webp 300w, https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas.jpg.webp 400w" /><noscript><img decoding="async" fetchpriority="high" class="alignnone size-medium wp-image-291" src="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas-300x225.jpg" alt="Hydrangeas" width="300" height="225" srcset="https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas-300x225.jpg 300w, https://topofthelist.net/wp-content/uploads/2016/01/Hydrangeas.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a></p>
+<p>You can play around with the dimensions as much as you like. Keep in mind that each time you change the dimensions, you will need to click apply, and then download the photo to see the true size &#8211; the preview will not show the actual size, only the resulting file size. As you can see, there are other features you can add &#8211; borders, sharpening, tint, etc. But we promised to keep this simple! So just change your image width or height (whatever you don&#8217;t select will scale correctly), click &#8220;apply changes,&#8221; and then click &#8220;download this image.&#8221;</p>
+<p><a href="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo.jpg" rel="attachment wp-att-292"><img decoding="async" class="alignnone size-medium wp-image-292 ewww_webp_lazy_load" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20174'%3E%3C/svg%3E" alt="Resize photo" width="300" height="174" data-lazy-srcset="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo-300x174.jpg 300w, https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo.jpg 418w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo-300x174.jpg" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo-300x174.jpg.webp" data-lazy-srcset-webp="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo-300x174.jpg.webp 300w, https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo.jpg.webp 418w" /><noscript><img decoding="async" class="alignnone size-medium wp-image-292" src="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo-300x174.jpg" alt="Resize photo" width="300" height="174" srcset="https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo-300x174.jpg 300w, https://topofthelist.net/wp-content/uploads/2016/01/Resize_Photo.jpg 418w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a></p>
+<p>And there you have it! Your photo should download by default to your &#8220;downloads&#8221; folder, or allow you to select a location to save the photo. We then suggest you rename the photo to something other than what the name of the original photo was so you preserve the original. Finally, upload your photo to your website, and voila!</p>
+
+
+<p class="has-medium-font-size"><strong>About the Author</strong></p>
+
+
+
+<div class="wp-block-uagb-team uagb-team__image-position-left uagb-team__align-center uagb-team__stack-tablet uagb-block-63418e25"><img decoding="async" class="uagb-team__image-crop-square ewww_webp_lazy_load" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20200'%3E%3C/svg%3E" alt="Nicole Vesota" height="200" width="200" data-lazy-src="https://topofthelist.net/wp-content/uploads/2015/12/Nicole-240x300.png" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/2015/12/Nicole-240x300.png.webp" /><noscript><img decoding="async" class="uagb-team__image-crop-square" src="https://topofthelist.net/wp-content/uploads/2015/12/Nicole-240x300.png" alt="Nicole Vesota" height="200" width="200" loading="lazy"/></noscript><div class="uagb-team__content"><h3 class="uagb-team__title"><a href="https://topofthelist.net/about-us/our-team/nicole/">Nicole Vesota</a></h3><span class="uagb-team__prefix">Vice President &amp; Project Manager</span><p class="uagb-team__desc">Nicole has been working in online marketing since 2007 when she joined Top Of The List. She loves creative endeavors and spending time with her daughter.</p></div></div>
+<!-- Rate my Post Plugin --><div  class="rmp-widgets-container rmp-wp-plugin rmp-main-container js-rmp-widgets-container js-rmp-widgets-container--289 "  data-post-id="289">    <!-- Rating widget -->  <div class="rmp-rating-widget js-rmp-rating-widget">          <p class="rmp-heading rmp-heading--title">        How useful was this post?      </p>              <p class="rmp-heading rmp-heading--subtitle">        Click on a star to rate it! 1 is the lowest rating, 5 is the highest.      </p>        <div class="rmp-rating-widget__icons">      <ul class="rmp-rating-widget__icons-list js-rmp-rating-icons-list">                  <li class="rmp-rating-widget__icons-list__icon js-rmp-rating-item" data-descriptive-rating="Not at all useful" data-value="1">            <i class="js-rmp-rating-icon rmp-icon rmp-icon--ratings rmp-icon--star rmp-icon--full-highlight"></i>          </li>                  <li class="rmp-rating-widget__icons-list__icon js-rmp-rating-item" data-descriptive-rating="Somewhat useful" data-value="2">            <i class="js-rmp-rating-icon rmp-icon rmp-icon--ratings rmp-icon--star "></i>          </li>                  <li class="rmp-rating-widget__icons-list__icon js-rmp-rating-item" data-descriptive-rating="Useful" data-value="3">            <i class="js-rmp-rating-icon rmp-icon rmp-icon--ratings rmp-icon--star "></i>          </li>                  <li class="rmp-rating-widget__icons-list__icon js-rmp-rating-item" data-descriptive-rating="Fairly useful" data-value="4">            <i class="js-rmp-rating-icon rmp-icon rmp-icon--ratings rmp-icon--star "></i>          </li>                  <li class="rmp-rating-widget__icons-list__icon js-rmp-rating-item" data-descriptive-rating="Very useful" data-value="5">            <i class="js-rmp-rating-icon rmp-icon rmp-icon--ratings rmp-icon--star "></i>          </li>              </ul>    </div>    <p class="rmp-rating-widget__hover-text js-rmp-hover-text"></p>    <button class="rmp-rating-widget__submit-btn rmp-btn js-submit-rating-btn">      Submit Rating    </button>    <p class="rmp-rating-widget__results js-rmp-results ">      Average rating <span class="rmp-rating-widget__results__rating js-rmp-avg-rating">1</span> / 5. Vote count: <span class="rmp-rating-widget__results__votes js-rmp-vote-count">1</span>    </p>    <p class="rmp-rating-widget__not-rated js-rmp-not-rated rmp-rating-widget__not-rated--hidden">      No votes so far! Be the first to rate this post.    </p>    <p class="rmp-rating-widget__msg js-rmp-msg"></p>  </div>  <!--Structured data -->        <!-- Social widget -->    <div class="rmp-social-widget js-rmp-social-widget">  <p class="rmp-heading rmp-heading--title">    As you found this post useful...  </p>  <p class="rmp-heading rmp-heading--subtitle">    Follow us on social media!  </p>    <div class="rmp-social-widget__icons-container">          <!-- Social follow widget -->              <a target="_blank" rel="nofollow noreferrer noopener" href="https://www.facebook.com/Top-Of-The-List-162598308250/" class="rmp-icon rmp-icon--facebook rmp-icon--social"></a>                    <a target="_blank" rel="nofollow noreferrer noopener" href="https://www.pinterest.com/TopOfTheList/" class="rmp-icon rmp-icon--pinterest rmp-icon--social"></a>                                <a target="_blank" rel="nofollow noreferrer noopener" href="https://www.instagram.com/topofthelistllc/" class="rmp-icon rmp-icon--instagram rmp-icon--social"></a>                    <a target="_blank" rel="nofollow noreferrer noopener" href="https://twitter.com/TopOfTheListLLC" class="rmp-icon rmp-icon--twitter rmp-icon--social"></a>                    <a target="_blank" rel="nofollow noreferrer noopener" href="https://www.linkedin.com/company/top-of-the-list/" class="rmp-icon rmp-icon--linkedin rmp-icon--social"></a>          </div> <!--  .rmp-social-widget__icons-container -->  </div> <!--  .rmp-social-widget -->        <!-- Feedback widget -->    <div class="rmp-feedback-widget js-rmp-feedback-widget">  <p class="rmp-heading rmp-heading--title">    We are sorry that this post was not useful for you!  </p>  <p class="rmp-heading rmp-heading--subtitle">    Let us improve this post!  </p>    <div class="rmp-feedback-widget__container">    <p class="rmp-feedback-widget__text">      Tell us how we can improve this post?    </p>    <textarea class="rmp-feedback-widget__input js-rmp-feedback-input" rows="5" id="feedback-text"></textarea>    <button type="button" class="rmp-feedback-widget__btn rmp-btn rmp-btn--large js-rmp-feedback-button">      Submit Feedback    </button>    <div class="rmp-feedback-widget__loader js-rmp-feedback-loader">      <div></div><div></div><div></div>    </div>    <p class="rmp-feedback-widget__msg js-rmp-feedback-msg"></p>  </div>  </div>    </div><div class='heateor_sss_sharing_container heateor_sss_vertical_sharing heateor_sss_bottom_sharing' style='width:44px;left: -10px;top: 100px;-webkit-box-shadow:none;box-shadow:none;' data-heateor-sss-href='https://topofthelist.net/how-to-resize-a-photo/'><div class="heateor_sss_sharing_ul"><a aria-label="Facebook" class="heateor_sss_facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F" title="Facebook" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#3c589a;width:40px;height:40px;margin:0;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-5 -5 42 42"><path d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z" fill="#fff"></path></svg></span></a><a aria-label="Linkedin" class="heateor_sss_button_linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F" title="Linkedin" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_linkedin" style="background-color:#0077b5;width:40px;height:40px;margin:0;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#fff"></path></svg></span></a><a aria-label="Pinterest" class="heateor_sss_button_pinterest" href="https://topofthelist.net/how-to-resize-a-photo/" onclick="event.preventDefault();javascript:void( (function() {var e=document.createElement('script' );e.setAttribute('type','text/javascript' );e.setAttribute('charset','UTF-8' );e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());" title="Pinterest" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_pinterest" style="background-color:#cc2329;width:40px;height:40px;margin:0;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-2 -2 35 35"><path fill="#fff" d="M16.539 4.5c-6.277 0-9.442 4.5-9.442 8.253 0 2.272.86 4.293 2.705 5.046.303.125.574.005.662-.33.061-.231.205-.816.27-1.06.088-.331.053-.447-.191-.736-.532-.627-.873-1.439-.873-2.591 0-3.338 2.498-6.327 6.505-6.327 3.548 0 5.497 2.168 5.497 5.062 0 3.81-1.686 7.025-4.188 7.025-1.382 0-2.416-1.142-2.085-2.545.397-1.674 1.166-3.48 1.166-4.689 0-1.081-.581-1.983-1.782-1.983-1.413 0-2.548 1.462-2.548 3.419 0 1.247.421 2.091.421 2.091l-1.699 7.199c-.505 2.137-.076 4.755-.039 5.019.021.158.223.196.314.077.13-.17 1.813-2.247 2.384-4.324.162-.587.929-3.631.929-3.631.46.876 1.801 1.646 3.227 1.646 4.247 0 7.128-3.871 7.128-9.053.003-3.918-3.317-7.568-8.361-7.568z"/></svg></span></a><a aria-label="Reddit" class="heateor_sss_button_reddit" href="http://reddit.com/submit?url=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F&title=How%20to%20Resize%20a%20Photo" title="Reddit" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_reddit" style="background-color:#ff5700;width:40px;height:40px;margin:0;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-3.5 -3.5 39 39"><path d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.882 2.882 0 0 0-1.9.713 14.075 14.075 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.314 14.314 0 0 0-7.316 2.029 2.908 2.908 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5.109 5.109 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5.2 5.2 0 0 0-.053-.706 2.963 2.963 0 0 0 1.427-2.51zm-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.709 1.709 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711zm9.565 4.968a5.573 5.573 0 0 1-4.081 1.272h-.032a5.576 5.576 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z" fill="#fff"/></svg></span></a><a aria-label="Email" class="heateor_sss_email" href="https://topofthelist.net/how-to-resize-a-photo/" onclick="event.preventDefault();window.open('mailto:?subject=' + decodeURIComponent('How%20to%20Resize%20a%20Photo').replace('&', '%26') + '&body=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F', '_blank')" title="Email" rel="nofollow noopener" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg" style="background-color:#649a3f;width:40px;height:40px;margin:0;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg style="display:block;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-.75 -.5 36 36"><path d="M 5.5 11 h 23 v 1 l -11 6 l -11 -6 v -1 m 0 2 l 11 6 l 11 -6 v 11 h -22 v -11" stroke-width="1" fill="#fff"></path></svg></span></a><a aria-label="X" class="heateor_sss_button_x" href="https://twitter.com/intent/tweet?text=How%20to%20Resize%20a%20Photo&url=https%3A%2F%2Ftopofthelist.net%2Fhow-to-resize-a-photo%2F" title="X" rel="nofollow noopener" target="_blank" style="font-size:32px!important;box-shadow:none;display:inline-block;vertical-align:middle"><span class="heateor_sss_svg heateor_sss_s__default heateor_sss_s_x" style="background-color:#2a2a2a;width:40px;height:40px;margin:0;display:inline-block;opacity:1;float:left;font-size:32px;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box"><svg width="100%" height="100%" style="display:block;" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M21.751 7h3.067l-6.7 7.658L26 25.078h-6.172l-4.833-6.32-5.531 6.32h-3.07l7.167-8.19L6 7h6.328l4.37 5.777L21.75 7Zm-1.076 16.242h1.7L11.404 8.74H9.58l11.094 14.503Z"></path></svg></span></a><a class="heateor_sss_more" title="More" rel="nofollow noopener" style="font-size: 32px!important;border:0;box-shadow:none;display:inline-block!important;font-size:16px;padding:0 4px;vertical-align: middle;display:inline;" href="https://topofthelist.net/how-to-resize-a-photo/" onclick="event.preventDefault()"><span class="heateor_sss_svg" style="background-color:#ee8e2d;width:40px;height:40px;margin:0;display:inline-block!important;opacity:1;float:left;font-size:32px!important;box-shadow:none;display:inline-block;font-size:16px;padding:0 4px;vertical-align:middle;display:inline;background-repeat:repeat;overflow:hidden;padding:0;cursor:pointer;box-sizing:content-box;" onclick="heateorSssMoreSharingPopup(this, 'https://topofthelist.net/how-to-resize-a-photo/', 'How%20to%20Resize%20a%20Photo', '' )"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-.3 0 32 32" version="1.1" width="100%" height="100%" style="display:block;" xml:space="preserve"><g><path fill="#fff" d="M18 14V8h-4v6H8v4h6v6h4v-6h6v-4h-6z" fill-rule="evenodd"></path></g></svg></span></a></div><div class="heateorSssClear"></div></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://topofthelist.net/category/top-tips/" rel="category tag">Top Tips</a></span>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+			
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://topofthelist.net/two-quick-tips-to-optimize-youtube-videos/" rel="prev">Two Quick Tips to Optimize YouTube Videos</a></div><div class="nav-next"><a href="https://topofthelist.net/percent-of-website-mobile-traffic-affects-desktop-seo/" rel="next">Percent of Website Mobile Traffic Affects Desktop SEO</a></div></div>
+	</nav>
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>
+			<ul>
+					<li class="cat-item cat-item-23"><a href="https://topofthelist.net/category/charity/">Charity</a>
+</li>
+	<li class="cat-item cat-item-98"><a href="https://topofthelist.net/category/content/">Content</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="https://topofthelist.net/category/developer-tips/">Developer Tips</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="https://topofthelist.net/category/fun-and-games/">Fun and Games</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://topofthelist.net/category/increase-traffic/">Increase Traffic</a>
+</li>
+	<li class="cat-item cat-item-37"><a href="https://topofthelist.net/category/local-search/">Local Search</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="https://topofthelist.net/category/mobile-search/">Mobile Search</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="https://topofthelist.net/category/news-archive/">News Archive</a>
+</li>
+	<li class="cat-item cat-item-73"><a href="https://topofthelist.net/category/online-marketing/">Online Marketing</a>
+</li>
+	<li class="cat-item cat-item-97"><a href="https://topofthelist.net/category/privacy/">Privacy</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="https://topofthelist.net/category/search-engines/">Search Engines</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="https://topofthelist.net/category/seo/">SEO</a>
+</li>
+	<li class="cat-item cat-item-76"><a href="https://topofthelist.net/category/small-business/">Small Business</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="https://topofthelist.net/category/social-media/">Social Media</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="https://topofthelist.net/category/top-tips/">Top Tips</a>
+</li>
+			</ul>
+
+			</aside><aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!-- semrush siteaudit widget -->
+<div id="ssa-widget" style="width: 100%; height: auto;"></div>
+<script type="text/javascript">
+    (function() {
+        var p = "https://www.semrush.com/leadgen/static/js/widget.min.js";
+        var d = document, s = d.createElement("script");
+        s.src = p + "?v=" + Math.random();
+        (d.head || d.body).appendChild(s);
+        s.onload = function() {
+            new SEMRUSH.SiteauditWidget({
+                widgetApiKey: "5c3df54af8564612653699bd"
+            });
+        }
+    })();
+
+</script>
+<!-- /semrush siteaudit widget --></div></aside><aside id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget"><h2 class="widget-title">Sign up for our monthly newsletter!</h2><script type="rocketlazyloadscript">(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.10 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-920" method="post" data-id="920" data-name="Top Of The List Newsletter" ><div class="mc4wp-form-fields"><p>
+	<label>Email address&nbsp;</label>
+	<input type="email" name="EMAIL" placeholder="Your email address" required />
+</p>
+<p>
+    <label>First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" name="FNAME" required="">
+</p>
+<p>
+    <label>Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" name="LNAME">
+</p>
+<p>
+    <label>Company&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="text" name="MMERGE6">
+</p>
+<p>
+	<input type="submit" value="Sign up" />
+</p>
+<p>
+  Top Of The List takes data protection seriously. Please read our <a href="https://topofthelist.net/privacy-policy/">privacy policy</a> for information on how we handle your data and what your rights are.
+</p></div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1701554312" /><input type="hidden" name="_mc4wp_form_id" value="920" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin --></aside></div><!-- #secondary -->
+		</div>
+	</div><!-- #content -->
+		<div id="footermenu"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="https://topofthelist.net/partners/">Partners</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://topofthelist.net/resources/">Resources</a></li>
+<li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113"><a href="https://topofthelist.net/sitemap/">Sitemap</a></li>
+<li id="menu-item-2111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2111"><a href="https://topofthelist.net/newsletter-archive/">Newsletters</a></li>
+<li id="menu-item-2113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2113"><a href="https://topofthelist.net/grand-rapids-mi/">Grand Rapids</a></li>
+</ul></div></div>
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="widthbox" id="footer-widthbox">
+			<div id="footer-left">
+<!-- 				<script type="rocketlazyloadscript" data-rocket-src="https://apis.google.com/js/platform.js" async defer></script> -->
+				<a href="https://www.expertise.com/mi/grand-rapids/digital-marketing-agencies" style="display:inline-block; border:0; width: 200px;"><img style="width:300px; display:block;" width="300" height="240" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20240'%3E%3C/svg%3E" alt="Best Digital Marketing Agencies in Grand Rapids" data-lazy-src="//res.cloudinary.com/expertise-com/image/upload/f_auto,fl_lossy,q_auto/w_auto/remote_media/awards/mi_grand-rapids_digital-marketing-agencies_2023.svg" /><noscript><img style="width:300px; display:block;" width="300" height="240" src="//res.cloudinary.com/expertise-com/image/upload/f_auto,fl_lossy,q_auto/w_auto/remote_media/awards/mi_grand-rapids_digital-marketing-agencies_2023.svg" alt="Best Digital Marketing Agencies in Grand Rapids" /></noscript></a>
+				<div style="padding-top:10px;" class="text-gray">
+				<span style="font-size:1.6rem; font-weight:500; line-height:1.2rem;padding-top:10px">Top Of The List</span><br>
+				2513 Lake Dr SE, Grand Rapids, MI 49506<br>
+				616.940.1174<br></div>
+			</div>
+			<div id="footer-right">
+				<div id="bbb-seal"><a target="_blank" title="Click for the Business Review of Top Of The List, LLC, an Internet Marketing Services Company in Grand Rapids MI" href="https://www.bbb.org/us/mi/grand-rapids/profile/internet-marketing-services/top-of-the-list-llc-0372-38158322"><img alt="Click for the BBB Business Review of this Internet Marketing Services in Grand Rapids MI" style="border: 0;" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20293%2061'%3E%3C/svg%3E" width="293" height="61" data-lazy-src="https://topofthelist.net/wp-content/uploads/bbb-totl-2.png" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/bbb-totl-2.png.webp" class="ewww_webp_lazy_load" /><noscript><img alt="Click for the BBB Business Review of this Internet Marketing Services in Grand Rapids MI" style="border: 0;" src="https://topofthelist.net/wp-content/uploads/bbb-totl-2.png" width="293" height="61"/></noscript></a></div>
+				<div>
+					<a target="_blank" href="https://www.sbam.org/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20103'%3E%3C/svg%3E" alt="certified by small business association of michigan" height="103" width="200" data-lazy-src="https://topofthelist.net/wp-content/uploads/sbam-logo-sm.png" data-lazy-src-webp="https://topofthelist.net/wp-content/uploads/sbam-logo-sm.png.webp" class="ewww_webp_lazy_load"><noscript><img src="https://topofthelist.net/wp-content/uploads/sbam-logo-sm.png" alt="certified by small business association of michigan" height="103" width="200"></noscript></a>
+				</div>
+			</div>
+			<div id="footer-center" style="width: 250px;">
+				<a href="https://www.google.com/partners/agency?id=6141394407" target="_blank">
+					<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.gstatic.com/partners/badge/images/2022/PartnerBadgeClickable.svg"/><noscript><img src="https://www.gstatic.com/partners/badge/images/2022/PartnerBadgeClickable.svg"/></noscript>
+				</a>
+				<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Top Of The List Rise To The Top logo" style="width: 70%; height: auto; margin-right: auto; margin-left: auto;" data-lazy-src="https://topofthelist.net/wp-content/themes/totl/graphics/footerlogo.png" data-lazy-src-webp="https://topofthelist.net/wp-content/themes/totl/graphics/footerlogo.png.webp" class="ewww_webp_lazy_load"><noscript><img src="https://topofthelist.net/wp-content/themes/totl/graphics/footerlogo.png" alt="Top Of The List Rise To The Top logo" style="width: 70%; height: auto; margin-right: auto; margin-left: auto;"></noscript>
+				<p style="text-align: center;" class="text-gray";>
+					rise to the top
+				</p></div>
+		</div>
+		<div style="text-align:center;padding-top:50px;">
+			<a href="https://topofthelist.net/privacy-policy/">Privacy Policy</a><a> | </a>
+				<a href="https://topofthelist.net/cookie-policy/">Cookie Policy</a><a> | </a>
+				<a href="https://topofthelist.net/terms-conditions/">Terms & Conditions</a>
+		</div>
+		<p style="text-align:center;" class="text-gray">
+			&reg; 2023 BY TOP OF THE LIST. ALL RIGHTS RESERVED.
+		</p>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="rocketlazyloadscript">(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><div class="mobmenu-overlay"></div><div class="mob-menu-header-holder mobmenu"  data-menu-display="mob-menu-slideout-over" data-autoclose-submenus="1" data-open-icon="down-open" data-close-icon="up-open"><div class="mob-menu-logo-holder"><a href="https://topofthelist.net" class="headertext"><span>Top Of The List</span></a></div><div class="mobmenur-container"><a href="#" class="mobmenu-right-bt mobmenu-trigger-action" data-panel-target="mobmenu-right-panel" aria-label="Right Menu Button"><i class="mob-icon-menu-1 mob-menu-icon"></i><i class="mob-icon-cancel-1 mob-cancel-button"></i></a></div></div>				<div class="mobmenu-right-alignment mobmenu-panel mobmenu-right-panel  ">
+				<a href="#" class="mobmenu-right-bt" aria-label="Right Menu Button"><i class="mob-icon-cancel-1 mob-cancel-button"></i></a>
+					<div class="mobmenu-content">
+			<div class="menu-mobile-menu-container"><ul id="mobmenuright" class="wp-mobile-menu" role="menubar" aria-label="Main navigation for mobile devices"><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3678"><a href="https://topofthelist.net/" role="menuitem" class="">Home</a></li><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-169"><a href="https://topofthelist.net/about-us/" role="menuitem" class="">About Us</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-172"><a href="https://topofthelist.net/about-us/why-totl/" role="menuitem" class="">Why TOTL</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171"><a href="https://topofthelist.net/about-us/our-team/" role="menuitem" class="">Our Team</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5348"><a href="https://topofthelist.net/about-us/helpful-tools/" role="menuitem" class="">Helpful Tools</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-170"><a href="https://topofthelist.net/about-us/charity-connections/" role="menuitem" class="">Charity Connections</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5349"><a href="https://topofthelist.net/careers/" role="menuitem" class="">Careers</a></li></ul>
+</li><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5798"><a href="https://topofthelist.net/strategies/" role="menuitem" class="">Strategies</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5799"><a href="https://topofthelist.net/strategies/" role="menuitem" class="">Overview</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"><a href="https://topofthelist.net/strategies/seo/" role="menuitem" class="">SEO</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181"><a href="https://topofthelist.net/strategies/ppc/" role="menuitem" class="">Paid Search</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180"><a href="https://topofthelist.net/strategies/lso/" role="menuitem" class="">Local Search</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5507"><a href="https://topofthelist.net/strategies/social-media-marketing/" role="menuitem" class="">Social Media</a></li></ul>
+</li><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-174"><a href="https://topofthelist.net/services/" role="menuitem" class="">Services</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3135"><a href="https://topofthelist.net/services/web-design-development/" role="menuitem" class="">Web Design &#038; Development</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3134"><a href="https://topofthelist.net/services/schema-markup-services/" role="menuitem" class="">Structured Data</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4144"><a href="https://topofthelist.net/services/visual-marketing-design/" role="menuitem" class="">Visual Marketing Design</a></li></ul>
+</li><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="https://topofthelist.net/testimonials/" role="menuitem" class="">Raves</a></li><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-173"><a href="https://topofthelist.net/blog/" role="menuitem" class="">Blog</a></li><li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183"><a href="https://topofthelist.net/contact-us/" role="menuitem" class="">Contact</a></li><li role="none"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3136"><a href="#" role="menuitem" class="">More Information</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-437"><a href="https://topofthelist.net/partners/" role="menuitem" class="">Partners</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178"><a href="https://topofthelist.net/resources/" role="menuitem" class="">Resources</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-436"><a href="https://topofthelist.net/sitemap/" role="menuitem" class="">Sitemap</a></li>	<li role="none"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175"><a href="https://topofthelist.net/grand-rapids-mi/" role="menuitem" class="">Grand Rapids MI</a></li></ul>
+</li></ul></div>
+			</div><div class="mob-menu-right-bg-holder"></div></div>
+
+		<script id="eio-lazy-load-js-before" type="text/javascript">
+var eio_lazy_vars = {"exactdn_domain":"","skip_autoscale":0,"threshold":0};
+</script>
+<script type='text/javascript' src='https://topofthelist.net/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=721' id='eio-lazy-load-js' defer></script>
+<script type='text/javascript' id='rate-my-post-js-extra'>
+/* <![CDATA[ */
+var rmp_frontend = {"admin_ajax":"https:\/\/topofthelist.net\/wp-admin\/admin-ajax.php","postID":"289","noVotes":"No votes so far! Be the first to rate this post.","cookie":"You already voted! This vote will not be counted!","afterVote":"Thank you for rating this post!","notShowRating":"1","social":"2","feedback":"2","cookieDisable":"1","emptyFeedback":"Please insert your feedback in the box above!","hoverTexts":"1","preventAccidental":"1","grecaptcha":"2","siteKey":"6LefGggjAAAAAOZMPOa6azvj8ON3Xj0uItsWQeZR","votingPriv":"1","loggedIn":"","positiveThreshold":"2","ajaxLoad":"1","disableClearCache":"1","nonce":"6f91d815af"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/rate-my-post/public/js/rate-my-post.js?ver=1701359666' id='rate-my-post-js' defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after" data-rocket-type="text/javascript">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/topofthelist.net","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after" data-rocket-type="text/javascript">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/themes/totl/js/navigation.js?ver=1701359667' id='totl-navigation-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/themes/totl/js/bjqs-mod.min.js?ver=1.0.0' id='bjqs-script-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/themes/totl/js/skip-link-focus-fix.js?ver=1701359667' id='totl-skip-link-focus-fix-js' defer></script>
+<script type="rocketlazyloadscript" id="heateor_sss_sharing_js-js-before" data-rocket-type="text/javascript">
+function heateorSssLoadEvent(e) {var t=window.onload;if (typeof window.onload!="function") {window.onload=e}else{window.onload=function() {t();e()}}};	var heateorSssSharingAjaxUrl = 'https://topofthelist.net/wp-admin/admin-ajax.php', heateorSssCloseIconPath = 'https://topofthelist.net/wp-content/plugins/sassy-social-share/public/../images/close.png', heateorSssPluginIconPath = 'https://topofthelist.net/wp-content/plugins/sassy-social-share/public/../images/logo.png', heateorSssHorizontalSharingCountEnable = 0, heateorSssVerticalSharingCountEnable = 0, heateorSssSharingOffset = -10; var heateorSssMobileStickySharingEnabled = 1;var heateorSssCopyLinkMessage = "Link copied.";var heateorSssUrlCountFetched = [], heateorSssSharesText = 'Shares', heateorSssShareText = 'Share';function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")}
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/sassy-social-share/public/js/sassy-social-share-public.js?ver=1701359667' id='heateor_sss_sharing_js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/wp-gallery-custom-links/wp-gallery-custom-links.js?ver=1701359667' id='wp-gallery-custom-links-js-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' defer data-rocket-src='https://topofthelist.net/wp-content/cache/min/1/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=1701359711' id='mc4wp-forms-api-js'></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://topofthelist.net/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
