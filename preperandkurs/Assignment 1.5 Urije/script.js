@@ -1,17 +1,10 @@
+let vip = false;
+let age = 15;
 
-let vip = false; 
-let age = 17
-
-if ( vip==true){
-
+if (vip) 
     console.log("Welcome my best VIP customer");
-
-}else { if( age >=18 ){
-
+ else if (age >= 18) 
     console.log("ACCESS GRANTED");
-    
-} else {
+ else 
     console.log("ACCESS DENIED");
-}
 
-}
