@@ -1,0 +1,16 @@
+h1{
+   
+    color:red;
+    font-weight: bold;
+    background-color: aquamarine;
+    
+    margin-left: 50px;
+}
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    margin-left: 50px;
+    color:blue;
+}
